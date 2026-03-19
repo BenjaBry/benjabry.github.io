@@ -3,301 +3,267 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CYLO | Soluciones Industriales Premium</title>
+    <title>CYLO GUATEMALA | Suministros Industriales</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f9f7f2; 
-            color: #2c2c2c;
+            scroll-behavior: smooth;
         }
-        .nav-link {
-            position: relative;
-            transition: color 0.3s ease;
-        }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 1px;
-            bottom: -2px;
-            left: 0;
-            background-color: #2c2c2c;
-            transition: width 0.3s ease;
-        }
-        .nav-link:hover::after {
-            width: 100%;
-        }
-        .btn-primary {
-            background-color: #2c2c2c;
-            color: white;
-            padding: 12px 32px;
-            border-radius: 4px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-        .btn-primary:hover {
-            background-color: #4a4a4a;
-            transform: translateY(-1px);
-        }
-        .hero-gradient {
-            background: linear-gradient(rgba(5, 7, 10, 0.6), rgba(5, 7, 10, 0.8)), url('banner.png');
+        /* Mantenemos el estilo claro que pediste, adaptado a los colores originales de la plantilla */
+        .bg-cream { background-color: #f8fafc; }
+        .text-navy { color: #05070a; }
+        .bg-navy { background-color: #05070a; }
+        
+        .product-card:hover .btn-quick-add { opacity: 1; transform: translateY(0); }
+        .btn-quick-add { opacity: 0; transform: translateY(10px); transition: all 0.3s ease; }
+        
+        /* Ajuste para el banner de fondo */
+        .hero-bg {
+            background-image: linear-gradient(rgba(248, 250, 252, 0.93), rgba(248, 250, 252, 0.93)), url('banner.png');
             background-size: cover;
             background-position: center;
         }
-        .product-card:hover img {
-            transform: scale(1.03);
-        }
-        .custom-scrollbar::-webkit-scrollbar {
-            width: 6px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: #d1d1d1;
-            border-radius: 10px;
-        }
+
+        /* Ocultar barra de scroll en el carrito */
+        #cartItems::-webkit-scrollbar { width: 4px; }
+        #cartItems::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
     </style>
 </head>
-<body class="antialiased">
+<body class="bg-cream text-navy">
 
-    <div class="bg-black text-white text-center py-2 text-xs font-medium tracking-widest uppercase">
-        Distribución Logística en Palín y Escuintla
+    <div class="bg-navy text-white text-center py-2 text-xs font-semibold tracking-widest uppercase">
+        Distribución Logística B2B en Palín y Escuintla
     </div>
 
-    <nav class="sticky top-0 z-50 bg-[#f9f7f2] border-b border-gray-200 px-6 py-4 flex justify-between items-center">
-        <div class="flex gap-6 items-center hidden md:flex">
-            <a href="#" class="nav-link text-sm font-medium uppercase tracking-wider">Catálogo</a>
-            <a href="#" class="nav-link text-sm font-medium uppercase tracking-wider">Soluciones</a>
-            <a href="#" class="nav-link text-sm font-medium uppercase tracking-wider">Nosotros</a>
-        </div>
-        
-        <div class="flex-shrink-0">
-            <h1 class="text-3xl font-bold tracking-tighter italic">CYLO</h1>
-        </div>
-
-        <div class="flex gap-6 items-center">
-            <a href="#" class="hidden md:block text-sm font-medium uppercase tracking-wider nav-link">Soporte</a>
-            <button class="relative" id="cartToggle">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-                <span class="absolute -top-2 -right-2 bg-black text-white text-[10px] rounded-full w-4 h-4 flex items-center justify-center">0</span>
-            </button>
+    <nav class="sticky top-0 z-50 bg-cream/90 backdrop-blur-md border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center gap-8">
+                    <a href="#" class="text-2xl font-bold tracking-tighter text-navy italic">CYLO</a>
+                    <div class="hidden md:flex space-x-6 text-sm font-medium">
+                        <a href="#productos" class="hover:underline">Catálogo</a>
+                        <a href="#mision" class="hover:underline">Capacidad Logística</a>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="relative p-2 hover:bg-gray-200 rounded-full transition" onclick="toggleCart()">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" /></svg>
+                        <span id="cartCount" class="absolute top-0 right-0 bg-[#10b981] text-white text-[10px] rounded-full h-4 w-4 flex items-center justify-center font-bold">0</span>
+                    </button>
+                </div>
+            </div>
         </div>
     </nav>
 
-    <section class="relative h-[85vh] flex items-center justify-center text-center px-4 overflow-hidden">
-        <div class="absolute inset-0 hero-gradient"></div>
-        <div class="relative z-10 max-w-3xl">
-            <h2 class="text-4xl md:text-7xl font-bold text-white mb-6 leading-tight">Reinventando el Suministro Industrial.</h2>
-            <p class="text-lg md:text-xl text-white mb-8 opacity-90">Contenedores de alta resistencia, limpieza profesional y tecnología solar para tu operación.</p>
-            <div class="flex flex-col md:flex-row gap-4 justify-center">
-                <a href="#" class="btn-primary uppercase text-sm tracking-widest">Ver Catálogo</a>
-                <a href="https://wa.me/50248005692" target="_blank" class="bg-white text-black px-8 py-3 rounded-sm uppercase text-sm tracking-widest font-medium hover:bg-gray-100 transition">Cotizar por WhatsApp</a>
+    <header class="relative h-[80vh] flex items-center overflow-hidden hero-bg">
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center md:text-left">
+            <div class="max-w-2xl">
+                <p class="text-sm font-bold uppercase tracking-widest text-[#10b981] mb-2">Eficiencia Industrial</p>
+                <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-6">Reinventando el Suministro.</h1>
+                <p class="text-lg md:text-xl mb-8 opacity-90 text-gray-700">Contenedores de alta resistencia, limpieza profesional y tecnología solar. Desde Escuintla para tu operación.</p>
+                <div class="flex flex-col sm:flex-row gap-4 md:justify-start justify-center">
+                    <a href="#productos" class="bg-navy text-white px-8 py-4 rounded-full font-bold text-center hover:bg-gray-800 transition shadow-lg">Ver Catálogo</a>
+                </div>
             </div>
         </div>
-    </section>
+    </header>
 
-    <section class="py-12 bg-white border-b border-gray-100">
-        <div class="max-w-7xl mx-auto px-6">
-            <p class="text-center text-xs uppercase tracking-widest text-gray-400 mb-8">Nuestros Pilares</p>
-            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-50">
-                <span class="text-xl font-bold tracking-widest">CALIDAD</span>
-                <span class="text-xl font-bold tracking-widest">RESISTENCIA</span>
-                <span class="text-xl font-bold tracking-widest">LOGÍSTICA</span>
-                <span class="text-xl font-bold tracking-widest">EFICIENCIA</span>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-20 px-6 max-w-7xl mx-auto">
+    <section id="productos" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-end mb-12">
             <div>
-                <h3 class="text-3xl font-bold mb-2">Soluciones Destacadas</h3>
-                <p class="text-gray-600">Equipando a la industria moderna con suministros de primer nivel.</p>
+                <h2 class="text-3xl font-bold mb-2">Soluciones Destacadas</h2>
+                <p class="text-gray-600">Suministros de primer nivel para industrias y comercios.</p>
             </div>
-            <a href="#" class="text-sm font-bold border-b-2 border-black pb-1 uppercase tracking-wider hover:text-gray-600 hover:border-gray-600 transition">Ver Todo</a>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-            <div class="product-card group cursor-pointer">
-                <div class="bg-white aspect-square rounded-sm mb-4 overflow-hidden border border-gray-100 flex items-center justify-center p-8">
-                    <img src="3.png" 
-                         alt="Contenedores Desechables" 
-                         class="w-full h-full object-contain transition duration-500 ease-out"
-                         onerror="this.src='https://via.placeholder.com/800x800?text=Desechables'">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+            <div class="product-card group cursor-pointer bg-white p-4 rounded-xl shadow-sm border border-gray-100">
+                <div class="relative aspect-square bg-gray-50 rounded-lg overflow-hidden mb-4 flex items-center justify-center p-8">
+                    <img src="3.png" alt="Desechables" class="w-full h-full object-contain group-hover:scale-105 transition duration-500">
+                    <button onclick="addToCart('Desechables Grado Pro', 250.00, '3.png')" class="btn-quick-add absolute bottom-4 left-4 right-4 bg-[#10b981] text-white py-3 rounded-lg font-bold text-sm shadow-md hover:bg-[#0ea5e9] transition-colors">Añadir a Cotización</button>
                 </div>
-                <div class="flex justify-between items-start">
-                    <div>
-                        <h4 class="font-bold text-lg">Desechables Grado Pro</h4>
-                        <p class="text-gray-500 text-sm">Contenedores térmicos y plásticos</p>
-                    </div>
-                    <span class="font-bold text-xs uppercase text-gray-400 mt-1">Cotizar</span>
-                </div>
-                <button class="w-full mt-4 border border-black py-2 text-sm uppercase font-bold tracking-widest group-hover:bg-black group-hover:text-white transition">Añadir a Cotización</button>
+                <h3 class="font-bold text-lg">Desechables Grado Pro</h3>
+                <p class="text-gray-500 text-sm mb-2">Contenedores térmicos (Caja x100)</p>
+                <p class="font-bold text-navy text-lg">Q250.00</p>
             </div>
 
-            <div class="product-card group cursor-pointer">
-                <div class="bg-white aspect-square rounded-sm mb-4 overflow-hidden border border-gray-100 flex items-center justify-center p-8">
-                    <img src="image_3fd0dd.png" 
-                         alt="Suministros de Limpieza" 
-                         class="w-full h-full object-contain transition duration-500 ease-out"
-                         onerror="this.src='https://via.placeholder.com/800x800?text=Limpieza'">
+            <div class="product-card group cursor-pointer bg-white p-4 rounded-xl shadow-sm border border-gray-100">
+                <div class="relative aspect-square bg-gray-50 rounded-lg overflow-hidden mb-4 flex items-center justify-center p-8">
+                    <img src="image_3fd0dd.png" alt="Limpieza" class="w-full h-full object-contain group-hover:scale-105 transition duration-500">
+                    <button onclick="addToCart('Kit Limpieza Especializada', 480.00, 'image_3fd0dd.png')" class="btn-quick-add absolute bottom-4 left-4 right-4 bg-[#10b981] text-white py-3 rounded-lg font-bold text-sm shadow-md hover:bg-[#0ea5e9] transition-colors">Añadir a Cotización</button>
                 </div>
-                <div class="flex justify-between items-start">
-                    <div>
-                        <h4 class="font-bold text-lg">Limpieza Especializada</h4>
-                        <p class="text-gray-500 text-sm">Químicos e implementos industriales</p>
-                    </div>
-                    <span class="font-bold text-xs uppercase text-gray-400 mt-1">Cotizar</span>
-                </div>
-                <button class="w-full mt-4 border border-black py-2 text-sm uppercase font-bold tracking-widest group-hover:bg-black group-hover:text-white transition">Añadir a Cotización</button>
+                <h3 class="font-bold text-lg">Kit Limpieza Especializada</h3>
+                <p class="text-gray-500 text-sm mb-2">Químicos industriales e implementos</p>
+                <p class="font-bold text-navy text-lg">Q480.00</p>
             </div>
 
-            <div class="product-card group cursor-pointer">
-                <div class="bg-white aspect-square rounded-sm mb-4 overflow-hidden border border-gray-100 flex items-center justify-center p-8">
-                    <img src="image_3fd0bc.png" 
-                         alt="Energía Solar" 
-                         class="w-full h-full object-contain transition duration-500 ease-out"
-                         onerror="this.src='https://via.placeholder.com/800x800?text=Solar'">
+            <div class="product-card group cursor-pointer bg-white p-4 rounded-xl shadow-sm border border-gray-100">
+                <div class="relative aspect-square bg-gray-50 rounded-lg overflow-hidden mb-4 flex items-center justify-center p-8">
+                    <img src="image_3fd0bc.png" alt="Energía Solar" class="w-full h-full object-contain group-hover:scale-105 transition duration-500">
+                    <button onclick="addToCart('Lámpara Solar Industrial', 850.00, 'image_3fd0bc.png')" class="btn-quick-add absolute bottom-4 left-4 right-4 bg-[#10b981] text-white py-3 rounded-lg font-bold text-sm shadow-md hover:bg-[#0ea5e9] transition-colors">Añadir a Cotización</button>
                 </div>
-                <div class="flex justify-between items-start">
-                    <div>
-                        <h4 class="font-bold text-lg">Energía Solar Industrial</h4>
-                        <p class="text-gray-500 text-sm">Lámparas de alto rendimiento</p>
-                    </div>
-                    <span class="font-bold text-xs uppercase text-gray-400 mt-1">Cotizar</span>
-                </div>
-                <button class="w-full mt-4 border border-black py-2 text-sm uppercase font-bold tracking-widest group-hover:bg-black group-hover:text-white transition">Añadir a Cotización</button>
+                <h3 class="font-bold text-lg">Lámpara Solar Industrial</h3>
+                <p class="text-gray-500 text-sm mb-2">Alto rendimiento 200W</p>
+                <p class="font-bold text-navy text-lg">Q850.00</p>
             </div>
         </div>
     </section>
 
-    <section class="bg-[#2c2c2c] text-white py-24 px-6">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-            <div>
-                <h3 class="text-4xl md:text-5xl font-bold mb-8 leading-tight">Logística eficiente que sostiene tu operación diaria.</h3>
-                <p class="text-lg text-gray-300 mb-8 italic border-l-4 border-gray-500 pl-6">"Nuestra misión es ser el aliado estratégico en suministros para toda la región de Escuintla."</p>
-                <div class="flex gap-4">
-                    <div class="text-center">
-                        <span class="block text-3xl font-bold">100%</span>
-                        <span class="text-xs uppercase text-gray-400">Calidad</span>
-                    </div>
-                    <div class="w-[1px] bg-gray-700"></div>
-                    <div class="text-center">
-                        <span class="block text-3xl font-bold">24h</span>
-                        <span class="text-xs uppercase text-gray-400">Entrega</span>
-                    </div>
-                    <div class="w-[1px] bg-gray-700"></div>
-                    <div class="text-center">
-                        <span class="block text-3xl font-bold">B2B</span>
-                        <span class="text-xs uppercase text-gray-400">Soporte</span>
-                    </div>
-                </div>
-            </div>
-            <div class="rounded-lg overflow-hidden shadow-2xl bg-gray-800">
-                <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1000" alt="Logística Industrial CYLO" class="w-full h-full object-cover opacity-80 mix-blend-overlay">
-            </div>
-        </div>
-    </section>
-
-    <footer class="bg-white py-20 px-6 border-t border-gray-200">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
-            <div class="md:col-span-1">
-                <h1 class="text-2xl font-bold italic mb-6">CYLO</h1>
-                <p class="text-sm text-gray-500 mb-6">Soluciones integrales en empaques, limpieza e iluminación solar para la industria.</p>
-                <div class="flex gap-4">
-                    <a href="#" class="text-gray-400 hover:text-black transition">IG</a>
-                    <a href="#" class="text-gray-400 hover:text-black transition">FB</a>
-                    <a href="#" class="text-gray-400 hover:text-black transition">WA</a>
-                </div>
-            </div>
-            
-            <div>
-                <h5 class="font-bold uppercase text-xs tracking-widest mb-6">Catálogo</h5>
-                <ul class="space-y-4 text-sm text-gray-600">
-                    <li><a href="#" class="hover:text-black transition">Desechables</a></li>
-                    <li><a href="#" class="hover:text-black transition">Suministros de Limpieza</a></li>
-                    <li><a href="#" class="hover:text-black transition">Lámparas Solares</a></li>
-                    <li><a href="#" class="hover:text-black transition">Venta Mayorista</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <h5 class="font-bold uppercase text-xs tracking-widest mb-6">Ayuda</h5>
-                <ul class="space-y-4 text-sm text-gray-600">
-                    <li><a href="#" class="hover:text-black transition">Cobertura de Envío</a></li>
-                    <li><a href="#" class="hover:text-black transition">Catálogo PDF</a></li>
-                    <li><a href="#" class="hover:text-black transition">Contacto</a></li>
-                    <li><a href="#" class="hover:text-black transition">Garantías</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <h5 class="font-bold uppercase text-xs tracking-widest mb-6">Asesoría</h5>
-                <p class="text-sm text-gray-500 mb-4">Recibe nuestra lista de precios para mayoristas.</p>
-                <form class="flex border-b border-black pb-2">
-                    <input type="email" placeholder="Email corporativo" class="bg-transparent border-none focus:ring-0 text-sm w-full outline-none">
-                    <button type="submit">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                    </button>
-                </form>
-            </div>
-        </div>
-        <div class="max-w-7xl mx-auto mt-20 pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between text-[10px] uppercase tracking-widest text-gray-400">
-            <p>&copy; 2026 CYLO Guatemala. Todos los derechos reservados.</p>
-            <div class="flex gap-6 mt-4 md:mt-0">
-                <a href="#">Privacidad</a>
-                <a href="#">Términos B2B</a>
-            </div>
-        </div>
-    </footer>
-
-    <div id="cartDrawer" class="fixed inset-y-0 right-0 w-full md:w-96 bg-white z-[100] transform translate-x-full transition-transform duration-300 ease-in-out shadow-2xl flex flex-col">
-        <div class="p-6 border-b border-gray-200 flex justify-between items-center">
-            <h2 class="text-xl font-bold">Tu Cotización</h2>
-            <button id="closeCart" class="text-gray-500 hover:text-black">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+    <div id="cartDrawer" class="fixed inset-y-0 right-0 w-full sm:w-96 bg-white z-[100] shadow-2xl translate-x-full transition-transform duration-300 ease-in-out border-l border-gray-200 flex flex-col">
+        
+        <div class="p-6 border-b border-gray-100 flex justify-between items-center bg-gray-50">
+            <h2 class="text-xl font-bold">Tu Orden B2B</h2>
+            <button onclick="toggleCart()" class="p-2 hover:bg-gray-200 rounded-full text-gray-500 transition">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
             </button>
         </div>
-        <div class="flex-grow p-6 flex flex-col items-center justify-center text-center">
-            <div class="bg-gray-100 rounded-full p-4 mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="text-gray-400"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+
+        <div id="cartItems" class="flex-grow p-6 overflow-y-auto flex flex-col gap-4">
+            <div id="emptyCartMsg" class="h-full flex flex-col items-center justify-center text-center text-gray-400">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mb-4 opacity-20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" /></svg>
+                <p class="font-medium">Tu carrito está vacío</p>
             </div>
-            <p class="text-gray-500 font-medium">Tu lista de cotización está vacía</p>
-            <button class="mt-6 btn-primary w-full uppercase text-xs tracking-widest">Ver Catálogo</button>
+        </div>
+
+        <div class="p-6 bg-gray-50 border-t border-gray-200">
+            <div class="flex justify-between font-bold text-lg mb-4 text-navy">
+                <span>Total Estimado</span>
+                <span id="cartTotal">Q0.00</span>
+            </div>
+            <button id="checkoutBtn" onclick="sendToWhatsApp()" class="w-full bg-[#25D366] text-white py-4 rounded-xl font-bold hover:bg-[#20b858] transition flex items-center justify-center gap-2 shadow-lg opacity-50 cursor-not-allowed" disabled>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"> <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/> </svg>
+                Enviar Orden por WhatsApp
+            </button>
         </div>
     </div>
-    <div id="cartOverlay" class="fixed inset-0 bg-black bg-opacity-50 z-[90] hidden opacity-0 transition-opacity duration-300"></div>
+    
+    <div id="cartOverlay" onclick="toggleCart()" class="fixed inset-0 bg-navy/40 backdrop-blur-sm z-[90] hidden opacity-0 transition-opacity duration-300"></div>
 
     <script>
-        const cartToggle = document.getElementById('cartToggle');
-        const closeCart = document.getElementById('closeCart');
+        // 1. Base de datos temporal del carrito
+        let cart = [];
+        const waNumber = "50248005692"; // Tu número configurado
+
+        // Elementos del DOM
         const cartDrawer = document.getElementById('cartDrawer');
         const cartOverlay = document.getElementById('cartOverlay');
+        const cartItemsContainer = document.getElementById('cartItems');
+        const emptyCartMsg = document.getElementById('emptyCartMsg');
+        const cartTotalEl = document.getElementById('cartTotal');
+        const cartCountEl = document.getElementById('cartCount');
+        const checkoutBtn = document.getElementById('checkoutBtn');
 
+        // Abrir/Cerrar Carrito
         function toggleCart() {
-            const isOpen = !cartDrawer.classList.contains('translate-x-full');
-            if (isOpen) {
-                cartDrawer.classList.add('translate-x-full');
-                cartOverlay.classList.add('hidden');
-                cartOverlay.classList.remove('opacity-100');
-            } else {
+            if (cartDrawer.classList.contains('translate-x-full')) {
                 cartDrawer.classList.remove('translate-x-full');
                 cartOverlay.classList.remove('hidden');
                 setTimeout(() => cartOverlay.classList.add('opacity-100'), 10);
+                document.body.style.overflow = 'hidden'; // Evita que la página haga scroll de fondo
+            } else {
+                cartDrawer.classList.add('translate-x-full');
+                cartOverlay.classList.remove('opacity-100');
+                setTimeout(() => { cartOverlay.classList.add('hidden'); }, 300);
+                document.body.style.overflow = '';
             }
         }
 
-        cartToggle.addEventListener('click', toggleCart);
-        closeCart.addEventListener('click', toggleCart);
-        cartOverlay.addEventListener('click', toggleCart);
+        // Añadir producto
+        function addToCart(name, price, img) {
+            // Buscar si ya existe
+            const existingItem = cart.find(item => item.name === name);
+            if (existingItem) {
+                existingItem.qty += 1;
+            } else {
+                cart.push({ name: name, price: price, qty: 1, img: img });
+            }
+            
+            updateCartUI();
+            toggleCart(); // Abre el carrito para confirmar al usuario
+        }
 
-        // Mensaje de éxito al añadir a cotización (Mock)
-        document.querySelectorAll('.product-card button').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                toggleCart();
+        // Restar/Eliminar producto
+        function changeQty(name, delta) {
+            const item = cart.find(item => item.name === name);
+            if (item) {
+                item.qty += delta;
+                if (item.qty <= 0) {
+                    cart = cart.filter(i => i.name !== name); // Eliminar si llega a 0
+                }
+            }
+            updateCartUI();
+        }
+
+        // Actualizar Interfaz
+        function updateCartUI() {
+            cartItemsContainer.innerHTML = '';
+            let total = 0;
+            let totalItems = 0;
+
+            if (cart.length === 0) {
+                cartItemsContainer.appendChild(emptyCartMsg);
+                emptyCartMsg.style.display = 'flex';
+                checkoutBtn.classList.add('opacity-50', 'cursor-not-allowed');
+                checkoutBtn.disabled = true;
+            } else {
+                emptyCartMsg.style.display = 'none';
+                checkoutBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                checkoutBtn.disabled = false;
+
+                cart.forEach(item => {
+                    total += item.price * item.qty;
+                    totalItems += item.qty;
+
+                    // Crear elemento visual del producto en el carrito
+                    const itemDiv = document.createElement('div');
+                    itemDiv.className = 'flex items-center gap-4 bg-white p-3 rounded-lg border border-gray-100 shadow-sm';
+                    itemDiv.innerHTML = `
+                        <div class="w-16 h-16 bg-gray-50 rounded p-1 flex-shrink-0">
+                            <img src="${item.img}" class="w-full h-full object-contain" alt="${item.name}">
+                        </div>
+                        <div class="flex-grow">
+                            <h4 class="font-bold text-sm text-navy leading-tight">${item.name}</h4>
+                            <p class="text-[#10b981] font-bold text-sm mt-1">Q${item.price.toFixed(2)}</p>
+                        </div>
+                        <div class="flex items-center gap-2 bg-gray-100 rounded-lg p-1">
+                            <button onclick="changeQty('${item.name}', -1)" class="w-6 h-6 flex items-center justify-center font-bold text-gray-500 hover:bg-white rounded transition">-</button>
+                            <span class="text-sm font-bold w-4 text-center">${item.qty}</span>
+                            <button onclick="changeQty('${item.name}', 1)" class="w-6 h-6 flex items-center justify-center font-bold text-gray-500 hover:bg-white rounded transition">+</button>
+                        </div>
+                    `;
+                    cartItemsContainer.appendChild(itemDiv);
+                });
+            }
+
+            // Actualizar textos
+            cartTotalEl.innerText = `Q${total.toFixed(2)}`;
+            cartCountEl.innerText = totalItems;
+        }
+
+        // Generar enlace y enviar a WhatsApp
+        function sendToWhatsApp() {
+            if(cart.length === 0) return;
+
+            let text = "Hola CYLO Guatemala, me interesa cotizar la siguiente orden B2B:%0A%0A";
+            let total = 0;
+
+            cart.forEach(item => {
+                let subtotal = item.price * item.qty;
+                total += subtotal;
+                // Formato: - 2x Producto (Q100.00)
+                text += `▪️ ${item.qty}x ${item.name} (Q${item.price.toFixed(2)})%0A`;
             });
-        });
+
+            text += `%0A*Total estimado:* Q${total.toFixed(2)}%0A%0A`;
+            text += "Quedo a la espera de confirmación y detalles de logística/envío.";
+
+            const whatsappUrl = `https://wa.me/${waNumber}?text=${text}`;
+            window.open(whatsappUrl, '_blank'); // Abre en pestaña nueva
+        }
     </script>
 </body>
 </html>
