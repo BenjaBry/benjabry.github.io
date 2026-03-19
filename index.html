@@ -3,316 +3,458 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CYLO GUATEMALA | Insumos y Utensilios 2026</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>CYLO Guatemala - Catálogo 2026</title>
     <style>
-        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-        .bg-cream { background-color: #f9f7f2; }
-        .text-navy { color: #1a2b3c; }
-        .bg-navy { background-color: #1a2b3c; }
-        .product-card:hover .btn-quick-add { opacity: 1; transform: translateY(0); }
-        .btn-quick-add { opacity: 0; transform: translateY(10px); transition: all 0.3s ease; }
-        /* Animación para el contador del carrito */
-        @keyframes pop {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.2); }
-            100% { transform: scale(1); }
+        /* Estilos base estilo "Bite" (Minimalista, tipografía limpia) */
+        :root {
+            --bg-color: #f9f9f9;
+            --text-color: #111;
+            --footer-bg: #111;
+            --footer-text: #fff;
+            --accent-color: #d1e231; /* Color verde limón de Bite */
         }
-        .cart-pop { animation: pop 0.3s ease-out; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+        
+        /* Navegación y Carrito Flotante */
+        header {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 40px;
+            background: #fff;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .cart-btn {
+            background: var(--text-color);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        /* Cuadrícula de Productos */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 50px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .product-card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        .product-img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            background: #f0f0f0; /* Placeholder para tus fotos reales */
+            margin-bottom: 15px;
+        }
+        .product-title {
+            font-size: 1.1rem;
+            margin: 10px 0;
+        }
+        .product-price {
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+        .add-to-cart {
+            background: transparent;
+            border: 2px solid var(--text-color);
+            padding: 10px 20px;
+            width: 100%;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.2s;
+        }
+        .add-to-cart:hover {
+            background: var(--text-color);
+            color: #fff;
+        }
+
+        /* Modal del Carrito */
+        #cart-modal {
+            display: none;
+            position: fixed;
+            right: 0;
+            top: 0;
+            width: 350px;
+            height: 100vh;
+            background: #fff;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+            z-index: 200;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        .close-cart {
+            cursor: pointer;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            margin: 15px 0;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        .checkout-btn {
+            background: #25D366; /* Color de WhatsApp */
+            color: white;
+            width: 100%;
+            padding: 15px;
+            border: none;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+
+        /* Footer idéntico a la imagen */
+        footer {
+            background-color: var(--footer-bg);
+            color: var(--footer-text);
+            padding: 60px 40px 20px;
+            font-size: 14px;
+        }
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            border-bottom: 1px solid #333;
+            padding-bottom: 40px;
+        }
+        .footer-newsletter {
+            flex: 1;
+            min-width: 300px;
+            margin-right: 40px;
+        }
+        .footer-newsletter h3 {
+            font-weight: normal;
+            font-size: 12px;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+        .footer-newsletter h2 {
+            font-size: 24px;
+            font-weight: normal;
+            margin-bottom: 30px;
+        }
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            border-bottom: 1px solid #fff;
+            padding-bottom: 5px;
+            margin-bottom: 30px;
+        }
+        .newsletter-form input {
+            background: transparent;
+            border: none;
+            color: #fff;
+            padding: 10px 0;
+            outline: none;
+        }
+        .newsletter-form button {
+            background: transparent;
+            border: none;
+            color: #fff;
+            text-align: left;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 10px 0;
+        }
+        .footer-links-grid {
+            display: flex;
+            flex: 2;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+        }
+        .footer-column h3 {
+            font-weight: normal;
+            font-size: 12px;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+        .footer-column a {
+            color: #ccc;
+            text-decoration: none;
+            margin-bottom: 12px;
+            transition: color 0.2s;
+        }
+        .footer-column a:hover {
+            color: #fff;
+        }
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 20px auto 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: #999;
+        }
+        .footer-bottom-links a {
+            color: #999;
+            text-decoration: none;
+            margin-left: 15px;
+        }
+        .cert-logos {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        .cert-logos img {
+            height: 40px;
+            filter: invert(1);
+        }
+        
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+            }
+            .footer-links-grid {
+                flex-wrap: wrap;
+                margin-top: 40px;
+            }
+        }
     </style>
 </head>
-<body class="bg-cream text-navy">
+<body>
 
-    <!-- Top Announcement Bar -->
-    <div class="bg-navy text-white text-center py-2 text-xs font-semibold tracking-widest uppercase">
-        Línea 2026: Servicio a domicilio gratuito en toda Guatemala
-    </div>
-
-    <!-- Navigation -->
-    <nav class="sticky top-0 z-50 bg-cream/90 backdrop-blur-md border-b border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center gap-8">
-                    <a href="#" class="text-2xl font-bold tracking-tighter text-navy italic">CYLO</a>
-                    <div class="hidden md:flex space-x-6 text-sm font-medium">
-                        <a href="#insumos" class="hover:underline">Insumos</a>
-                        <a href="#utensilios" class="hover:underline">Utensilios</a>
-                        <a href="#nosotros" class="hover:underline">Misión</a>
-                    </div>
-                </div>
-                <div class="flex items-center space-x-4">
-                    <button class="relative p-2 hover:bg-gray-100 rounded-full" onclick="toggleCart()">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" /></svg>
-                        <span id="cartCount" class="absolute top-0 right-0 bg-red-500 text-white text-[10px] rounded-full h-4 w-4 flex items-center justify-center font-bold">0</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <header class="relative h-[70vh] flex items-center overflow-hidden bg-gray-900">
-        <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1595246140625-573b715d11dc?auto=format&fit=crop&q=80&w=2000" 
-                 alt="Kitchen Utensils" class="w-full h-full object-cover opacity-60">
-        </div>
-        <div class="relative z-10 max-w-7xl mx-auto px-4 w-full">
-            <div class="max-w-2xl text-white">
-                <span class="bg-white text-navy px-3 py-1 rounded-full text-xs font-bold uppercase mb-4 inline-block tracking-widest">Lo Nuevo de 2026</span>
-                <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-6">Siempre más insumos y utensilios.</h1>
-                <p class="text-lg md:text-xl mb-8 opacity-90">Calidad premium para tu cocina y negocio. Equipamiento profesional con entrega inmediata en Palín y toda Guatemala.</p>
-                <div class="flex gap-4">
-                    <a href="#insumos" class="bg-white text-navy px-8 py-4 rounded-full font-bold hover:bg-gray-100 transition">Explorar Catálogo</a>
-                </div>
-            </div>
-        </div>
+    <header>
+        <h2>CYLO</h2>
+        <button class="cart-btn" onclick="toggleCart()">Carrito (<span id="cart-count">0</span>)</button>
     </header>
 
-    <!-- Insumos Grid -->
-    <section id="insumos" class="py-20 max-w-7xl mx-auto px-4">
-        <div class="mb-12 border-l-4 border-navy pl-4">
-            <h2 class="text-3xl font-bold uppercase tracking-tight">Insumos Biodegradables</h2>
-            <p class="text-gray-500 italic">Sostenibilidad y eficiencia para tu restaurante.</p>
+    <main>
+        <div class="product-grid" id="product-grid">
+            </div>
+    </main>
+
+    <div id="cart-modal">
+        <div class="cart-header">
+            <h2>Tu Orden</h2>
+            <button class="close-cart" onclick="toggleCart()">×</button>
         </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Product 1 -->
-            <div class="product-card group bg-white p-4 rounded-2xl shadow-sm border border-gray-100">
-                <div class="relative aspect-square bg-gray-50 rounded-xl overflow-hidden mb-4">
-                    <img src="https://images.unsplash.com/photo-1592420042220-333e144a6755?auto=format&fit=crop&q=80&w=600" alt="Contenedor Bagazo" class="w-full h-full object-cover">
-                    <button onclick="addToCart('Contenedor Bagazo 6x6 (500 unid)', 730)" class="btn-quick-add absolute bottom-3 left-3 right-3 bg-navy text-white py-3 rounded-lg font-bold text-xs uppercase">Añadir Caja</button>
-                </div>
-                <h3 class="font-bold">Contenedor Bagazo Caña</h3>
-                <p class="text-xs text-gray-400 mb-2 uppercase tracking-tighter">Caja: 500 Unidades | 6x6 pulgadas</p>
-                <p class="font-bold text-navy">Q730.00</p>
-            </div>
-
-            <!-- Product 2 -->
-            <div class="product-card group bg-white p-4 rounded-2xl shadow-sm border border-gray-100">
-                <div class="relative aspect-square bg-gray-50 rounded-xl overflow-hidden mb-4">
-                    <img src="https://images.unsplash.com/photo-1610348725531-843dff563e2c?auto=format&fit=crop&q=80&w=600" alt="Bowl Kraft" class="w-full h-full object-cover">
-                    <button onclick="addToCart('Bowl Kraft 1000ml (300 unid)', 545)" class="btn-quick-add absolute bottom-3 left-3 right-3 bg-navy text-white py-3 rounded-lg font-bold text-xs uppercase">Añadir Caja</button>
-                </div>
-                <h3 class="font-bold">Bowl Kraft Biodegradable</h3>
-                <p class="text-xs text-gray-400 mb-2 uppercase tracking-tighter">Caja: 300 Unidades | 1000 ml</p>
-                <p class="font-bold text-navy">Q545.00</p>
-            </div>
-
-            <!-- Product 3 -->
-            <div class="product-card group bg-white p-4 rounded-2xl shadow-sm border border-gray-100">
-                <div class="relative aspect-square bg-gray-50 rounded-xl overflow-hidden mb-4">
-                    <img src="https://images.unsplash.com/photo-1594498653385-d5172c532c00?auto=format&fit=crop&q=80&w=600" alt="Cubiertos PP" class="w-full h-full object-cover">
-                    <button onclick="addToCart('Kit 4 Cubiertos PP (500 unid)', 450)" class="btn-quick-add absolute bottom-3 left-3 right-3 bg-navy text-white py-3 rounded-lg font-bold text-xs uppercase">Añadir Caja</button>
-                </div>
-                <h3 class="font-bold">Kit de 4 Cubiertos PP</h3>
-                <p class="text-xs text-gray-400 mb-2 uppercase tracking-tighter">Caja: 500 Unidades | Reciclable</p>
-                <p class="font-bold text-navy">Q450.00</p>
-            </div>
-
-            <!-- Product 4 -->
-            <div class="product-card group bg-white p-4 rounded-2xl shadow-sm border border-gray-100">
-                <div class="relative aspect-square bg-gray-50 rounded-xl overflow-hidden mb-4">
-                    <img src="https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&q=80&w=600" alt="Palillos Chinos" class="w-full h-full object-cover">
-                    <button onclick="addToCart('Palillos Chinos Bambú (3000 unid)', 896)" class="btn-quick-add absolute bottom-3 left-3 right-3 bg-navy text-white py-3 rounded-lg font-bold text-xs uppercase">Añadir Caja</button>
-                </div>
-                <h3 class="font-bold">Palillos Chinos de Bambú</h3>
-                <p class="text-xs text-gray-400 mb-2 uppercase tracking-tighter">Caja: 3000 Unid | Empacados</p>
-                <p class="font-bold text-navy">Q896.00</p>
-            </div>
+        <div id="cart-items"></div>
+        <div style="margin-top: 20px; font-weight: bold;">
+            Total: Q<span id="cart-total">0.00</span>
         </div>
-    </section>
+        <button class="checkout-btn" onclick="sendToWhatsApp()">Finalizar compra por WhatsApp</button>
+    </div>
 
-    <!-- Utensilios Grid -->
-    <section id="utensilios" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="mb-12 border-l-4 border-orange-500 pl-4">
-                <h2 class="text-3xl font-bold uppercase tracking-tight">Utensilios Profesionales</h2>
-                <p class="text-gray-500 italic">Acero inoxidable de alta resistencia.</p>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Utensilio 1 -->
-                <div class="product-card group">
-                    <div class="relative aspect-[4/3] bg-gray-100 rounded-xl overflow-hidden mb-4">
-                        <img src="https://images.unsplash.com/photo-1621501710185-9377f7220265?auto=format&fit=crop&q=80&w=600" alt="Cuchillo Chef" class="w-full h-full object-cover">
-                        <button onclick="addToCart('Cuchillo Chef 10 Hoja Ancha (12 unid)', 1175)" class="btn-quick-add absolute bottom-3 left-3 right-3 bg-navy text-white py-3 rounded-lg font-bold text-xs">Añadir Pack</button>
-                    </div>
-                    <h3 class="font-bold">Cuchillo de Chef 10"</h3>
-                    <p class="text-xs text-gray-400 mb-2">Caja: 12 Unidades | Acero 5Cr15MOV</p>
-                    <p class="font-bold text-navy">Q1,175.00</p>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-newsletter">
+                <h3>STAY IN THE KNOW</h3>
+                <h2>Sign up for 10% off your first order.</h2>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Enter email address">
+                    <button>Subscribe</button>
                 </div>
-
-                <!-- Utensilio 2 -->
-                <div class="product-card group">
-                    <div class="relative aspect-[4/3] bg-gray-100 rounded-xl overflow-hidden mb-4">
-                        <img src="https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?auto=format&fit=crop&q=80&w=600" alt="Pesa Gramera" class="w-full h-full object-cover">
-                        <button onclick="addToCart('Pesa Gramera con Timer (2 unid)', 505)" class="btn-quick-add absolute bottom-3 left-3 right-3 bg-navy text-white py-3 rounded-lg font-bold text-xs">Añadir Pack</button>
-                    </div>
-                    <h3 class="font-bold">Pesa Gramera Digital</h3>
-                    <p class="text-xs text-gray-400 mb-2">Caja: 2 Unidades | Con Temporizador</p>
-                    <p class="font-bold text-navy">Q505.00</p>
-                </div>
-
-                <!-- Utensilio 3 -->
-                <div class="product-card group">
-                    <div class="relative aspect-[4/3] bg-gray-100 rounded-xl overflow-hidden mb-4">
-                        <img src="https://images.unsplash.com/photo-1594385208974-2e75f9d8a513?auto=format&fit=crop&q=80&w=600" alt="Pinzas" class="w-full h-full object-cover">
-                        <button onclick="addToCart('Pinzas Deluxe 12 (12 unid)', 623)" class="btn-quick-add absolute bottom-3 left-3 right-3 bg-navy text-white py-3 rounded-lg font-bold text-xs">Añadir Pack</button>
-                    </div>
-                    <h3 class="font-bold">Tenazas Deluxe 12"</h3>
-                    <p class="text-xs text-gray-400 mb-2">Caja: 12 Unidades | Acero Inoxidable</p>
-                    <p class="font-bold text-navy">Q623.00</p>
-                </div>
-
-                <!-- Utensilio 4 -->
-                <div class="product-card group">
-                    <div class="relative aspect-[4/3] bg-gray-100 rounded-xl overflow-hidden mb-4">
-                        <img src="https://images.unsplash.com/photo-1621266304191-8bc68bc99cc6?auto=format&fit=crop&q=80&w=600" alt="Colador Chino" class="w-full h-full object-cover">
-                        <button onclick="addToCart('Colador Chino Acero (1 unid)', 470)" class="btn-quick-add absolute bottom-3 left-3 right-3 bg-navy text-white py-3 rounded-lg font-bold text-xs">Añadir Unidad</button>
-                    </div>
-                    <h3 class="font-bold">Colador Chino Pro</h3>
-                    <p class="text-xs text-gray-400 mb-2">Pieza Individual | 25 cm Acero</p>
-                    <p class="font-bold text-navy">Q470.00</p>
+                <div class="cert-logos">
+                    <div style="border: 1px solid white; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; font-size: 20px;">B</div>
+                    <div style="border: 1px solid white; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">🐰</div>
+                    <div style="border: 1px solid white; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">🌿</div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Side Cart Drawer -->
-    <div id="cartDrawer" class="fixed inset-y-0 right-0 w-full sm:w-96 bg-white z-[100] shadow-2xl translate-x-full transition-transform duration-300 ease-in-out border-l border-gray-100 flex flex-col">
-        <div class="p-6 border-b border-gray-100 flex justify-between items-center">
-            <h2 class="text-xl font-bold uppercase tracking-tight">Tu Pedido</h2>
-            <button onclick="toggleCart()" class="p-2 hover:bg-gray-100 rounded-full text-gray-400">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
-            </button>
+            
+            <div class="footer-links-grid">
+                <div class="footer-column">
+                    <h3>SHOP</h3>
+                    <a href="#">All Products</a>
+                    <a href="#">Insumos</a>
+                    <a href="#">Utensilios</a>
+                    <a href="#">Sets</a>
+                </div>
+                <div class="footer-column">
+                    <h3>LEARN</h3>
+                    <a href="#">Ingredients</a>
+                    <a href="#">Sustainability</a>
+                    <a href="#">About Us</a>
+                </div>
+                <div class="footer-column">
+                    <h3>HELP</h3>
+                    <a href="#">Account ↗</a>
+                    <a href="#">Wholesale ↗</a>
+                    <a href="#">Affiliate Program ↗</a>
+                    <a href="#">FAQs</a>
+                    <a href="#">Contact Us</a>
+                </div>
+                <div class="footer-column">
+                    <h3>FOLLOW</h3>
+                    <a href="#">Instagram ↗</a>
+                    <a href="#">Twitter ↗</a>
+                    <a href="#">TikTok ↗</a>
+                    <a href="#">Facebook ↗</a>
+                </div>
+            </div>
         </div>
         
-        <!-- Cart Items Container -->
-        <div id="cartItems" class="flex-grow p-6 overflow-y-auto space-y-4">
-            <!-- Empty state is handled by JS -->
-        </div>
-
-        <div class="p-6 bg-gray-50 border-t border-gray-100">
-            <div class="flex justify-between font-bold text-lg mb-6">
-                <span>Total Estimado</span>
-                <span id="cartTotal">Q0.00</span>
+        <div class="footer-bottom">
+            <div>
+                © 2026 CYLO Guatemala. All Rights Reserved.
+                <span class="footer-bottom-links">
+                    <a href="#">Privacy policy</a>
+                    <a href="#">Terms of service</a>
+                    <a href="#">Shipping policy</a>
+                    <a href="#">Cancellation policy</a>
+                    <a href="#">info@cyloguatemala.com</a>
+                </span>
             </div>
-            <button onclick="sendOrder()" class="w-full bg-navy text-white py-4 rounded-full font-bold flex items-center justify-center gap-3 hover:bg-opacity-90 transition">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.767 5.767 0 3.18 2.586 5.766 5.767 5.766 3.18 0 5.766-2.586 5.766-5.766 0-3.181-2.586-5.767-5.766-5.767zm0 1.774c2.204 0 3.992 1.788 3.992 3.993 0 2.204-1.788 3.992-3.992 3.992-2.205 0-3.993-1.788-3.993-3.992 0-2.205 1.788-3.993 3.993-3.993zm.001-5.946C6.474 2 2 6.474 2 12.032c0 5.556 4.474 10.032 10.032 10.032 5.556 0 10.032-4.476 10.032-10.032 0-5.558-4.476-10.032-10.032-10.032zM12.032 20.3c-4.567 0-8.268-3.7-8.268-8.268 0-4.566 3.7-8.267 8.268-8.267 4.566 0 8.267 3.701 8.267 8.267 0 4.568-3.701 8.268-8.267 8.268z"/></svg>
-                Finalizar por WhatsApp
-            </button>
-            <p class="text-[10px] text-center mt-4 text-gray-400 uppercase tracking-widest font-bold">Entrega estimada: 48-72 horas hábiles</p>
         </div>
-    </div>
-    
-    <!-- Overlay -->
-    <div id="cartOverlay" onclick="toggleCart()" class="fixed inset-0 bg-black/30 backdrop-blur-sm z-[90] hidden opacity-0 transition-opacity duration-300"></div>
+    </footer>
 
     <script>
-        let cart = [];
-        const WHATSAPP_NUMBER = "+50248005692";
+        // Catálogo de prueba basado en tu PDF. Deberás expandir esto o usar un JSON externo.
+        const productos = [
+            {
+                id: 1,
+                nombre: "Contenedor de Alimentos Biodegradable (Bagazo) 8x8 pulg.",
+                descripcion: "Caja: 200 Unidades",
+                precio: 630.00,
+                imagen: "" // Aquí va la URL de tu imagen limpia recortada
+            },
+            {
+                id: 2,
+                nombre: "Vasos Papel 8 Onzas - Sin Tapadera",
+                descripcion: "Caja: 1000 Unidades",
+                precio: 574.00,
+                imagen: "" 
+            }
+        ];
 
-        function addToCart(name, price) {
-            const existing = cart.find(item => item.name === name);
-            if (existing) {
-                existing.quantity++;
+        let carrito = [];
+
+        // Renderizar productos en la cuadrícula
+        function renderProducts() {
+            const grid = document.getElementById('product-grid');
+            productos.forEach(prod => {
+                const card = document.createElement('div');
+                card.className = 'product-card';
+                card.innerHTML = `
+                    <div class="product-img">FOTO AQUÍ</div>
+                    <h3 class="product-title">${prod.nombre}</h3>
+                    <p style="font-size: 0.9rem; color: #666;">${prod.descripcion}</p>
+                    <div class="product-price">Q${prod.precio.toFixed(2)}</div>
+                    <button class="add-to-cart" onclick="addToCart(${prod.id})">Agregar al Carrito</button>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Lógica del Carrito
+        function addToCart(id) {
+            const producto = productos.find(p => p.id === id);
+            const itemInCart = carrito.find(item => item.id === id);
+            
+            if (itemInCart) {
+                itemInCart.cantidad++;
             } else {
-                cart.push({ name, price, quantity: 1 });
+                carrito.push({...producto, cantidad: 1});
             }
             updateCartUI();
-            
-            // Animation for cart icon
-            const badge = document.getElementById('cartCount');
-            badge.classList.remove('cart-pop');
-            void badge.offsetWidth; // trigger reflow
-            badge.classList.add('cart-pop');
         }
 
         function updateCartUI() {
-            const container = document.getElementById('cartItems');
-            const totalEl = document.getElementById('cartTotal');
-            const countEl = document.getElementById('cartCount');
+            document.getElementById('cart-count').innerText = carrito.reduce((sum, item) => sum + item.cantidad, 0);
             
-            if (cart.length === 0) {
-                container.innerHTML = `
-                    <div class="flex flex-col items-center justify-center h-full text-center text-gray-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" /></svg>
-                        <p class="text-sm font-bold uppercase tracking-widest">Carrito Vacío</p>
-                    </div>`;
-                totalEl.innerText = "Q0.00";
-                countEl.innerText = "0";
-                return;
-            }
-
+            const cartItemsDiv = document.getElementById('cart-items');
+            cartItemsDiv.innerHTML = '';
             let total = 0;
-            let count = 0;
-            container.innerHTML = cart.map((item, index) => {
-                total += item.price * item.quantity;
-                count += item.quantity;
-                return `
-                    <div class="flex justify-between items-center bg-gray-50 p-4 rounded-xl">
-                        <div class="flex-grow">
-                            <h4 class="font-bold text-sm leading-tight">${item.name}</h4>
-                            <p class="text-xs text-gray-400">Q${item.price.toFixed(2)} x ${item.quantity}</p>
+
+            carrito.forEach((item, index) => {
+                const itemTotal = item.precio * item.cantidad;
+                total += itemTotal;
+                cartItemsDiv.innerHTML += `
+                    <div class="cart-item">
+                        <div>
+                            <strong>${item.nombre}</strong><br>
+                            Q${item.precio.toFixed(2)} x ${item.cantidad}
                         </div>
-                        <div class="flex items-center gap-3">
-                            <button onclick="changeQty(${index}, -1)" class="w-6 h-6 rounded-full bg-white border border-gray-200 flex items-center justify-center text-navy">-</button>
-                            <span class="text-xs font-bold">${item.quantity}</span>
-                            <button onclick="changeQty(${index}, 1)" class="w-6 h-6 rounded-full bg-white border border-gray-200 flex items-center justify-center text-navy">+</button>
+                        <div>
+                            Q${itemTotal.toFixed(2)}
+                            <button onclick="removeFromCart(${index})" style="margin-left:10px; color:red; border:none; background:none; cursor:pointer;">X</button>
                         </div>
                     </div>
                 `;
-            }).join('');
-
-            totalEl.innerText = `Q${total.toLocaleString('es-GT', {minimumFractionDigits:2})}`;
-            countEl.innerText = count;
+            });
+            document.getElementById('cart-total').innerText = total.toFixed(2);
         }
 
-        function changeQty(index, delta) {
-            cart[index].quantity += delta;
-            if (cart[index].quantity <= 0) {
-                cart.splice(index, 1);
-            }
+        function removeFromCart(index) {
+            carrito.splice(index, 1);
             updateCartUI();
         }
 
         function toggleCart() {
-            const drawer = document.getElementById('cartDrawer');
-            const overlay = document.getElementById('cartOverlay');
-            const isOpen = !drawer.classList.contains('translate-x-full');
-
-            if (!isOpen) {
-                drawer.classList.remove('translate-x-full');
-                overlay.classList.remove('hidden');
-                setTimeout(() => overlay.classList.add('opacity-100'), 10);
-            } else {
-                drawer.classList.add('translate-x-full');
-                overlay.classList.remove('opacity-100');
-                setTimeout(() => overlay.classList.add('hidden'), 300);
-            }
+            const modal = document.getElementById('cart-modal');
+            modal.style.display = modal.style.display === 'block' ? 'none' : 'block';
         }
 
-        function sendOrder() {
-            if (cart.length === 0) return;
+        // Integración con WhatsApp
+        function sendToWhatsApp() {
+            if (carrito.length === 0) {
+                alert("Tu carrito está vacío.");
+                return;
+            }
 
-            let message = "📦 *NUEVO PEDIDO CYLO 2026*\n\n";
+            // Teléfono extraído del catálogo
+            const telefono = "50248005692"; 
+            let mensaje = "Hola CYLO Guatemala, me gustaría realizar la siguiente orden (Lo Nuevo de 2026):\n\n";
             let total = 0;
-            
-            cart.forEach(item => {
-                const subtotal = item.price * item.quantity;
-                message += `• ${item.quantity}x ${item.name} - Q${subtotal.toFixed(2)}\n`;
+
+            carrito.forEach(item => {
+                let subtotal = item.precio * item.cantidad;
                 total += subtotal;
+                mensaje += `- ${item.cantidad}x ${item.nombre} (Q${subtotal.toFixed(2)})\n`;
             });
 
-            message += `\n*TOTAL ESTIMADO:* Q${total.toFixed(2)}\n\n`;
-            message += "_Favor confirmar disponibilidad y datos de envío._";
+            mensaje += `\n*Total estimado: Q${total.toFixed(2)}*\n\n`;
+            mensaje += "Por favor, indíquenme los pasos para el pago y envío.";
 
-            const encodedMessage = encodeURIComponent(message);
-            window.open(`https://wa.me/${48005692}?text=${Quiero Cotizar}`, '_blank');
+            const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+            window.open(url, '_blank');
         }
+
+        // Inicializar
+        renderProducts();
     </script>
 </body>
 </html>
