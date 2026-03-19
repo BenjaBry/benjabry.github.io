@@ -36,7 +36,7 @@
 
         .logo { font-weight: 800; font-size: 1.5rem; letter-spacing: 2px; }
 
-       /* Hero Section Impactante con Banner como Marca de Agua sutil */
+        /* Hero Section Impactante */
         .hero {
             height: 90vh;
             display: flex;
@@ -44,33 +44,29 @@
             justify-content: center;
             text-align: center;
             padding: 0 10%;
-            
-            /* LA SOLUCIÓN TÉCNICA: Superposición de capa clara sobre foto oscura */
-            background-color: var(--gray); /* Mantiene tu color base claro (#f8fafc) */
-            background-image: 
-                /* Capa 1: Un tinte blanco/gris claro casi opaco (93% de opacidad) encima de la foto */
-                linear-gradient(rgba(248, 250, 252, 0.93), rgba(248, 250, 252, 0.93)),
-                /* Capa 2: Tu imagen banner.png de fondo */
-                url('banner.png'); 
-            
+            background-color: var(--dark);
+            background-image: linear-gradient(rgba(5, 7, 10, 0.85), rgba(5, 7, 10, 0.95)), url('banner.png');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-
-            /* Mantenemos el color de texto oscuro original */
-            color: var(--dark); 
+            color: white;
         }
 
-        /* Mantenemos el color de la descripción original */
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 800;
+            margin: 0;
+            line-height: 1;
+            text-transform: uppercase;
+        }
+
         .hero-content p {
-            color: #64748b; /* Color gris oscuro original */
+            font-size: 1.2rem;
+            font-weight: 300;
+            color: #cbd5e1;
+            margin: 20px 0;
         }
-        
-        /* Mantenemos el color de la etiqueta original */
-        .hero-content .tag {
-            color: var(--accent); /* Verde éxito original */
-        }
-        
+
         /* Grid de Productos Premium */
         .products {
             padding: 100px 5%;
@@ -145,30 +141,23 @@
         <p>Desde Palín para toda la región de Escuintla, entregamos soluciones que optimizan tus costos y reducen tu impacto ambiental.</p>
     </section>
 
-   <section class="products">
-        
+    <section class="products">
         <div class="product-card">
-            <img src="3.png" alt="Icono Contenedores" style="width: 80px; height: 80px; margin-bottom: 20px;">
             <span class="tag">01</span>
-            <h3>Desechables <br>Premium</h3>
+            <h3>Desechables <br>Grado Pro</h3>
         </div>
-
         <div class="product-card">
-            <img src="3.png" alt="Icono Suministros Limpieza" style="width: 80px; height: 80px; margin-bottom: 20px;">
             <span class="tag">02</span>
             <h3>Limpieza <br>Especializada</h3>
         </div>
-
         <div class="product-card">
-            <img src="3.png" alt="Icono Energía Solar" style="width: 80px; height: 80px; margin-bottom: 20px;">
             <span class="tag">03</span>
-            <h3>Energía <br>Solar</h3>
+            <h3>Energía <br>Solar Industrial</h3>
         </div>
-
     </section>
 
-    <a href="https://wa.me/50248005692?text=Hola%20CYLO,%20necesito%20una%20cotización." class="shop-now" target="_blank" rel="noopener noreferrer">
-    ORDENAR POR WHATSAPP →
+    <a href="https://wa.me/50248005692" class="shop-now">
+        ORDENAR POR WHATSAPP →
     </a>
 
 </body>
