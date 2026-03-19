@@ -67,30 +67,102 @@
             margin: 20px 0;
         }
 
-        /* Grid de Productos Premium */
+/* SECCIÓN DE PRODUCTOS REESCRITA PARA EL NUEVO EFECTO DINÁMICO */
+        
         .products {
+            background-color: white; /* Fondo limpio para resaltar las tarjetas */
             padding: 100px 5%;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
+            /* Grid adaptable y robusto */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
         }
 
         .product-card {
-            position: relative;
-            overflow: hidden;
-            border-radius: 0; /* Estilo cuadrado minimalista */
-            transition: all 0.5s ease;
-            background: var(--gray);
-            padding: 40px;
+            background: #f8fafc; /* Color de fondo base claro */
+            border: 2px solid transparent; /* Borde invisible para la transición */
+            
+            /* Estandarización de forma: Estilo cuadrado */
             aspect-ratio: 1/1;
+            
+            /* LOGÍSTICA DE ANIMACIÓN CRÍTICA: */
+            overflow: hidden; /* Mantiene el zoom de la imagen dentro de la tarjeta */
+            position: relative;
+            cursor: pointer;
+            transition: all 0.5s ease-out; /* Transición suave general */
+            
+            /* Layout interno */
             display: flex;
             flex-direction: column;
-            justify-content: flex-end;
+            justify-content: flex-end; /* Texto al fondo */
+            padding: 40px;
+            text-align: center;
         }
 
-        .product-card:hover { background: #e2e8f0; }
+        /* Contenedor interno para el activo visual (Icono) */
+        .product-card-visual {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -60%); /* Centrado inicial, un poco más arriba */
+            width: 150px; /* Tamaño del icono ajustable */
+            height: auto;
+            transition: transform 0.6s ease-out; /* Transición de zoom suave */
+            opacity: 0.9; /* Sutil transparencia inicial */
+        }
 
-        .product-card h3 { font-size: 1.8rem; margin: 10px 0; }
+        /* Asegurar que las imágenes dentro del visual sigan la regla */
+        .product-card-visual img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Transición de Texto */
+        .product-card h3 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin: 0;
+            line-height: 1.2;
+            color: var(--dark);
+            z-index: 2; /* Asegurar legibilidad sobre el icono si se superponen */
+            transition: color 0.3s ease;
+        }
+
+        .product-card .tag {
+            margin-bottom: 10px;
+            color: var(--dark); /* Color por defecto */
+            opacity: 0.6;
+            transition: color 0.3s ease, opacity 0.3s ease;
+        }
+
+        /* ========================================================== */
+        /* EL EFECTO DE HOVER (TRANSICIÓN DE OPCIONES) */
+        /* Replicando la dinámica de la referencia */
+        /* ========================================================== */
+
+        /* 1. Cambio de Borde: Se activa el verde de CYLO */
+        .product-card:hover {
+            border-color: var(--accent);
+            background: white; /* Resaltado sutil */
+        }
+
+        /* 2. El "Zoom Dinámico": El icono escala dramáticamente dentro */
+        .product-card:hover .product-card-visual {
+            transform: translate(-50%, -65%) scale(1.2); /* Sube y agranda (estilo JPG) */
+            opacity: 1; /* Se vuelve totalmente visible */
+        }
+
+        /* 3. Cambio de Color de Texto: El título se vuelve verde */
+        .product-card:hover h3 {
+            color: var(--accent);
+        }
+
+        /* 4. Resaltado de Tag */
+        .product-card:hover .tag {
+            color: var(--accent);
+            opacity: 1;
+        }
 
         /* Botón Flotante de Compra (Estilo DTC) */
         .shop-now {
@@ -142,18 +214,23 @@
     </section>
 
     <section class="products">
+        
         <div class="product-card">
-            <span class="tag">01</span>
-            <h3>Desechables <br>Grado Pro</h3>
-        </div>
-        <div class="product-card">
+            <div class="product-card-visual">
+                <img src="image_3fd0dd.png" alt="Icono Limpieza Especializada CYLO">
+            </div>
             <span class="tag">02</span>
             <h3>Limpieza <br>Especializada</h3>
         </div>
+
         <div class="product-card">
+            <div class="product-card-visual">
+                <img src="image_3fd0bc.png" alt="Icono Energía Solar Industrial CYLO">
+            </div>
             <span class="tag">03</span>
             <h3>Energía <br>Solar Industrial</h3>
         </div>
+
     </section>
 
     <a href="https://wa.me/50248005692" class="shop-now">
