@@ -1,0 +1,32 @@
+.pt-0 {
+  padding-top: 0 !important;
+}
+
+.pt-5 {
+  padding-top: 3rem !important;
+}
+
+.pt-6 {
+  padding-top: 4.5rem !important;
+}
+
+.pb-0 {
+  padding-bottom: 0 !important;
+}
+
+.pb-6 {
+  padding-bottom: 4.5rem !important;
+}
+
+@media (min-width: 576px) {
+  .pt-sm-5 {
+    padding-top: 3rem !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .pt-lg-7 {
+    padding-top: 6rem !important;
+  }
+}
+
