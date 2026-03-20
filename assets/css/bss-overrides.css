@@ -1,18 +1,5 @@
-.p-2 {
-  padding: .5rem !important;
-}
-
 .p-4 {
   padding: 1.5rem !important;
-}
-
-.p-5 {
-  padding: 3rem !important;
-}
-
-.px-3 {
-  padding-right: 1rem !important;
-  padding-left: 1rem !important;
 }
 
 .px-4 {
@@ -25,19 +12,9 @@
   padding-bottom: .5rem !important;
 }
 
-.py-3 {
-  padding-top: 1rem !important;
-  padding-bottom: 1rem !important;
-}
-
 .py-4 {
   padding-top: 1.5rem !important;
   padding-bottom: 1.5rem !important;
-}
-
-.py-5 {
-  padding-top: 3rem !important;
-  padding-bottom: 3rem !important;
 }
 
 .pt-0 {
@@ -64,10 +41,6 @@
   padding-bottom: 0 !important;
 }
 
-.pb-5 {
-  padding-bottom: 3rem !important;
-}
-
 .ps-0 {
   padding-left: 0 !important;
 }
@@ -87,13 +60,6 @@
 @media (min-width: 992px) {
   .p-lg-5 {
     padding: 3rem !important;
-  }
-}
-
-@media (min-width: 992px) {
-  .px-lg-0 {
-    padding-right: 0 !important;
-    padding-left: 0 !important;
   }
 }
 
