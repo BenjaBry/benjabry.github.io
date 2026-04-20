@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.cyloguatemala.me/sitemap.xml
+
+# Bloquear archivos innecesarios
+Disallow: /img/.keep
