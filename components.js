@@ -8,7 +8,7 @@
     const path = location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('.nav-links a, .nav-mobile a').forEach(a => {
       const href = a.getAttribute('href') || '';
-      if (href === path || (path === 'index.html' && href === 'index.html')) {
+      if (href === path || (path === 'index.html' && href === '/')) {
         a.classList.add('active');
       }
     });
