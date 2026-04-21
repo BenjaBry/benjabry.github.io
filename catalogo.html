@@ -245,7 +245,7 @@
       <h2>¿Listo para ver todos los productos con precios?</h2>
       <p>Accede al catálogo interactivo completo con buscador, cotizador y más de 800 artículos organizados por categoría.</p>
       <div class="actions">
-        <a href="Catalogo-digital-2026.html" class="btn btn-primary btn-lg" target="_blank">
+        <a href="Catalogo-digital-2026" class="btn btn-primary btn-lg" target="_blank">
           Abrir Catálogo Completo →
         </a>
         <a href="https://wa.me/50248005692?text=Hola,%20quiero%20cotizar%20productos." target="_blank" class="btn btn-wa btn-lg">
@@ -392,7 +392,7 @@ function renderCategories(filter = '') {
     c.name.toLowerCase().includes(filter.toLowerCase())
   );
   grid.innerHTML = filtered.map(c => `
-    <a href="Catalogo-digital-2026.html#cat-${c.name.toLowerCase().replace(/[^a-z0-9]/g,'-')}"
+    <a href="Catalogo-digital-2026#cat-${c.name.toLowerCase().replace(/[^a-z0-9]/g,'-')}"
        class="cat-browse-card" target="_blank">
       <div class="cat-browse-top" style="background:linear-gradient(135deg,${c.color}22,${c.color}44);color:${c.color}">
         <span style="width:48px;height:48px;display:flex;align-items:center;justify-content:center;">${CAT_ICONS[c.name] || ''}</span>
@@ -409,7 +409,7 @@ function renderCategories(filter = '') {
 }
 
 function openFullCatalog() {
-  window.open('Catalogo-digital-2026.html', '_blank');
+  window.open('Catalogo-digital-2026', '_blank');
 }
 
 document.getElementById('cat-search').addEventListener('input', e => {
