@@ -2,14 +2,19 @@
 <html lang="es-GT">
 <head>
   
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LHMK4HJZLF"></script>
+<!-- Analytics Diferido para no afectar PageSpeed -->
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  setTimeout(function(){
+    var script = document.createElement('script');
+    script.src = "https://www.googletagmanager.com/gtag/js?id=G-LHMK4HJZLF";
+    script.async = true;
+    document.head.appendChild(script);
 
-  gtag('config', 'G-LHMK4HJZLF');
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LHMK4HJZLF', { 'anonymize_ip': true });
+  }, 3000); // Retrasa la carga 3 segundos
 </script>
   
   <meta charset="UTF-8">
