@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="es-GT">
 <head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LHMK4HJZLF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LHMK4HJZLF', { 'anonymize_ip': true });
+</script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
@@ -139,5 +149,22 @@
 </footer>
 
 <script src="https://www.cyloguatemala.me/components.js"></script>
+
+<!-- Banner de Cookies Minimalista -->
+<div id="cookie-banner" style="position: fixed; bottom: 20px; left: 20px; right: 20px; background: #222; color: #fff; padding: 15px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; z-index: 9999; font-family: sans-serif; font-size: 14px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+    <span>Utilizamos cookies para optimizar tu suministro industrial. Al navegar, aceptas nuestra <a href="/politica-de-privacidad.html" style="color: #007bff; text-decoration: underline;">política de privacidad</a>.</span>
+    <button onclick="acceptCookies()" style="background: #007bff; color: white; border: none; padding: 8px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; margin-left: 15px;">Aceptar</button>
+</div>
+
+<script>
+function acceptCookies() {
+    document.getElementById('cookie-banner').style.display = 'none';
+    localStorage.setItem('cookiesAccepted', 'true');
+}
+if(localStorage.getItem('cookiesAccepted') === 'true') {
+    document.getElementById('cookie-banner').style.display = 'none';
+}
+</script>
+
 </body>
 </html>
