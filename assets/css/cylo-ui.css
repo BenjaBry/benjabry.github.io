@@ -1,0 +1,354 @@
+/* CYLO Unified UI - Header/Nav - versión con Blog */
+
+:root {
+  --cylo-navy: #1B2A4A;
+  --cylo-navy2: #0F1D33;
+  --cylo-orange: #F47B20;
+  --cylo-orange-dark: #D95F0E;
+  --cylo-green: #25D366;
+  --cylo-green-dark: #128C7E;
+  --cylo-border: #D8E2EF;
+  --cylo-muted: #6B7A8D;
+  --cylo-white: #FFFFFF;
+}
+
+.cylo-shell,
+.cylo-shell * {
+  box-sizing: border-box;
+  max-width: none;
+}
+
+.cylo-container {
+  width: min(1220px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.cylo-top-bar {
+  background: var(--cylo-navy2);
+  color: rgba(255,255,255,0.82);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 0.78rem;
+  padding: 8px 0;
+}
+
+.cylo-top-bar-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+}
+
+.cylo-top-bar strong {
+  color: #FFFFFF;
+}
+
+.cylo-header {
+  background: #FFFFFF;
+  border-bottom: 1px solid var(--cylo-border);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  font-family: 'DM Sans', system-ui, sans-serif;
+}
+
+.cylo-header-main {
+  height: 78px;
+  display: grid;
+  grid-template-columns: 210px 1fr auto;
+  gap: 24px;
+  align-items: center;
+}
+
+.cylo-logo {
+  text-decoration: none;
+  display: inline-block;
+}
+
+.cylo-logo-main {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.9rem;
+  font-weight: 900;
+  color: var(--cylo-navy);
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.cylo-logo-main em {
+  color: var(--cylo-orange);
+  font-style: normal;
+}
+
+.cylo-logo-sub {
+  color: var(--cylo-muted);
+  font-size: 0.55rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-top: 4px;
+}
+
+.cylo-search {
+  display: flex;
+  border: 2px solid var(--cylo-border);
+  border-radius: 4px;
+  overflow: hidden;
+  height: 44px;
+  background: #FFFFFF;
+}
+
+.cylo-search input {
+  flex: 1;
+  border: none;
+  padding: 0 14px;
+  font-family: inherit;
+  font-size: 0.92rem;
+  outline: none;
+  min-width: 0;
+}
+
+.cylo-search button {
+  border: none;
+  background: var(--cylo-orange);
+  color: white;
+  padding: 0 22px;
+  font-family: inherit;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.cylo-search button:hover {
+  background: var(--cylo-orange-dark);
+}
+
+.cylo-header-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.cylo-header-actions a {
+  text-decoration: none;
+  font-size: 0.86rem;
+  font-weight: 900;
+  color: var(--cylo-navy);
+}
+
+.cylo-header-actions a:hover {
+  color: var(--cylo-orange);
+}
+
+.cylo-header-actions .cylo-whatsapp {
+  background: var(--cylo-green);
+  color: white !important;
+  padding: 11px 16px;
+  border-radius: 4px;
+}
+
+.cylo-header-actions .cylo-whatsapp:hover {
+  background: var(--cylo-green-dark);
+}
+
+.cylo-main-menu {
+  background: var(--cylo-navy);
+}
+
+.cylo-menu-inner {
+  display: flex;
+  align-items: center;
+  overflow: visible;
+  position: relative;
+}
+
+.cylo-menu-inner > a,
+.cylo-dropdown > summary {
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+}
+
+.cylo-menu-inner > a {
+  color: rgba(255,255,255,0.92);
+  text-decoration: none;
+  padding: 13px 22px;
+  font-size: 0.86rem;
+  font-weight: 900;
+  border-right: 1px solid rgba(255,255,255,0.10);
+  white-space: nowrap;
+}
+
+.cylo-menu-inner > a:hover,
+.cylo-menu-inner > a.is-active {
+  background: var(--cylo-orange);
+  color: white;
+}
+
+.cylo-dropdown {
+  position: relative;
+  color: rgba(255,255,255,0.92);
+  font-size: 0.86rem;
+  font-weight: 900;
+  border-right: 1px solid rgba(255,255,255,0.10);
+}
+
+.cylo-dropdown summary {
+  min-height: 52px;
+  list-style: none;
+  cursor: pointer;
+  padding: 13px 22px;
+  user-select: none;
+}
+
+.cylo-dropdown summary::-webkit-details-marker {
+  display: none;
+}
+
+.cylo-dropdown summary::after {
+  content: "▾";
+  font-size: 0.75rem;
+  margin-left: 9px;
+  color: var(--cylo-orange);
+}
+
+.cylo-dropdown[open] summary,
+.cylo-dropdown summary:hover {
+  background: var(--cylo-orange);
+  color: #FFFFFF;
+}
+
+.cylo-dropdown[open] summary::after,
+.cylo-dropdown summary:hover::after {
+  color: #FFFFFF;
+}
+
+.cylo-dropdown-panel {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: min(720px, calc(100vw - 32px));
+  min-width: 560px;
+  background: #FFFFFF;
+  border: 1px solid var(--cylo-border);
+  box-shadow: 0 22px 50px rgba(16, 29, 51, 0.22);
+  z-index: 1200;
+  padding: 14px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(230px, 1fr));
+  gap: 8px;
+  overflow: visible;
+}
+
+.cylo-dropdown-panel a,
+.cylo-dropdown-panel span,
+.cylo-dropdown-panel small {
+  max-width: none !important;
+}
+
+.cylo-dropdown-panel a {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  align-items: center;
+  text-decoration: none;
+  color: var(--cylo-navy);
+  background: #F8FAFC;
+  border: 1px solid var(--cylo-border);
+  padding: 12px 14px;
+  font-size: 0.86rem;
+  font-weight: 900;
+  transition: 0.16s ease;
+  white-space: normal;
+}
+
+.cylo-dropdown-panel a:hover {
+  background: var(--cylo-navy);
+  color: #FFFFFF;
+  border-color: var(--cylo-navy);
+}
+
+.cylo-dropdown-panel small {
+  color: var(--cylo-orange);
+  font-weight: 900;
+}
+
+.cylo-dropdown-panel a:hover small {
+  color: #FFFFFF;
+}
+
+@media (hover: hover) {
+  .cylo-dropdown:hover .cylo-dropdown-panel {
+    display: grid;
+  }
+
+  .cylo-dropdown:not([open]) .cylo-dropdown-panel {
+    display: none;
+  }
+
+  .cylo-dropdown:hover summary {
+    background: var(--cylo-orange);
+    color: white;
+  }
+
+  .cylo-dropdown:hover summary::after {
+    color: white;
+  }
+}
+
+@media (max-width: 1100px) {
+  .cylo-menu-inner > a,
+  .cylo-dropdown summary {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .cylo-header-main {
+    grid-template-columns: 1fr auto;
+    height: auto;
+    padding: 14px 0;
+  }
+
+  .cylo-search {
+    grid-column: 1 / -1;
+    order: 3;
+  }
+}
+
+@media (max-width: 760px) {
+  .cylo-dropdown {
+    position: static;
+  }
+
+  .cylo-dropdown-panel {
+    left: 16px;
+    right: 16px;
+    width: auto;
+    min-width: 0;
+    max-width: none;
+    grid-template-columns: 1fr;
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .cylo-top-bar-inner {
+    display: grid;
+    gap: 4px;
+  }
+
+  .cylo-header-actions a:not(.cylo-whatsapp) {
+    display: none;
+  }
+
+  .cylo-menu-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .cylo-menu-inner > a,
+  .cylo-dropdown summary {
+    justify-content: center;
+    padding: 12px 8px;
+    min-height: 48px;
+  }
+}

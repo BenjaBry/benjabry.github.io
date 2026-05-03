@@ -3,35 +3,35 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>https://www.cyloguatemala.me/inicio.html</loc>
-    <lastmod>2026-04-20</lastmod>
+    <loc>https://www.cyloguatemala.me/</loc>
+    <lastmod>2026-05-03</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="es-GT" href="https://www.cyloguatemala.me/inicio.html"/>
+    <priority>1.00</priority>
+    <xhtml:link rel="alternate" hreflang="es-GT" href="https://www.cyloguatemala.me/"/>
   </url>
 
   <url>
-    <loc>https://www.cyloguatemala.me/catalogo.html</loc>
-    <lastmod>2026-04-20</lastmod>
+    <loc>https://www.cyloguatemala.me/Catalogo-digital-2026.html</loc>
+    <lastmod>2026-05-03</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
-    <xhtml:link rel="alternate" hreflang="es-GT" href="https://www.cyloguatemala.me/catalogo.html"/>
-  </url>
-
-  <url>
-    <loc>https://www.cyloguatemala.me/nosotros.html</loc>
-    <lastmod>2026-04-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
-    <xhtml:link rel="alternate" hreflang="es-GT" href="https://www.cyloguatemala.me/nosotros.html"/>
+    <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="es-GT" href="https://www.cyloguatemala.me/Catalogo-digital-2026.html"/>
   </url>
 
   <url>
     <loc>https://www.cyloguatemala.me/contacto.html</loc>
-    <lastmod>2026-04-20</lastmod>
+    <lastmod>2026-05-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <xhtml:link rel="alternate" hreflang="es-GT" href="https://www.cyloguatemala.me/contacto.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.cyloguatemala.me/nosotros.html</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+    <xhtml:link rel="alternate" hreflang="es-GT" href="https://www.cyloguatemala.me/nosotros.html"/>
   </url>
 
 </urlset>

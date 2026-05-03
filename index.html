@@ -1,854 +1,2651 @@
 <!DOCTYPE html>
 <html lang="es-GT">
 <head>
-  
-<!-- Analytics Diferido para no afectar PageSpeed -->
+
+<!-- Analytics diferido para proteger rendimiento -->
 <script>
   setTimeout(function(){
-    var script = document.createElement('script');
+    const script = document.createElement('script');
     script.src = "https://www.googletagmanager.com/gtag/js?id=G-LHMK4HJZLF";
     script.async = true;
     document.head.appendChild(script);
 
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    window.gtag = gtag;
     gtag('js', new Date());
     gtag('config', 'G-LHMK4HJZLF', { 'anonymize_ip': true });
-  }, 3000); // Retrasa la carga 3 segundos
+  }, 3000);
 </script>
-  
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Icono de la pestaña (Favicon) -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <link rel="icon" href="img/favicon.png" type="image/png">
 
-<!-- Pre-carga de Tipografías (Optimizada para PageSpeed) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-  <!-- SEO Primario -->
-  <title>Insumos para Alimentos en Guatemala | CYLO Guatemala — Proveedor Digital</title>
-  <meta name="description" content="CYLO Guatemala: proveedor digital de insumos para alimentos, utensilios de cocina, higiene institucional y desechables ecológicos. +800 productos. Entrega Express en Ciudad de Guatemala y envíos a toda la República. Cotiza ahora.">
-  <meta name="keywords" content="insumos para alimentos Guatemala, utensilios de cocina Guatemala, desechables para restaurantes Guatemala, proveedor insumos gastronomicos Guatemala, productos higiene institucional Guatemala, envase desechable Guatemala, insumos cocina Guatemala, distribuidor alimentos Guatemala, suministros restaurante Guatemala, CYLO Guatemala">
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-  <meta name="author" content="CYLO Guatemala">
-  <link rel="canonical" href="https://www.cyloguatemala.me/index.html">
+<title>Insumos para Alimentos en Guatemala | CYLO Guatemala — Proveedor Digital</title>
+<meta name="description" content="CYLO Guatemala: proveedor digital de insumos para alimentos, utensilios de cocina, desechables, empaques, cristalería y productos para foodservice. +900 productos para cotización comercial en Guatemala.">
+<meta name="keywords" content="insumos para alimentos Guatemala, utensilios de cocina Guatemala, desechables para restaurantes Guatemala, proveedor insumos gastronomicos Guatemala, productos higiene institucional Guatemala, envase desechable Guatemala, suministros restaurante Guatemala, CYLO Guatemala">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="CYLO Guatemala">
+<link rel="canonical" href="https://www.cyloguatemala.me/index.html">
 
-  <!-- Geo -->
-  <meta name="geo.region" content="GT">
-  <meta name="geo.placename" content="Ciudad de Guatemala, Guatemala">
-  <meta name="geo.position" content="14.634915;-90.506882">
-  <meta name="ICBM" content="14.634915, -90.506882">
+<meta name="geo.region" content="GT">
+<meta name="geo.placename" content="Ciudad de Guatemala, Guatemala">
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="es_GT">
-  <meta property="og:site_name" content="CYLO Guatemala">
-  <meta property="og:title" content="Insumos para Alimentos en Guatemala | CYLO Guatemala">
-  <meta property="og:description" content="Proveedor digital de insumos para alimentos, utensilios de cocina y desechables ecológicos. +800 productos. Entrega Express en Guatemala.">
-  <meta property="og:url" content="https://www.cyloguatemala.me/index.html">
-  <meta property="og:image" content="https://www.cyloguatemala.me/img/hero-bg.webp">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="CYLO Guatemala - Insumos para alimentos y cocina profesional">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_GT">
+<meta property="og:site_name" content="CYLO Guatemala">
+<meta property="og:title" content="Insumos para Alimentos en Guatemala | CYLO Guatemala">
+<meta property="og:description" content="Proveedor digital de insumos para restaurantes, cocinas, foodservice y compras institucionales en Guatemala. +900 productos disponibles para cotización.">
+<meta property="og:url" content="https://www.cyloguatemala.me/index.html">
+<meta property="og:image" content="https://www.cyloguatemala.me/img/hero-bg.webp">
+<meta property="og:image:alt" content="CYLO Guatemala - Insumos para alimentos y cocina profesional">
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Insumos para Alimentos en Guatemala | CYLO Guatemala">
-  <meta name="twitter:description" content="Proveedor digital de insumos para restaurantes y cocinas en Guatemala. +800 productos, entrega express.">
-  <meta name="twitter:image" content="https://www.cyloguatemala.me/img/hero-bg.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Insumos para Alimentos en Guatemala | CYLO Guatemala">
+<meta name="twitter:description" content="Proveedor digital de insumos para restaurantes y cocinas en Guatemala. +900 productos para cotización comercial.">
+<meta name="twitter:image" content="https://www.cyloguatemala.me/img/hero-bg.webp">
 
-  <!-- Preconnect fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <!-- Schema.org JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://www.cyloguatemala.me/#organization",
-        "name": "CYLO Guatemala",
-        "alternateName": "reCYcle LOgistic Guatemala",
-        "url": "https://www.cyloguatemala.me",
-        "logo": "https://www.cyloguatemala.me/img/hero-bg.webp",
-        "description": "Tienda digital de insumos para alimentos, utensilios de cocina, higiene institucional y accesorios en Guatemala.",
-        "foundingDate": "2025",
-        "areaServed": {"@type": "Country", "name": "Guatemala"},
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "telephone": "+502-4800-5692",
-          "contactType": "sales",
-          "availableLanguage": "Spanish",
-          "contactOption": "TollFree"
-        },
-        "sameAs": [
-          "https://www.facebook.com/cyloguatemala",
-          "https://www.tiktok.com/@cylo.guatemala"
-        ]
-      },
-      {
-        "@type": "LocalBusiness",
-        "@id": "https://www.cyloguatemala.me/#localbusiness",
-        "name": "CYLO Guatemala",
-        "description": "Proveedor digital de insumos para alimentos, utensilios de cocina, productos de higiene institucional y accesorios para restaurantes y cocinas en Guatemala.",
-        "url": "https://www.cyloguatemala.me",
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.cyloguatemala.me/#organization",
+      "name": "CYLO Guatemala",
+      "alternateName": "reCYcle LOgistic Guatemala",
+      "url": "https://www.cyloguatemala.me",
+      "logo": "https://www.cyloguatemala.me/img/hero-bg.webp",
+      "description": "Tienda digital de insumos para alimentos, utensilios de cocina, higiene institucional y accesorios en Guatemala.",
+      "foundingDate": "2025",
+      "areaServed": {"@type": "Country", "name": "Guatemala"},
+      "contactPoint": {
+        "@type": "ContactPoint",
         "telephone": "+502-4800-5692",
-        "email": "ventas@cyloguatemala.me",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Palín",
-          "addressRegion": "Escuintla",
-          "addressCountry": "GT"
-        },
-        "openingHoursSpecification": [
-          {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "17:00"},
-          {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "12:00"}
-        ],
-        "priceRange": "Q-QQQ",
-        "image": "https://www.cyloguatemala.me/img/hero-bg.webp",
-        "hasMap": "https://maps.google.com/?q=Palín,Escuintla,Guatemala"
+        "contactType": "sales",
+        "availableLanguage": "Spanish"
       },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "¿CYLO Guatemala tiene tienda física?",
-            "acceptedAnswer": {"@type": "Answer", "text": "CYLO GUATEMALA es una tienda 100% digital. Toda compra se realiza de manera segura en línea con acompañamiento de asesores."}
-          },
-          {
-            "@type": "Question",
-            "name": "¿Cuáles son los métodos de pago de CYLO Guatemala?",
-            "acceptedAnswer": {"@type": "Answer", "text": "Aceptamos transferencia bancaria, depósito bancario, enlace de pago con tarjeta (recargo 5.25%+Q2) y pago contra entrega (recargo ~8%)."}
-          },
-          {
-            "@type": "Question",
-            "name": "¿Hacen entrega express de insumos para alimentos en Guatemala?",
-            "acceptedAnswer": {"@type": "Answer", "text": "Sí. Servicio Express el mismo día en Ciudad Capital, Lunes a Viernes de 08:00–15:00 hrs y Sábado de 08:00–10:00 hrs."}
-          },
-          {
-            "@type": "Question",
-            "name": "¿Tienen productos personalizados para restaurantes en Guatemala?",
-            "acceptedAnswer": {"@type": "Answer", "text": "Sí. Trabajamos cotizaciones personalizadas con impresión sobre la base o mediante etiqueta de vinil."}
-          }
-        ]
-      }
-    ]
+      "sameAs": [
+        "https://www.facebook.com/cyloguatemala",
+        "https://www.tiktok.com/@cylo.guatemala"
+      ]
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://www.cyloguatemala.me/#localbusiness",
+      "name": "CYLO Guatemala",
+      "description": "Proveedor digital de insumos para alimentos, utensilios de cocina, productos de higiene institucional y accesorios para restaurantes y cocinas en Guatemala.",
+      "url": "https://www.cyloguatemala.me",
+      "telephone": "+502-4800-5692",
+      "email": "ventas@cyloguatemala.me",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Palín",
+        "addressRegion": "Escuintla",
+        "addressCountry": "GT"
+      },
+      "openingHoursSpecification": [
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "17:00"},
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "12:00"}
+      ],
+      "priceRange": "Q-QQQ",
+      "image": "https://www.cyloguatemala.me/img/hero-bg.webp"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿CYLO Guatemala vende al por mayor?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Sí. CYLO Guatemala atiende compras comerciales, institucionales y por volumen para negocios de alimentos."}
+        },
+        {
+          "@type": "Question",
+          "name": "¿Puedo cotizar por WhatsApp?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Sí. Puedes enviar tu solicitud por WhatsApp para confirmar precio vigente, disponibilidad y condiciones de entrega."}
+        },
+        {
+          "@type": "Question",
+          "name": "¿Hacen entregas en Guatemala?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Sí. CYLO Guatemala coordina entregas en Ciudad de Guatemala y distintos departamentos, sujeto a cobertura logística."}
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+:root {
+  --navy: #1B2A4A;
+  --navy2: #0F1D33;
+  --navy3: #263B5E;
+  --orange: #F47B20;
+  --orange-dark: #D95F0E;
+  --green: #25D366;
+  --green-dark: #128C7E;
+  --light: #F4F6F9;
+  --soft: #F8FAFC;
+  --border: #D8E2EF;
+  --text: #24324A;
+  --muted: #6B7A8D;
+  --white: #FFFFFF;
+  --shadow: 0 8px 28px rgba(16, 29, 51, 0.10);
+  --shadow-soft: 0 4px 16px rgba(16, 29, 51, 0.07);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'DM Sans', sans-serif;
+  background: #FFFFFF;
+  color: var(--text);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+}
+
+.container {
+  width: min(1220px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  font-weight: 900;
+  border-radius: 4px;
+  transition: 0.18s ease;
+  border: 1px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--orange);
+  color: white;
+  padding: 14px 22px;
+}
+
+.btn-primary:hover {
+  background: var(--orange-dark);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: white;
+  color: var(--navy);
+  border-color: var(--border);
+  padding: 14px 22px;
+}
+
+.btn-outline:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+}
+
+.btn-whatsapp {
+  background: var(--green);
+  color: white;
+  padding: 14px 22px;
+}
+
+.btn-whatsapp:hover {
+  background: var(--green-dark);
+  transform: translateY(-2px);
+}
+
+/* TOP BAR */
+.top-bar {
+  background: var(--navy2);
+  color: rgba(255,255,255,0.8);
+  font-size: 0.78rem;
+  padding: 8px 0;
+}
+
+.top-bar-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+}
+
+.top-bar strong {
+  color: #FFFFFF;
+}
+
+/* HEADER */
+.site-header {
+  background: #FFFFFF;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-main {
+  height: 78px;
+  display: grid;
+  grid-template-columns: 210px 1fr auto;
+  gap: 24px;
+  align-items: center;
+}
+
+.logo {
+  text-decoration: none;
+  display: inline-block;
+}
+
+.logo-main {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.9rem;
+  font-weight: 900;
+  color: var(--navy);
+  line-height: 1;
+}
+
+.logo-main em {
+  color: var(--orange);
+  font-style: normal;
+}
+
+.logo-sub {
+  color: var(--muted);
+  font-size: 0.55rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-top: 4px;
+}
+
+.search-box {
+  display: flex;
+  border: 2px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  height: 44px;
+}
+
+.search-box input {
+  flex: 1;
+  border: none;
+  padding: 0 14px;
+  font-family: inherit;
+  font-size: 0.92rem;
+  outline: none;
+}
+
+.search-box button {
+  border: none;
+  background: var(--orange);
+  color: white;
+  padding: 0 18px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.header-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.header-actions a {
+  text-decoration: none;
+  font-size: 0.86rem;
+  font-weight: 900;
+  color: var(--navy);
+}
+
+.header-whatsapp {
+  background: var(--green);
+  color: white !important;
+  padding: 11px 16px;
+  border-radius: 4px;
+}
+
+/* MENU */
+.main-menu {
+  background: var(--navy);
+}
+
+.menu-inner {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  overflow-x: auto;
+}
+
+.menu-inner a {
+  color: rgba(255,255,255,0.92);
+  text-decoration: none;
+  padding: 15px 20px;
+  font-size: 0.86rem;
+  font-weight: 900;
+  border-right: 1px solid rgba(255,255,255,0.10);
+  white-space: nowrap;
+}
+
+.menu-inner a:hover,
+.menu-inner a.active {
+  background: var(--orange);
+  color: white;
+}
+
+/* HERO */
+.hero {
+  background:
+    linear-gradient(135deg, rgba(15,29,51,0.96), rgba(27,42,74,0.94)),
+    url('img/hero-bg.webp') center/cover no-repeat;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(244,123,32,0.14), transparent 38%),
+    radial-gradient(circle at 83% 18%, rgba(244,123,32,0.28), transparent 30%);
+}
+
+.hero-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 38px;
+  align-items: stretch;
+  min-height: 680px;
+  padding: 54px 0;
+}
+
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
+.hero-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  align-self: flex-start;
+  color: #FFFFFF;
+  background: rgba(244,123,32,0.18);
+  border: 1px solid rgba(244,123,32,0.38);
+  padding: 9px 14px;
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.hero-kicker::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: var(--orange);
+  border-radius: 50%;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.65rem, 5.1vw, 5.15rem);
+  line-height: 0.97;
+  margin: 0 0 20px;
+  max-width: 860px;
+  letter-spacing: -1.8px;
+}
+
+.hero h1 em {
+  color: var(--orange);
+  font-style: normal;
+}
+
+.hero-copy {
+  color: rgba(255,255,255,0.76);
+  font-size: 1.08rem;
+  line-height: 1.75;
+  max-width: 680px;
+  margin: 0 0 24px;
+}
+
+.hero-search {
+  background: white;
+  border: 1px solid rgba(255,255,255,0.45);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  max-width: 700px;
+  box-shadow: 0 20px 46px rgba(0,0,0,0.24);
+  margin-bottom: 14px;
+  padding: 7px;
+}
+
+.hero-search input {
+  border: none;
+  outline: none;
+  padding: 0 14px;
+  font-family: inherit;
+  color: var(--navy);
+  font-size: 1rem;
+  min-height: 48px;
+}
+
+.hero-search button {
+  border: none;
+  background: var(--orange);
+  color: white;
+  padding: 14px 22px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.quick-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.quick-tags a {
+  text-decoration: none;
+  color: rgba(255,255,255,0.82);
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.13);
+  padding: 8px 10px;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.quick-tags a:hover {
+  background: var(--orange);
+  color: white;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* HERO COMMAND PANEL */
+.command-panel {
+  background: rgba(255,255,255,0.98);
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,0.5);
+  box-shadow: 0 26px 70px rgba(0,0,0,0.25);
+  align-self: center;
+}
+
+.command-head {
+  background: var(--orange);
+  color: white;
+  padding: 15px 18px;
+  font-weight: 900;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.command-head span:last-child {
+  background: rgba(255,255,255,0.18);
+  padding: 4px 8px;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.command-body {
+  padding: 18px;
+}
+
+.status-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid var(--border);
+  margin-bottom: 16px;
+}
+
+.status {
+  padding: 14px 10px;
+  border-right: 1px solid var(--border);
+  text-align: center;
+}
+
+.status:last-child {
+  border-right: none;
+}
+
+.status strong {
+  display: block;
+  color: var(--navy);
+  font-size: 1.42rem;
+  line-height: 1;
+}
+
+.status span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.64rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 900;
+  margin-top: 5px;
+}
+
+.command-list {
+  display: grid;
+  gap: 10px;
+}
+
+.command-item {
+  display: grid;
+  grid-template-columns: 42px 1fr auto;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid var(--border);
+  background: #FFFFFF;
+  text-decoration: none;
+  padding: 11px;
+  transition: 0.16s ease;
+}
+
+.command-item:hover {
+  border-color: var(--orange);
+  transform: translateX(3px);
+}
+
+.command-icon {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  background: #FFF1E8;
+  color: var(--orange);
+  font-weight: 900;
+}
+
+.command-item strong {
+  display: block;
+  color: var(--navy);
+  font-size: 0.92rem;
+}
+
+.command-item small {
+  display: block;
+  color: var(--muted);
+  font-size: 0.74rem;
+  line-height: 1.35;
+  margin-top: 2px;
+}
+
+.command-arrow {
+  color: var(--orange);
+  font-weight: 900;
+}
+
+.hero-bottom {
+  position: relative;
+  z-index: 2;
+  background: rgba(255,255,255,0.06);
+  border-top: 1px solid rgba(255,255,255,0.10);
+  backdrop-filter: blur(10px);
+}
+
+.hero-bottom-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.hero-proof {
+  padding: 18px 20px;
+  border-right: 1px solid rgba(255,255,255,0.10);
+}
+
+.hero-proof:last-child {
+  border-right: none;
+}
+
+.hero-proof strong {
+  display: block;
+  color: white;
+  margin-bottom: 5px;
+  font-size: 0.92rem;
+}
+
+.hero-proof span {
+  display: block;
+  color: rgba(255,255,255,0.62);
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+/* COMMON */
+.section {
+  padding: 76px 0;
+}
+
+.section.light {
+  background: var(--light);
+}
+
+.section.dark {
+  background: var(--navy);
+  color: white;
+}
+
+.section-head {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: 28px;
+  align-items: end;
+  margin-bottom: 34px;
+}
+
+.section-head.center {
+  display: block;
+  text-align: center;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.eyebrow {
+  display: inline-block;
+  color: var(--orange);
+  font-size: 0.74rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.section-head h2 {
+  margin: 0;
+  color: var(--navy);
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 3.6vw, 3.1rem);
+  line-height: 1.05;
+  letter-spacing: -0.6px;
+}
+
+.dark .section-head h2 {
+  color: white;
+}
+
+.section-head p {
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.dark .section-head p {
+  color: rgba(255,255,255,0.70);
+}
+
+/* CATEGORY STRIP */
+.category-strip {
+  background: var(--navy2);
+  color: white;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.category-strip-inner {
+  display: flex;
+  overflow-x: auto;
+  gap: 0;
+}
+
+.category-pill {
+  min-width: 180px;
+  padding: 16px 18px;
+  text-decoration: none;
+  border-right: 1px solid rgba(255,255,255,0.10);
+  transition: 0.16s ease;
+}
+
+.category-pill:hover {
+  background: var(--orange);
+}
+
+.category-pill strong {
+  display: block;
+  color: white;
+  font-size: 0.9rem;
+  margin-bottom: 3px;
+}
+
+.category-pill span {
+  color: rgba(255,255,255,0.58);
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+/* FEATURED PRODUCTS */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.product-card {
+  background: white;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  flex-direction: column;
+  transition: 0.18s ease;
+  overflow: hidden;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(244,123,32,0.45);
+  box-shadow: var(--shadow);
+}
+
+.product-img {
+  height: 190px;
+  background: var(--soft);
+  border-bottom: 1px solid var(--border);
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  position: relative;
+}
+
+.product-img img {
+  max-width: 100%;
+  max-height: 155px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  transition: 0.22s ease;
+}
+
+.product-card:hover .product-img img {
+  transform: scale(1.06);
+}
+
+.product-badge {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  background: var(--orange);
+  color: white;
+  padding: 5px 8px;
+  font-size: 0.68rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.product-body {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.product-code {
+  color: var(--orange);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 900;
+}
+
+.product-title {
+  color: var(--navy);
+  text-decoration: none;
+  font-weight: 900;
+  line-height: 1.35;
+  font-size: 0.92rem;
+  min-height: 48px;
+}
+
+.product-title:hover {
+  color: var(--orange);
+}
+
+.product-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.product-units {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.product-price {
+  color: var(--orange);
+  font-weight: 900;
+  font-size: 1rem;
+}
+
+.product-actions {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.product-actions a {
+  text-decoration: none;
+  text-align: center;
+  padding: 10px 12px;
+  font-size: 0.82rem;
+  font-weight: 900;
+  border-radius: 3px;
+}
+
+.btn-product {
+  background: var(--navy);
+  color: white;
+}
+
+.btn-product:hover {
+  background: var(--orange);
+}
+
+.btn-quote {
+  background: #ECFFF4;
+  color: var(--green-dark);
+  border: 1px solid rgba(37,211,102,0.28);
+}
+
+.btn-quote:hover {
+  background: var(--green);
+  color: white;
+}
+
+/* BUSINESS TYPES */
+.business-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+}
+
+.business-card {
+  background: white;
+  border: 1px solid var(--border);
+  padding: 22px 18px;
+  box-shadow: var(--shadow-soft);
+  min-height: 180px;
+}
+
+.business-card .icon {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  background: var(--navy);
+  color: white;
+  font-weight: 900;
+  margin-bottom: 14px;
+}
+
+.business-card h3 {
+  margin: 0 0 8px;
+  color: var(--navy);
+  font-size: 1rem;
+}
+
+.business-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.55;
+  font-size: 0.88rem;
+}
+
+/* PROCESS */
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.process-card {
+  background: white;
+  border: 1px solid var(--border);
+  padding: 24px;
+  min-height: 220px;
+  box-shadow: var(--shadow-soft);
+  position: relative;
+}
+
+.process-num {
+  display: inline-grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  background: var(--navy);
+  color: white;
+  font-weight: 900;
+  margin-bottom: 18px;
+}
+
+.process-card h3 {
+  color: var(--navy);
+  margin: 0 0 10px;
+  font-size: 1rem;
+}
+
+.process-card p {
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* TRUST */
+.trust-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 30px;
+  align-items: stretch;
+}
+
+.trust-card {
+  background: var(--navy2);
+  color: white;
+  padding: 32px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.trust-card h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 3.2vw, 3rem);
+  line-height: 1.05;
+  margin: 0 0 14px;
+}
+
+.trust-card p {
+  color: rgba(255,255,255,0.70);
+  line-height: 1.7;
+}
+
+.trust-list {
+  background: white;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-soft);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.trust-item {
+  padding: 24px;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.trust-item:nth-child(2n) {
+  border-right: none;
+}
+
+.trust-item:nth-last-child(-n+2) {
+  border-bottom: none;
+}
+
+.trust-item strong {
+  color: var(--navy);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.trust-item span {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+/* CTA */
+.final-cta {
+  background:
+    radial-gradient(circle at 82% 20%, rgba(244,123,32,0.24), transparent 34%),
+    linear-gradient(135deg, var(--navy2), var(--navy));
+  color: white;
+  padding: 42px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: center;
+  box-shadow: var(--shadow);
+}
+
+.final-cta h2 {
+  font-family: 'Playfair Display', serif;
+  margin: 0 0 10px;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  line-height: 1.05;
+}
+
+.final-cta p {
+  margin: 0;
+  color: rgba(255,255,255,0.72);
+  line-height: 1.6;
+}
+
+/* FOOTER */
+.site-footer {
+  background:
+    radial-gradient(circle at 85% 0%, rgba(244,123,32,0.18), transparent 28%),
+    linear-gradient(135deg, #08111F 0%, var(--navy2) 48%, #132542 100%);
+  color: rgba(255,255,255,0.70);
+  padding: 0;
+  margin-top: 0;
+}
+
+.footer-cta {
+  border-bottom: 1px solid rgba(255,255,255,0.10);
+  padding: 34px 0;
+}
+
+.footer-cta-inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: center;
+}
+
+.footer-cta h2 {
+  font-family: 'Playfair Display', serif;
+  color: white;
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  line-height: 1.05;
+  margin: 0 0 8px;
+}
+
+.footer-cta p {
+  margin: 0;
+  color: rgba(255,255,255,0.66);
+  line-height: 1.6;
+}
+
+.footer-main {
+  padding: 48px 0 34px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.9fr 0.9fr 1fr;
+  gap: 34px;
+}
+
+.footer-brand h2 {
+  color: white;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  margin: 0 0 10px;
+}
+
+.footer-brand h2 em {
+  color: var(--orange);
+  font-style: normal;
+}
+
+.footer-brand p {
+  max-width: 390px;
+}
+
+.footer-badge-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+
+.footer-badge {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.10);
+  color: rgba(255,255,255,0.78);
+  padding: 7px 9px;
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.site-footer h3 {
+  color: white;
+  margin: 0 0 14px;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+}
+
+.site-footer p,
+.site-footer li {
+  line-height: 1.7;
+  font-size: 0.9rem;
+}
+
+.site-footer ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 9px;
+}
+
+.site-footer a {
+  color: rgba(255,255,255,0.68);
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: var(--orange);
+}
+
+.footer-contact-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+  padding: 18px;
+}
+
+.footer-contact-card strong {
+  display: block;
+  color: white;
+  margin-bottom: 6px;
+}
+
+.footer-contact-card span {
+  display: block;
+  color: rgba(255,255,255,0.66);
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.10);
+  padding: 16px 0;
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.45);
+}
+
+.footer-bottom-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* FLOATING WHATSAPP */
+.float-whatsapp {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 999;
+  background: var(--green);
+  color: white;
+  text-decoration: none;
+  padding: 14px 18px;
+  border-radius: 999px;
+  font-weight: 900;
+  box-shadow: 0 12px 28px rgba(37,211,102,0.35);
+}
+
+/* COOKIE */
+#cookie-banner {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  background: #222;
+  color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 9999;
+  font-family: sans-serif;
+  font-size: 14px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+#cookie-banner a {
+  color: #7AB7FF;
+}
+
+#cookie-banner button {
+  background: var(--orange);
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-left: 15px;
+}
+
+/* REVEAL */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1080px) {
+  .hero-grid,
+  .trust-grid,
+  .final-cta {
+    grid-template-columns: 1fr;
   }
-  </script>
 
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    /* ── HERO ── */
-    .hero {
-      min-height: 100vh;
-      background: var(--navy2);
-      display: flex;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-      padding-top: 68px;
-      padding-bottom: 120px; /* espacio para la barra de estadísticas */
-    }
-    .hero-photo {
-      position: absolute; inset: 0;
-      background: url('img/hero-bg.webp') center/cover no-repeat;
-      opacity: 0.22;
-      transform: scale(1.05);
-      animation: hero-zoom 18s ease-in-out infinite alternate;
-    }
-    @keyframes hero-zoom { from{transform:scale(1.05)} to{transform:scale(1.12)} }
-    .hero::before {
-      content: '';
-      position: absolute; inset: 0;
-      background:
-        radial-gradient(ellipse at 80% 30%, rgba(244,123,32,.22) 0%, transparent 55%),
-        radial-gradient(ellipse at 20% 80%, rgba(13,26,48,.96) 0%, transparent 65%);
-      z-index: 1;
-    }
-    /* Animated geometric shapes */
-    .hero-shape {
-      position: absolute;
-      border-radius: 50%;
-      border: 1px solid rgba(244,123,32,.12);
-    }
-    .hero-shape-1 { width: 600px; height: 600px; right: -200px; top: -100px; animation: rotate-slow 30s linear infinite; }
-    .hero-shape-2 { width: 400px; height: 400px; right: 50px; top: 100px; animation: rotate-slow 20s linear infinite reverse; }
-    .hero-shape-3 { width: 200px; height: 200px; right: 200px; top: 250px; border-color: rgba(244,123,32,.2); }
-    @keyframes rotate-slow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+  .hero-grid {
+    min-height: auto;
+  }
 
-    .hero-content {
-      position: relative; z-index: 4;
-      max-width: 660px;
-    }
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(244,123,32,.15);
-      border: 1px solid rgba(244,123,32,.3);
-      color: var(--orange);
-      padding: 6px 16px;
-      border-radius: 50px;
-      font-size: .75rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 24px;
-    }
-    .hero-badge span { width: 6px; height: 6px; background: var(--orange); border-radius: 50%; animation: pulse 2s ease infinite; }
-    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(.8)} }
+  .products-grid,
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-    .hero-title {
-      font-size: clamp(2.8rem, 6vw, 4.4rem);
-      font-weight: 900;
-      color: white;
-      line-height: 1.08;
-      margin-bottom: 8px;
-    }
-    .hero-title .accent { color: var(--orange); }
-    .hero-subtitle {
-      font-family: 'DM Sans', sans-serif;
-      font-size: clamp(1rem, 2vw, 1.2rem);
-      color: rgba(255,255,255,.6);
-      margin-bottom: 36px;
-      line-height: 1.65;
-      max-width: 520px;
-    }
-    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
-    .hero-scroll {
-      position: absolute;
-      bottom: 36px; left: 50%;
-      transform: translateX(-50%);
-      z-index: 2;
-      display: flex; flex-direction: column; align-items: center; gap: 6px;
-      color: rgba(255,255,255,.4);
-      font-size: .7rem; letter-spacing: 2px; text-transform: uppercase;
-      animation: bounce 2s ease infinite;
-    }
-    .hero-scroll svg { width: 18px; height: 18px; }
-    @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(6px)} }
+  .footer-grid,
+  .footer-cta-inner {
+    grid-template-columns: 1fr 1fr;
+  }
 
-    /* Floating stats strip */
-    .hero-stats {
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      z-index: 3;
-      background: rgba(13,26,48,.45);
-      backdrop-filter: blur(20px) saturate(160%);
-      -webkit-backdrop-filter: blur(20px) saturate(160%);
-      border-top: 1px solid rgba(255,255,255,.12);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
-      padding: 22px 0;
-    }
-    .hero-stats-grid {
-      display: flex;
-      justify-content: space-around;
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 0 28px;
-    }
-    .hero-stat { text-align: center; }
-    .hero-stat-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.8rem; font-weight: 900;
-      color: white; line-height: 1;
-    }
-    .hero-stat-num em { color: var(--orange); font-style: normal; }
-    .hero-stat-lbl {
-      font-size: .65rem; font-weight: 600;
-      letter-spacing: 2px; text-transform: uppercase;
-      color: rgba(255,255,255,.4);
-      margin-top: 4px;
-    }
-    .hero-divider { width: 1px; background: rgba(255,255,255,.1); }
+  .business-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 
-    /* ── SCROLLING BANNER ── */
-    /* (uses .banner-strip from styles.css) */
+  .section-head {
+    grid-template-columns: 1fr;
+  }
+}
 
-    /* ── CATEGORIES ── */
-    .cat-section { background: var(--light); }
-    .cat-placeholder {
-      aspect-ratio: 3/4;
-      border-radius: 12px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 24px;
-      position: relative;
-      overflow: hidden;
-      cursor: pointer;
-      transition: transform .3s, box-shadow .3s;
-    }
-    .cat-placeholder:hover { transform: translateY(-6px); box-shadow: 0 20px 48px rgba(0,0,0,.2); }
-    .cat-bg {
-      position: absolute; inset: 0;
-      background-size: cover;
-      background-position: center;
-      transition: transform .5s cubic-bezier(.4,0,.2,1);
-    }
-    .cat-placeholder:hover .cat-bg { transform: scale(1.06); }
-    .cat-grad {
-      position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(13,26,48,.9) 0%, rgba(13,26,48,.1) 60%);
-      transition: var(--transition);
-    }
-    .cat-placeholder:hover .cat-grad {
-      background: linear-gradient(to top, rgba(244,123,32,.82) 0%, rgba(13,26,48,.2) 60%);
-    }
-    .cat-content { position: relative; z-index: 1; }
-    .cat-tag { font-size: .62rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,.6); margin-bottom: 6px; }
-    .cat-name { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 900; color: white; line-height: 1.2; }
-    .cat-link-arrow {
-      display: inline-flex; align-items: center; justify-content: center;
-      width: 32px; height: 32px;
-      background: var(--orange); border-radius: 50%;
-      margin-top: 12px;
-      opacity: 0; transform: translateY(8px);
-      transition: var(--transition);
-      color: white; font-size: 1rem;
-    }
-    .cat-placeholder:hover .cat-link-arrow { opacity: 1; transform: translateY(0); }
+@media (max-width: 780px) {
+  .header-main {
+    grid-template-columns: 1fr auto;
+    height: auto;
+    padding: 14px 0;
+  }
 
-    /* ── STEPS ── */
-    .steps-section { background: var(--white); }
+  .search-box {
+    grid-column: 1 / -1;
+    order: 3;
+  }
 
-    /* ── BRAND STORY ── */
-    .brand-section {
-      background: var(--navy);
-      position: relative;
-      overflow: hidden;
-    }
-    .brand-section::before {
-      content: '';
-      position: absolute; top: -60px; right: -60px;
-      width: 400px; height: 400px;
-      border: 1px solid rgba(255,255,255,.05);
-      border-radius: 50%;
-    }
-    .brand-section::after {
-      content: '';
-      position: absolute; bottom: -80px; left: -80px;
-      width: 300px; height: 300px;
-      border: 1px solid rgba(244,123,32,.1);
-      border-radius: 50%;
-    }
-    .brand-content { position: relative; z-index: 1; }
-    .brand-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-    }
-    .brand-text h2 { color: white; margin-bottom: 20px; }
-    .brand-text p { color: rgba(255,255,255,.6); font-size: 1rem; line-height: 1.8; margin-bottom: 16px; }
-    .brand-visual {
-      background: rgba(255,255,255,.06);
-      backdrop-filter: blur(18px) saturate(160%);
-      -webkit-backdrop-filter: blur(18px) saturate(160%);
-      border: 1px solid rgba(255,255,255,.13);
-      border-radius: 20px;
-      padding: 40px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-      box-shadow: 0 8px 40px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.12);
-    }
-    .brand-feat {
-      display: flex; flex-direction: column; gap: 10px;
-      padding: 20px;
-      background: rgba(255,255,255,.06);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      border: 1px solid rgba(255,255,255,.10);
-      border-radius: 12px;
-      transition: background .22s;
-    }
-    .brand-feat:hover { background: rgba(255,255,255,.10); }
-    .brand-feat-icon {
-      width: 38px; height: 38px;
-      background: rgba(244,123,32,.2);
-      border-radius: 9px;
-      display: flex; align-items: center; justify-content: center;
-      color: var(--orange);
-    }
-    .brand-feat-icon svg { width: 20px; height: 20px; }
-    .brand-feat-title { font-size: .85rem; font-weight: 700; color: white; }
-    .brand-feat-text  { font-size: .78rem; color: rgba(255,255,255,.50); line-height: 1.55; }
+  .top-bar-inner,
+  .hero-bottom-grid {
+    grid-template-columns: 1fr;
+    display: grid;
+  }
 
-    /* ── FAQ ── */
-    .faq-section { background: var(--light); }
-    .faq-grid { display: grid; grid-template-columns: 5fr 4fr; gap: 80px; align-items: start; }
-    .faq-visual {
-      background: var(--navy);
-      border-radius: 16px;
-      padding: 40px;
-      color: white;
-      position: sticky;
-      top: 96px;
-    }
-    .faq-visual h3 { color: white; margin-bottom: 12px; }
-    .faq-visual p  { color: rgba(255,255,255,.55); font-size: .9rem; line-height: 1.7; margin-bottom: 24px; }
+  .hero-proof {
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.10);
+  }
 
-    /* ── TESTIMONIALS ── */
-    .reviews-section { background: var(--white); }
+  .hero-search {
+    grid-template-columns: 1fr;
+  }
 
-    /* ── CTA BOTTOM ── */
-    .cta-section {
-      background: var(--orange);
-      padding: 80px 0;
-      position: relative;
-      overflow: hidden;
-      text-align: center;
-    }
-    .cta-section::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    }
-    .cta-section h2 { color: white; position: relative; z-index: 1; margin-bottom: 12px; }
-    .cta-section p  { color: rgba(255,255,255,.8); position: relative; z-index: 1; margin-bottom: 32px; font-size: 1.05rem; }
-    .cta-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; position: relative; z-index: 1; }
+  .hero-search input {
+    min-height: 46px;
+    padding: 12px 14px;
+  }
 
-    @media (max-width: 900px) {
-      .brand-grid { grid-template-columns: 1fr; gap: 40px; }
-      .faq-grid   { grid-template-columns: 1fr; }
-      .faq-visual { position: static; }
-    }
-    @media (max-width: 600px) {
-      .hero-stats-grid { flex-wrap: wrap; gap: 16px; }
-      .hero-divider    { display: none; }
-      .hero-stat       { flex: 1 1 40%; text-align: center; }
-      .brand-visual    { grid-template-columns: 1fr; }
-      .hero-scroll     { display: none; }
-    }
-    @media (max-width: 480px) {
-      .hero-stat-num { font-size: 1.5rem; }
-      .hero-stat-lbl { font-size: .6rem; }
-      .hero-stats    { padding: 16px 0; }
-    }
-  </style>
+  .hero-actions {
+    display: grid;
+  }
+
+  .products-grid,
+  .business-grid,
+  .process-grid,
+  .footer-grid,
+  .footer-cta-inner,
+  .trust-list {
+    grid-template-columns: 1fr;
+  }
+
+  .status-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .status {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .status:last-child {
+    border-bottom: none;
+  }
+
+  .trust-item,
+  .trust-item:nth-child(2n),
+  .trust-item:nth-last-child(-n+2) {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .trust-item:last-child {
+    border-bottom: none;
+  }
+
+  .section {
+    padding: 56px 0;
+  }
+
+  .float-whatsapp {
+    left: 18px;
+    right: 18px;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+  }
+
+  #cookie-banner {
+    bottom: 80px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  #cookie-banner button {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 580px) {
+  .header-actions a:not(.header-whatsapp) {
+    display: none;
+  }
+
+  .main-menu .menu-inner a {
+    padding: 13px 14px;
+    font-size: 0.78rem;
+  }
+
+  .hero-grid {
+    padding: 42px 0;
+  }
+
+  .final-cta {
+    padding: 28px;
+  }
+}
+
+/* CATEGORY DIRECTORY - 14 categorías oficiales */
+.category-strip-inner {
+  scroll-snap-type: x proximity;
+}
+
+.category-pill {
+  scroll-snap-align: start;
+}
+
+.category-directory {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.category-mini {
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-soft);
+  text-decoration: none;
+  padding: 14px;
+  transition: 0.16s ease;
+  min-height: 98px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.category-mini:hover {
+  transform: translateY(-3px);
+  border-color: rgba(244,123,32,0.48);
+  box-shadow: var(--shadow);
+}
+
+.category-mini strong {
+  display: block;
+  color: var(--navy);
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+
+.category-mini span {
+  color: var(--muted);
+  font-size: 0.76rem;
+  line-height: 1.35;
+}
+
+.category-mini small {
+  color: var(--orange);
+  font-weight: 900;
+  font-size: 0.72rem;
+  margin-top: 10px;
+}
+
+@media (max-width: 1080px) {
+  .category-directory {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 780px) {
+  .category-directory {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .category-directory {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* CATEGORY NAVIGATOR V5 */
+.category-strip {
+  display: none !important;
+}
+
+.category-navigator {
+  background: #FFFFFF;
+  border-bottom: 1px solid var(--border);
+  padding: 38px 0;
+}
+
+.category-nav-head {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: end;
+  margin-bottom: 18px;
+}
+
+.category-nav-head h2 {
+  font-family: 'Playfair Display', serif;
+  color: var(--navy);
+  font-size: clamp(1.8rem, 3vw, 2.7rem);
+  line-height: 1.05;
+  margin: 0;
+}
+
+.category-tools {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.category-select {
+  height: 44px;
+  min-width: 260px;
+  border: 2px solid var(--border);
+  background: #FFFFFF;
+  color: var(--navy);
+  font-family: inherit;
+  font-weight: 900;
+  padding: 0 12px;
+  outline: none;
+}
+
+.category-select:focus {
+  border-color: var(--orange);
+}
+
+.category-arrows {
+  display: flex;
+  gap: 8px;
+}
+
+.cat-arrow {
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--border);
+  background: var(--navy);
+  color: #FFFFFF;
+  font-size: 1.65rem;
+  line-height: 1;
+  font-weight: 900;
+  cursor: pointer;
+  transition: 0.16s ease;
+}
+
+.cat-arrow:hover {
+  background: var(--orange);
+  border-color: var(--orange);
+  transform: translateY(-1px);
+}
+
+.category-carousel-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.category-carousel {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  padding: 2px 2px 10px;
+  scroll-snap-type: x mandatory;
+}
+
+.category-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.category-tile {
+  flex: 0 0 235px;
+  min-height: 148px;
+  background:
+    linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-soft);
+  text-decoration: none;
+  padding: 18px;
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  position: relative;
+  overflow: hidden;
+  scroll-snap-align: start;
+  transition: 0.18s ease;
+}
+
+.category-tile::after {
+  content: "→";
+  position: absolute;
+  right: 16px;
+  bottom: 12px;
+  color: var(--orange);
+  font-weight: 900;
+  font-size: 1rem;
+}
+
+.category-tile:hover {
+  transform: translateY(-4px);
+  border-color: rgba(244,123,32,0.50);
+  box-shadow: var(--shadow);
+}
+
+.category-tile:hover .category-dot {
+  transform: scale(1.2);
+}
+
+.category-dot {
+  width: 10px;
+  height: 10px;
+  background: var(--orange);
+  border-radius: 50%;
+  display: inline-block;
+  transition: 0.16s ease;
+}
+
+.category-tile strong {
+  color: var(--navy);
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+.category-tile em {
+  color: var(--orange);
+  font-style: normal;
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.category-tile small {
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.45;
+  padding-right: 18px;
+}
+
+@media (max-width: 900px) {
+  .category-nav-head {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .category-tools {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr auto;
+  }
+
+  .category-select {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .category-tile {
+    flex-basis: 220px;
+  }
+}
+
+@media (max-width: 560px) {
+  .category-navigator {
+    padding: 30px 0;
+  }
+
+  .category-tools {
+    grid-template-columns: 1fr;
+  }
+
+  .category-arrows {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .cat-arrow {
+    width: 100%;
+  }
+
+  .category-tile {
+    flex-basis: 84%;
+  }
+}
+
+
+/* NAV CLEAN V6 - elimina scrollbar nativo y usa desplegable */
+.clean-menu {
+  overflow: visible !important;
+  position: relative;
+}
+
+.clean-menu > a,
+.nav-dropdown > summary {
+  min-height: 59px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-dropdown {
+  position: relative;
+  color: rgba(255,255,255,0.92);
+  font-size: 0.86rem;
+  font-weight: 900;
+  border-right: 1px solid rgba(255,255,255,0.10);
+}
+
+.nav-dropdown summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 15px 22px;
+  user-select: none;
+}
+
+.nav-dropdown summary::-webkit-details-marker {
+  display: none;
+}
+
+.nav-dropdown summary::after {
+  content: "▾";
+  font-size: 0.75rem;
+  margin-left: 9px;
+  color: var(--orange);
+}
+
+.nav-dropdown[open] summary,
+.nav-dropdown summary:hover {
+  background: var(--orange);
+  color: #FFFFFF;
+}
+
+.nav-dropdown[open] summary::after,
+.nav-dropdown summary:hover::after {
+  color: #FFFFFF;
+}
+
+.nav-dropdown-panel {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: min(680px, calc(100vw - 32px));
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  box-shadow: 0 22px 50px rgba(16, 29, 51, 0.22);
+  z-index: 1200;
+  padding: 14px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.nav-dropdown-panel a {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  align-items: center;
+  text-decoration: none;
+  color: var(--navy);
+  background: #F8FAFC;
+  border: 1px solid var(--border);
+  padding: 12px 14px;
+  font-size: 0.86rem;
+  font-weight: 900;
+  transition: 0.16s ease;
+}
+
+.nav-dropdown-panel a:hover {
+  background: var(--navy);
+  color: #FFFFFF;
+  border-color: var(--navy);
+}
+
+.nav-dropdown-panel small {
+  color: var(--orange);
+  font-weight: 900;
+}
+
+.nav-dropdown-panel a:hover small {
+  color: #FFFFFF;
+}
+
+@media (hover: hover) {
+  .nav-dropdown:hover .nav-dropdown-panel {
+    display: grid;
+  }
+
+  .nav-dropdown:not([open]) .nav-dropdown-panel {
+    display: none;
+  }
+
+  .nav-dropdown:hover summary {
+    background: var(--orange);
+    color: white;
+  }
+
+  .nav-dropdown:hover summary::after {
+    color: white;
+  }
+}
+
+@media (max-width: 780px) {
+  .clean-menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: visible !important;
+  }
+
+  .clean-menu > a,
+  .nav-dropdown summary {
+    justify-content: center;
+    border-bottom: 1px solid rgba(255,255,255,0.10);
+    min-height: 50px;
+    padding: 13px 10px;
+  }
+
+  .nav-dropdown {
+    position: static;
+  }
+
+  .nav-dropdown-panel {
+    left: 16px;
+    right: 16px;
+    width: auto;
+    grid-template-columns: 1fr;
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .clean-menu {
+    grid-template-columns: 1fr;
+  }
+}
+
+</style>
+<link rel="stylesheet" href="assets/css/cylo-ui.css">
 </head>
+
 <body>
 
-<!-- NAV -->
-<nav class="site-nav" id="site-nav">
-  <div class="nav-inner">
-    <a href="/" class="nav-logo">
-      <div>
-        <div class="nav-logo-text">CY<em>LO</em></div>
-        <div class="nav-logo-sub">Guatemala</div>
-      </div>
-    </a>
-    <div class="nav-links">
-      <a href="/" class="active">Inicio</a>
-      <a href="catalogo.html">Productos</a>
-      <a href="nosotros.html">Nosotros</a>
-      <a href="contacto.html">Contacto</a>
-      <a href="https://wa.me/50248005692?text=Hola,%20necesito%20conversar%20con%20un%20asesor.%20Har%C3%A9%20un%20pedido." target="_blank" class="nav-cta">Comprar Ahora</a>
-    </div>
-    <button class="nav-hamburger" id="nav-hamburger" aria-label="Menú" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-  <div class="nav-mobile" id="nav-mobile">
-    <a href="/">Inicio</a>
-    <a href="catalogo.html">Productos</a>
-    <a href="nosotros.html">Nosotros</a>
-    <a href="contacto.html">Contacto</a>
-    <a href="https://wa.me/50248005692?text=Hola,%20necesito%20conversar%20con%20un%20asesor.%20Har%C3%A9%20un%20pedido." target="_blank" class="nav-cta">Comprar Ahora</a>
-  </div>
-</nav>
+<div id="cylo-header" data-active="inicio"></div>
+<main>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-photo"></div>
-  <div class="hero-shape hero-shape-1"></div>
-  <div class="hero-shape hero-shape-2"></div>
-  <div class="hero-shape hero-shape-3"></div>
-  <div class="container">
-    <div class="hero-content anim-fade-up">
-      <div class="hero-badge"><span></span>CYLO Guatemala 2026</div>
-      <h1 class="hero-title">
-        La solución<br>
-        en <span class="accent">insumos</span> para<br>
-        tu negocio.
-      </h1>
-      <p class="hero-subtitle">
-        Somos una tienda 100% digital, dedicada a la distribución de insumos para alimentos, utensilios de cocina, higiene institucional y accesorios. Enviamos a toda Guatemala.
-      </p>
-      <div class="hero-actions">
-        <a href="catalogo.html" class="btn btn-primary btn-lg">Ver Catálogo →</a>
-        <a href="https://wa.me/50248005692?text=Hola,%20necesito%20cotizar%20un%20pedido." target="_blank" class="btn btn-outline-white btn-lg">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          Hablar con asesor
-        </a>
-      </div>
-    </div>
-  </div>
-  <div class="hero-stats">
-    <div class="hero-stats-grid">
-      <div class="hero-stat">
-        <div class="hero-stat-num">+<em>800</em></div>
-        <div class="hero-stat-lbl">Productos</div>
-      </div>
-      <div class="hero-divider"></div>
-      <div class="hero-stat">
-        <div class="hero-stat-num"><em>14</em></div>
-        <div class="hero-stat-lbl">Categorías</div>
-      </div>
-      <div class="hero-divider"></div>
-      <div class="hero-stat">
-        <div class="hero-stat-num"><em>24</em>h</div>
-        <div class="hero-stat-lbl">Entrega express</div>
-      </div>
-      <div class="hero-divider"></div>
-      <div class="hero-stat">
-        <div class="hero-stat-num"><em>100</em>%</div>
-        <div class="hero-stat-lbl">Digital</div>
-      </div>
-    </div>
-  </div>
-  <div class="hero-scroll">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-    scroll
-  </div>
-</section>
+  <section class="hero">
+    <div class="container hero-grid">
 
-<!-- SCROLLING BANNER -->
-<div class="banner-strip">
-  <div class="banner-strip-inner" id="banner-inner">
-    <div class="banner-strip-item">✦ Envío a toda Guatemala</div>
-    <div class="banner-strip-item">✦ +800 Productos disponibles</div>
-    <div class="banner-strip-item">✦ Entrega Express mismo día</div>
-    <div class="banner-strip-item">✦ Productos Reciclables &amp; Ecológicos</div>
-    <div class="banner-strip-item">✦ Atención personalizada</div>
-    <div class="banner-strip-item">✦ Pago con tarjeta, depósito o contra entrega</div>
-    <div class="banner-strip-item">✦ Envío a toda Guatemala</div>
-    <div class="banner-strip-item">✦ +800 Productos disponibles</div>
-    <div class="banner-strip-item">✦ Entrega Express mismo día</div>
-    <div class="banner-strip-item">✦ Productos Reciclables &amp; Ecológicos</div>
-    <div class="banner-strip-item">✦ Atención personalizada</div>
-    <div class="banner-strip-item">✦ Pago con tarjeta, depósito o contra entrega</div>
-  </div>
-</div>
+      <div class="hero-left">
+        <div class="hero-kicker">Central digital de abastecimiento</div>
 
-<!-- CATEGORIES -->
-<section class="cat-section section-pad">
-  <div class="container">
-    <div class="text-center" data-reveal style="margin-bottom:52px">
-      <span class="eyebrow">Explora</span>
-      <h2>Nuestras Categorías</h2>
-      <p style="max-width:480px;margin:12px auto 0">Encuentra todo lo que necesitas para tu negocio gastronómico, de higiene o servicio.</p>
-    </div>
-    <div class="cat-grid">
-      <a href="catalogo.html" class="cat-placeholder" data-reveal>
-        <div class="cat-bg" style="background-image:url('img/cat-insumos.webp');background-size:cover;background-position:center;"></div>
-        <div class="cat-grad"></div>
-        <div class="cat-content">
-          <div class="cat-tag">Insumos para Alimentos</div>
-          <div class="cat-name">Empaques y Contenedores</div>
-          <div class="cat-link-arrow">→</div>
-        </div>
-      </a>
-      <a href="catalogo.html" class="cat-placeholder" data-reveal>
-        <div class="cat-bg" style="background-image:url('img/cat-utensilios.webp');background-size:cover;background-position:center;"></div>
-        <div class="cat-grad"></div>
-        <div class="cat-content">
-          <div class="cat-tag">Utensilios de Cocina</div>
-          <div class="cat-name">Herramientas Profesionales</div>
-          <div class="cat-link-arrow">→</div>
-        </div>
-      </a>
-      <a href="catalogo.html" class="cat-placeholder" data-reveal>
-        <div class="cat-bg" style="background-image:url('img/cat-inocuidad.webp');background-size:cover;background-position:center;"></div>
-        <div class="cat-grad"></div>
-        <div class="cat-content">
-          <div class="cat-tag">Higiene Institucional</div>
-          <div class="cat-name">Inocuidad y Seguridad</div>
-          <div class="cat-link-arrow">→</div>
-        </div>
-      </a>
-      <a href="catalogo.html" class="cat-placeholder" data-reveal>
-        <div class="cat-bg" style="background-image:url('img/cat-accesorios.webp');background-size:cover;background-position:center;"></div>
-        <div class="cat-grad"></div>
-        <div class="cat-content">
-          <div class="cat-tag">Accesorios</div>
-          <div class="cat-name">Servicio de Mesa</div>
-          <div class="cat-link-arrow">→</div>
-        </div>
-      </a>
-    </div>
-    <div class="text-center" style="margin-top:36px" data-reveal>
-      <p style="margin-bottom:16px">¿No encuentras lo que buscas?</p>
-      <a href="contacto.html" class="btn btn-outline">Contáctanos →</a>
-    </div>
-  </div>
-</section>
+        <h1>
+          Insumos para negocios de alimentos que necesitan comprar <em>rápido, claro y por volumen.</em>
+        </h1>
 
-<!-- HOW TO BUY (STEPS) -->
-<section class="steps-section section-pad">
-  <div class="container">
-    <div class="text-center" data-reveal style="margin-bottom:52px">
-      <span class="eyebrow">Proceso</span>
-      <h2>Pasos para realizar una compra</h2>
-    </div>
-    <div class="steps-grid">
-      <div class="step-card" data-reveal>
-        <div class="step-num">01</div>
-        <h3>Elige tu producto.</h3>
-        <p>Contamos con un portafolio con más de 800 soluciones en diferentes estilos, colores y tamaños.</p>
-        <div class="step-connector">→</div>
-      </div>
-      <div class="step-card" data-reveal>
-        <div class="step-num">02</div>
-        <h3>Haz tu pedido.</h3>
-        <p>Comunícate con nuestro equipo de ventas por medio de nuestro <a href="mailto:ventas@cyloguatemala.me" style="color:var(--orange)">correo</a> o número de <a href="https://wa.me/50248005692" target="_blank" style="color:var(--orange)">WhatsApp</a>.</p>
-        <div class="step-connector">→</div>
-      </div>
-      <div class="step-card" data-reveal>
-        <div class="step-num">03</div>
-        <h3>Realiza tu pago.</h3>
-        <p>Elige tu método de pago y espera para recibir tu pedido en 24 o 48 horas.</p>
-      </div>
-    </div>
-  </div>
-</section>
+        <p class="hero-copy">
+          Más de 900 productos para restaurantes, cafeterías, hoteles, foodservice, catering y distribuidores en Guatemala. Busca, revisa fichas individuales y solicita cotización directa por WhatsApp.
+        </p>
 
-<!-- BRAND STORY -->
-<section class="brand-section section-pad">
-  <div class="container brand-content">
-    <div class="brand-grid">
-      <div class="brand-text" data-reveal>
-        <span class="eyebrow">Quiénes somos</span>
-        <h2 style="color:white">CYLO — <em style="color:var(--orange);font-style:normal">reCYcle LOgistic</em></h2>
-        <p>Diseñada en el año 2025, durante una temporada de consumo masivo, una alianza realizada entre diferentes entidades estableció la idea de mejorar el funcionamiento de abastecimiento para el sector gastronómico a través de un modelo de distribución con el sistema más flexible del mundo.</p>
-        <p>A partir de ese punto, nació oficialmente la tienda en línea CYLO Guatemala, teniendo como objetivo principal dar un enfoque ecológico para el consumo masivo de insumos dentro de la región y ser la solución más confiable para los clientes guatemaltecos.</p>
-        <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap">
-          <a href="nosotros.html" class="btn btn-outline-white">Conoce más →</a>
-          <a href="contacto.html" class="btn btn-primary">Contáctanos</a>
-        </div>
-      </div>
-      <div class="brand-visual" data-reveal>
-        <div class="brand-feat">
-          <div class="brand-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M7 12s1.5 2 5 2 5-2 5-2"/><path d="M9 9h.01M15 9h.01"/></svg></div>
-          <div class="brand-feat-title">Enfoque Ecológico</div>
-          <div class="brand-feat-text">Productos elaborados con materiales reciclables: PET, PP, bagazo de caña, fibra de papel y vidrio.</div>
-        </div>
-        <div class="brand-feat">
-          <div class="brand-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-          <div class="brand-feat-title">Entrega Express</div>
-          <div class="brand-feat-text">Servicio mismo día en la Ciudad Capital, Lunes a Sábado.</div>
-        </div>
-        <div class="brand-feat">
-          <div class="brand-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-          <div class="brand-feat-title">Calidad Premium</div>
-          <div class="brand-feat-text">Más de 800 soluciones para la industria gastronómica e higiene industrial.</div>
-        </div>
-        <div class="brand-feat">
-          <div class="brand-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
-          <div class="brand-feat-title">Asesoría Personal</div>
-          <div class="brand-feat-text">Equipo de ventas dedicado, cotizaciones personalizadas y soporte continuo.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+        <form class="hero-search js-search-form" action="Catalogo-digital-2026.html">
+          <input type="search" name="q" placeholder="Ej: envase soufflé, abrelatas, bowl kraft, vajilla...">
+          <button type="submit">Buscar producto</button>
+        </form>
 
-<!-- FAQ -->
-<section class="faq-section section-pad">
-  <div class="container">
-    <div class="faq-grid">
-      <div>
-        <span class="eyebrow" data-reveal>Preguntas Frecuentes</span>
-        <h2 data-reveal style="margin-bottom:8px">Dedicamos este espacio para responder tus dudas.</h2>
-        <p data-reveal style="margin-bottom:36px">La confianza de nuestros clientes es nuestra prioridad.</p>
+        <div class="quick-tags">
+          <a href="Catalogo-digital-2026.html#cat-desechables">Desechables</a>
+          <a href="Catalogo-digital-2026.html#cat-utensilios">Utensilios</a>
+          <a href="Catalogo-digital-2026.html#cat-cocci-n">Cocción</a>
+          <a href="Catalogo-digital-2026.html#cat-accesorios">Accesorios</a>
+          <a href="Catalogo-digital-2026.html#cat-reposter-a">Repostería</a>
+          <a href="Catalogo-digital-2026.html#cat-pizzer-a">Pizzería</a>
+          <a href="Catalogo-digital-2026.html#cat-contenedores">Contenedores</a>
+          <a href="Catalogo-digital-2026.html#cat-catering">Catering</a>
+          <a href="Catalogo-digital-2026.html#cat-servicio">Servicio</a>
+          <a href="Catalogo-digital-2026.html#cat-bartender">Bartender</a>
+          <a href="Catalogo-digital-2026.html#cat-cafeter-a">Cafetería</a>
+          <a href="Catalogo-digital-2026.html#cat-presentaci-n">Presentación</a>
+          <a href="Catalogo-digital-2026.html#cat-vajilla">Vajilla</a>
+          <a href="Catalogo-digital-2026.html#cat-cristaler-a">Cristalería</a>
+        </div>
 
-        <div class="faq-item" data-reveal>
-          <button class="faq-question">¿En dónde se encuentra su tienda física? <span class="faq-icon">+</span></button>
-          <div class="faq-answer"><div class="faq-answer-inner">CYLO GUATEMALA es una tienda que opera 100% de manera digital, por lo que, actualmente no contamos con una tienda física. Toda compra es realizada de manera segura a través de nuestro sistema en línea, con el acompañamiento de nuestros mejores asesores.</div></div>
-        </div>
-        <div class="faq-item" data-reveal>
-          <button class="faq-question">¿Cuáles son sus métodos de pago? <span class="faq-icon">+</span></button>
-          <div class="faq-answer"><div class="faq-answer-inner">Contamos con diferentes métodos de pago:<ul><li>Por medio de transferencia bancaria.</li><li>Depósito bancario.</li><li>Enlaces de pago (recargo del 5.25% + Q2).</li><li>Pago contra entrega (recargo del ≈8%).</li></ul></div></div>
-        </div>
-        <div class="faq-item" data-reveal>
-          <button class="faq-question">¡Necesito un pedido y me urge recibirlo hoy! <span class="faq-icon">+</span></button>
-          <div class="faq-answer"><div class="faq-answer-inner">Contamos con un Servicio Exprés de entrega el mismo día, dentro del perímetro de la Ciudad Capital de Guatemala en horario de Lunes a Viernes de 08:00–15:00 hrs y Sábado de 08:00–10:00 hrs.</div></div>
-        </div>
-        <div class="faq-item" data-reveal>
-          <button class="faq-question">¿Tienen productos personalizados? <span class="faq-icon">+</span></button>
-          <div class="faq-answer"><div class="faq-answer-inner">Trabajamos cotizaciones para su empresa o negocio, únicamente necesitamos:<ul><li>Tipo de producto que desea personalizar.</li><li>Tipo de personalización: sobre la base o mediante etiqueta de vinil.</li><li>Cantidad mensual deseada.</li><li>Diseño a utilizar.</li></ul>Será un gusto trabajar juntos.</div></div>
-        </div>
-        <div class="faq-item" data-reveal>
-          <button class="faq-question">¿Tienen otras líneas de productos? <span class="faq-icon">+</span></button>
-          <div class="faq-answer"><div class="faq-answer-inner">Cuéntanos tu plan, podemos elaborarte material promocional acorde a tus necesidades o brindarte otras líneas de productos. Tu imaginación es el límite. 💎</div></div>
+        <div class="hero-actions">
+          <a href="Catalogo-digital-2026.html" class="btn btn-primary">Ver catálogo completo</a>
+          <a href="https://wa.me/50248005692?text=Hola%20CYLO,%20quiero%20cotizar%20productos%20para%20mi%20negocio." class="btn btn-whatsapp" target="_blank" rel="noopener">Cotizar por WhatsApp</a>
+          <a href="#productos-destacados" class="btn btn-outline">Ver productos destacados</a>
         </div>
       </div>
 
-      <div class="faq-visual" data-reveal>
-        <h3>¿Tienes más preguntas?</h3>
-        <p>Nuestro equipo de asesores está disponible para atenderte de forma personalizada. Escríbenos y resolveremos tus dudas en minutos.</p>
-        <a href="https://wa.me/50248005692?text=Hola%20CYLO,%20tengo%20una%20pregunta." target="_blank" class="btn btn-wa" style="width:100%;justify-content:center;margin-bottom:12px">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          WhatsApp: 4800-5692
-        </a>
-        <a href="contacto.html" class="btn btn-outline-white" style="width:100%;justify-content:center">Ver página de contacto</a>
+      <aside class="command-panel reveal">
+        <div class="command-head">
+          <span>Panel comercial</span>
+          <span>Activo</span>
+        </div>
 
-        <div style="margin-top:28px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1)">
-          <div style="font-size:.7rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:12px">Horario de atención</div>
-          <div style="font-size:.88rem;color:rgba(255,255,255,.7);line-height:1.9">
-            Lun–Vie: 08:00 – 17:00 hrs<br>
-            Sábado: 08:00 – 12:00 hrs<br>
-            <span style="color:rgba(255,255,255,.35)">Domingo: Cerrado</span>
+        <div class="command-body">
+          <div class="status-grid">
+            <div class="status">
+              <strong>+900</strong>
+              <span>Productos</span>
+            </div>
+            <div class="status">
+              <strong>14</strong>
+              <span>Categorías</span>
+            </div>
+            <div class="status">
+              <strong>GT</strong>
+              <span>Cobertura</span>
+            </div>
+          </div>
+
+          <div class="command-list">
+            <a href="Catalogo-digital-2026.html" class="command-item">
+              <div class="command-icon">01</div>
+              <div>
+                <strong>Catálogo completo</strong>
+                <small>Consulta productos por categoría, código, imagen y precio.</small>
+              </div>
+              <div class="command-arrow">→</div>
+            </a>
+
+            <a href="#productos-destacados" class="command-item">
+              <div class="command-icon">02</div>
+              <div>
+                <strong>Alta rotación</strong>
+                <small>Catálogo de alta rotación para acelerar la cotización.</small>
+              </div>
+              <div class="command-arrow">→</div>
+            </a>
+
+            <a href="#por-negocio" class="command-item">
+              <div class="command-icon">03</div>
+              <div>
+                <strong>Compra por tipo de negocio</strong>
+                <small>Restaurantes, cafeterías, hoteles, catering y distribuidores.</small>
+              </div>
+              <div class="command-arrow">→</div>
+            </a>
+
+            <a href="https://wa.me/50248005692?text=Hola%20CYLO,%20quiero%20hacer%20una%20cotizaci%C3%B3n%20por%20volumen." target="_blank" rel="noopener" class="command-item">
+              <div class="command-icon">04</div>
+              <div>
+                <strong>Cotización por volumen</strong>
+                <small>Envía tu pedido para confirmar stock, precio vigente y entrega.</small>
+              </div>
+              <div class="command-arrow">→</div>
+            </a>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+
+    <div class="hero-bottom">
+      <div class="container hero-bottom-grid">
+        <div class="hero-proof">
+          <strong>Precios mayoristas</strong>
+          <span>Referencias comerciales para compras recurrentes.</span>
+        </div>
+        <div class="hero-proof">
+          <strong>Fichas individuales</strong>
+          <span>Páginas con precio, presentación, subtotal y WhatsApp dinámico.</span>
+        </div>
+        <div class="hero-proof">
+          <strong>Atención directa</strong>
+          <span>Proceso de cotización sin carrito pesado ni fricción innecesaria.</span>
+        </div>
+        <div class="hero-proof">
+          <strong>Atención en Guatemala</strong>
+          <span>Cotización y coordinación logística según cobertura local.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="category-navigator" aria-label="Navegación de categorías">
+    <div class="container">
+
+      <div class="category-nav-head">
+        <div>
+          <span class="eyebrow">14 categorías oficiales</span>
+          <h2>Explora el catálogo por categoría</h2>
+        </div>
+
+        <div class="category-tools">
+          <select id="categorySelect" class="category-select" aria-label="Seleccionar categoría">
+            <option value="">Seleccionar categoría</option><option value="Catalogo-digital-2026.html#cat-desechables">Desechables — 76 productos</option><option value="Catalogo-digital-2026.html#cat-utensilios">Utensilios — 136 productos</option><option value="Catalogo-digital-2026.html#cat-cocci-n">Cocción — 34 productos</option><option value="Catalogo-digital-2026.html#cat-accesorios">Accesorios — 59 productos</option><option value="Catalogo-digital-2026.html#cat-reposter-a">Repostería — 59 productos</option><option value="Catalogo-digital-2026.html#cat-pizzer-a">Pizzería — 16 productos</option><option value="Catalogo-digital-2026.html#cat-contenedores">Contenedores — 38 productos</option><option value="Catalogo-digital-2026.html#cat-catering">Catering — 84 productos</option><option value="Catalogo-digital-2026.html#cat-servicio">Servicio — 96 productos</option><option value="Catalogo-digital-2026.html#cat-bartender">Bartender — 77 productos</option><option value="Catalogo-digital-2026.html#cat-cafeter-a">Cafetería — 48 productos</option><option value="Catalogo-digital-2026.html#cat-presentaci-n">Presentación — 17 productos</option><option value="Catalogo-digital-2026.html#cat-vajilla">Vajilla — 108 productos</option><option value="Catalogo-digital-2026.html#cat-cristaler-a">Cristalería — 123 productos</option>
+          </select>
+
+          <div class="category-arrows" aria-label="Controles de carrusel de categorías">
+            <button type="button" class="cat-arrow" id="catPrev" aria-label="Categorías anteriores">‹</button>
+            <button type="button" class="cat-arrow" id="catNext" aria-label="Categorías siguientes">›</button>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
 
-<!-- TESTIMONIALS -->
-<section class="reviews-section section-pad">
-  <div class="container">
-    <div class="text-center" data-reveal style="margin-bottom:48px">
-      <span class="eyebrow">Testimonios</span>
-      <h2>¿Qué dicen nuestros clientes?</h2>
-    </div>
-    <div class="testimonials-grid">
-      <div class="testimonial-card" data-reveal>
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">"Definitivamente son una opción más eficiente a lo normal"</p>
-        <div class="testimonial-author">— Marcela Solis</div>
+      <div class="category-carousel-wrap">
+        <div class="category-carousel" id="categoryCarousel">
+        <a href="Catalogo-digital-2026.html#cat-desechables" class="category-tile">
+          <span class="category-dot"></span>
+          <strong>Desechables</strong>
+          <em>76 productos</em>
+          <small>Empaques, contenedores y desechables</small>
+        </a>
+        <a href="Catalogo-digital-2026.html#cat-utensilios" class="category-tile">
+          <span class="category-dot"></span>
+          <strong>Utensilios</strong>
+          <em>136 productos</em>
+          <small>Herramientas para cocina y operación</small>
+        </a>
+        <a href="Catalogo-digital-2026.html#cat-cocci-n" class="category-tile">
+          <span class="category-dot"></span>
+          <strong>Cocción</strong>
+          <em>34 productos</em>
+          <small>Productos para preparación y cocina</small>
+        </a>
+        <a href="Catalogo-digital-2026.html#cat-accesorios" class="category-tile">
+          <span class="category-dot"></span>
+          <strong>Accesorios</strong>
+          <em>59 productos</em>
+          <small>Accesorios para servicio y operación</small>
+        </a>
+        <a href="Catalogo-digital-2026.html#cat-reposter-a" class="category-tile">
+          <span class="category-dot"></span>
+          <strong>Repostería</strong>
+          <em>59 productos</em>
+          <small>Insumos y herramientas de repostería</small>
+        </a>
+        <a href="Catalogo-digital-2026.html#cat-pizzer-a" class="category-tile">
+          <span class="category-dot"></span>
+          <strong>Pizzería</strong>
+          <em>16 productos</em>
+          <small>Soluciones para pizzerías</small>
+        </a>
+        <a href="Catalogo-digital-2026.html#cat-contenedores" class="category-tile">
+          <span class="category-dot"></span>
+          <strong>Contenedores</strong>
+          <em>38 productos</em>
+          <small>Contenedores para alimentos</small>
+        </a>
+        <a href="Catalogo-digital-2026.html#cat-catering" class="category-tile">
+          <span class="category-dot"></span>
+          <strong>Catering</strong>
+          <em>84 productos</em>
+          <small>Servicio, eventos y banquetes</small>
+        </a>
+        <a href="Catalogo-digital-2026.html#cat-servicio" class="category-tile">
+          <span class="category-dot"></span>
+          <strong>Servicio</strong>
+          <em>96 productos</em>
+          <small>Productos para atención y mesa</small>
+        </a>
+        <a href="Catalogo-digital-2026.html#cat-bartender" class="category-tile">
+          <span class="category-dot"></span>
+          <strong>Bartender</strong>
+          <em>77 productos</em>
+          <small>Barra, coctelería y servicio</small>
+        </a>
+        <a href="Catalogo-digital-2026.html#cat-cafeter-a" class="category-tile">
+          <span class="category-dot"></span>
+          <strong>Cafetería</strong>
+          <em>48 productos</em>
+          <small>Insumos para cafeterías</small>
+        </a>
+        <a href="Catalogo-digital-2026.html#cat-presentaci-n" class="category-tile">
+          <span class="category-dot"></span>
+          <strong>Presentación</strong>
+          <em>17 productos</em>
+          <small>Presentación de alimentos</small>
+        </a>
+        <a href="Catalogo-digital-2026.html#cat-vajilla" class="category-tile">
+          <span class="category-dot"></span>
+          <strong>Vajilla</strong>
+          <em>108 productos</em>
+          <small>Vajilla para restaurantes y hoteles</small>
+        </a>
+        <a href="Catalogo-digital-2026.html#cat-cristaler-a" class="category-tile">
+          <span class="category-dot"></span>
+          <strong>Cristalería</strong>
+          <em>123 productos</em>
+          <small>Cristalería para servicio profesional</small>
+        </a>
+        </div>
       </div>
-      <div class="testimonial-card" data-reveal>
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">"El precio lo compensa totalmente"</p>
-        <div class="testimonial-author">— Alberto González</div>
-      </div>
-      <div class="testimonial-card" data-reveal>
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">"Es una opción confiable para mejorar mis compras"</p>
-        <div class="testimonial-author">— Alejandra Pérez</div>
-      </div>
-      <div class="testimonial-card" data-reveal>
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">"Me gusta la facilidad que se tiene para comprar con ustedes"</p>
-        <div class="testimonial-author">— Lucia Alvarado</div>
-      </div>
-      <div class="testimonial-card" data-reveal>
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">"¡He quedado impresionada con los productos que me han enviado! ¡Gracias!"</p>
-        <div class="testimonial-author">— Elena Martínez</div>
-      </div>
-      <div class="testimonial-card" data-reveal>
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">"Se han convertido en mi proveedor principal"</p>
-        <div class="testimonial-author">— Brenda Suleima</div>
-      </div>
-      <div class="testimonial-card" data-reveal>
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">"Me salvaron de esta emergencia"</p>
-        <div class="testimonial-author">— Luis Hernández</div>
-      </div>
-      <div class="testimonial-card" data-reveal>
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">"Se nota la calidad de sus productos"</p>
-        <div class="testimonial-author">— Julio Jacobo</div>
-      </div>
-    </div>
-    <div class="text-center" style="margin-top:36px" data-reveal>
-      <a href="contacto.html" class="btn btn-primary btn-lg">Comunicarme con un asesor →</a>
-    </div>
-  </div>
-</section>
 
-<!-- CTA BOTTOM -->
-<section class="cta-section">
-  <div class="container">
-    <span class="eyebrow" style="color:rgba(255,255,255,.7)">¿Listo para empezar?</span>
-    <h2>Bienvenido a la<br>experiencia CYLO</h2>
-    <p>Más de 800 soluciones para tu negocio, con envío a toda Guatemala.</p>
-    <div class="cta-actions">
-      <a href="catalogo.html" class="btn btn-outline-white btn-lg">Explorar Catálogo</a>
-      <a href="https://wa.me/50248005692?text=Hola,%20quiero%20hacer%20un%20pedido." target="_blank" class="btn btn-lg" style="background:white;color:var(--orange);border-color:white">
-        Comprar Ahora ☀
+    </div>
+  </section>
+
+  <section class="section light" style="padding-top:52px;">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">14 categorías oficiales</span>
+          <h2>Organización completa del catálogo CYLO</h2>
+        </div>
+        <p>
+          Accede directamente a cada familia de productos del catálogo digital 2026.
+          Estas categorías deben mantenerse iguales en el inicio, catálogo, fichas de producto y navegación general.
+        </p>
+      </div>
+
+      <div class="category-directory">
+        <a href="Catalogo-digital-2026.html#cat-desechables" class="category-mini">
+          <div>
+            <strong>Desechables</strong>
+            <span>Empaques, contenedores y desechables</span>
+          </div>
+          <small>76 productos →</small>
+        </a>
+        <a href="Catalogo-digital-2026.html#cat-utensilios" class="category-mini">
+          <div>
+            <strong>Utensilios</strong>
+            <span>Herramientas para cocina y operación</span>
+          </div>
+          <small>136 productos →</small>
+        </a>
+        <a href="Catalogo-digital-2026.html#cat-cocci-n" class="category-mini">
+          <div>
+            <strong>Cocción</strong>
+            <span>Productos para preparación y cocina</span>
+          </div>
+          <small>34 productos →</small>
+        </a>
+        <a href="Catalogo-digital-2026.html#cat-accesorios" class="category-mini">
+          <div>
+            <strong>Accesorios</strong>
+            <span>Accesorios para servicio y operación</span>
+          </div>
+          <small>59 productos →</small>
+        </a>
+        <a href="Catalogo-digital-2026.html#cat-reposter-a" class="category-mini">
+          <div>
+            <strong>Repostería</strong>
+            <span>Insumos y herramientas de repostería</span>
+          </div>
+          <small>59 productos →</small>
+        </a>
+        <a href="Catalogo-digital-2026.html#cat-pizzer-a" class="category-mini">
+          <div>
+            <strong>Pizzería</strong>
+            <span>Soluciones para pizzerías</span>
+          </div>
+          <small>16 productos →</small>
+        </a>
+        <a href="Catalogo-digital-2026.html#cat-contenedores" class="category-mini">
+          <div>
+            <strong>Contenedores</strong>
+            <span>Contenedores para alimentos</span>
+          </div>
+          <small>38 productos →</small>
+        </a>
+        <a href="Catalogo-digital-2026.html#cat-catering" class="category-mini">
+          <div>
+            <strong>Catering</strong>
+            <span>Servicio, eventos y banquetes</span>
+          </div>
+          <small>84 productos →</small>
+        </a>
+        <a href="Catalogo-digital-2026.html#cat-servicio" class="category-mini">
+          <div>
+            <strong>Servicio</strong>
+            <span>Productos para atención y mesa</span>
+          </div>
+          <small>96 productos →</small>
+        </a>
+        <a href="Catalogo-digital-2026.html#cat-bartender" class="category-mini">
+          <div>
+            <strong>Bartender</strong>
+            <span>Barra, coctelería y servicio</span>
+          </div>
+          <small>77 productos →</small>
+        </a>
+        <a href="Catalogo-digital-2026.html#cat-cafeter-a" class="category-mini">
+          <div>
+            <strong>Cafetería</strong>
+            <span>Insumos para cafeterías</span>
+          </div>
+          <small>48 productos →</small>
+        </a>
+        <a href="Catalogo-digital-2026.html#cat-presentaci-n" class="category-mini">
+          <div>
+            <strong>Presentación</strong>
+            <span>Presentación de alimentos</span>
+          </div>
+          <small>17 productos →</small>
+        </a>
+        <a href="Catalogo-digital-2026.html#cat-vajilla" class="category-mini">
+          <div>
+            <strong>Vajilla</strong>
+            <span>Vajilla para restaurantes y hoteles</span>
+          </div>
+          <small>108 productos →</small>
+        </a>
+        <a href="Catalogo-digital-2026.html#cat-cristaler-a" class="category-mini">
+          <div>
+            <strong>Cristalería</strong>
+            <span>Cristalería para servicio profesional</span>
+          </div>
+          <small>123 productos →</small>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="productos-destacados" class="section light">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Catálogo de alta rotación</span>
+          <h2>Productos solicitados con frecuencia</h2>
+        </div>
+        <p>
+          Consulta referencias comerciales con imagen, presentación, precio y acceso directo a la ficha individual del producto.
+        </p>
+      </div>
+
+      <div class="products-grid">
+        <article class="product-card reveal">
+          <a class="product-img" href="productos/contenedor-para-alimentos-de-bagazo-8x8-pulg.html">
+            <span class="product-badge">Desechables</span>
+            <img src="https://res.cloudinary.com/dhew6sfwc/image/upload/eco_bag_0002_contenedor_para_alimentos_de_bagazo_8x8_pulg.webp" alt="Contenedor para alimentos de bagazo 8x8 pulg" loading="lazy">
+          </a>
+          <div class="product-body">
+            <div class="product-code">ECO-BAG-0002</div>
+            <a href="productos/contenedor-para-alimentos-de-bagazo-8x8-pulg.html" class="product-title">CONTENEDOR PARA ALIMENTOS DE BAGAZO 8X8 PULG.</a>
+            <div class="product-meta">
+              <span class="product-units">200 uds</span>
+              <span class="product-price">Q716.44</span>
+            </div>
+            <div class="product-actions">
+              <a href="productos/contenedor-para-alimentos-de-bagazo-8x8-pulg.html" class="btn-product">Ver ficha</a>
+              <a href="https://wa.me/50248005692?text=Hola%20CYLO,%20quiero%20cotizar%20CONTENEDOR%20PARA%20ALIMENTOS%20DE%20BAGAZO%208X8%20PULG.%20SKU%20ECO-BAG-0002" target="_blank" rel="noopener" class="btn-quote">Cotizar</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal">
+          <a class="product-img" href="productos/abrelatas-manual-con-manivela.html">
+            <span class="product-badge">Accesorios</span>
+            <img src="https://res.cloudinary.com/dhew6sfwc/image/upload/acc_abre_0002_abrelatas_manual_con_manivela.jpg" alt="Abrelatas manual con manivela" loading="lazy">
+          </a>
+          <div class="product-body">
+            <div class="product-code">ACC-ABRE-0002</div>
+            <a href="productos/abrelatas-manual-con-manivela.html" class="product-title">ABRELATAS MANUAL CON MANIVELA</a>
+            <div class="product-meta">
+              <span class="product-units">3 uds</span>
+              <span class="product-price">Q413.70</span>
+            </div>
+            <div class="product-actions">
+              <a href="productos/abrelatas-manual-con-manivela.html" class="btn-product">Ver ficha</a>
+              <a href="https://wa.me/50248005692?text=Hola%20CYLO,%20quiero%20cotizar%20ABRELATAS%20MANUAL%20CON%20MANIVELA%20SKU%20ACC-ABRE-0002" target="_blank" rel="noopener" class="btn-quote">Cotizar</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal">
+          <a class="product-img" href="productos/contenedor-multiusos-blanco-de-12-onzas.html">
+            <span class="product-badge">Foodservice</span>
+            <img src="https://res.cloudinary.com/dhew6sfwc/image/upload/eco_pap_0002_contenedor_multiusos_blanco_de_12_onzas.webp" alt="Contenedor multiusos blanco de 12 onzas" loading="lazy">
+          </a>
+          <div class="product-body">
+            <div class="product-code">ECO-PAP-0002</div>
+            <a href="productos/contenedor-multiusos-blanco-de-12-onzas.html" class="product-title">CONTENEDOR MULTIUSOS BLANCO DE 12 ONZAS</a>
+            <div class="product-meta">
+              <span class="product-units">1000 uds</span>
+              <span class="product-price">Q991.78</span>
+            </div>
+            <div class="product-actions">
+              <a href="productos/contenedor-multiusos-blanco-de-12-onzas.html" class="btn-product">Ver ficha</a>
+              <a href="https://wa.me/50248005692?text=Hola%20CYLO,%20quiero%20cotizar%20CONTENEDOR%20MULTIUSOS%20BLANCO%20DE%2012%20ONZAS%20SKU%20ECO-PAP-0002" target="_blank" rel="noopener" class="btn-quote">Cotizar</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal">
+          <a class="product-img" href="productos/bandeja-ovalada-antideslizante-56-x-68-5-cms-fibra-de-vidrio.html">
+            <span class="product-badge">Servicio</span>
+            <img src="https://res.cloudinary.com/dhew6sfwc/image/upload/serv_0009_bandeja_ovalada_antideslizante_56_x_68_5_cms_fibra_de_vidrio.webp" alt="Bandeja ovalada antideslizante" loading="lazy">
+          </a>
+          <div class="product-body">
+            <div class="product-code">SERV-0009</div>
+            <a href="productos/bandeja-ovalada-antideslizante-56-x-68-5-cms-fibra-de-vidrio.html" class="product-title">BANDEJA OVALADA ANTIDESLIZANTE 56 x 68.5 cms</a>
+            <div class="product-meta">
+              <span class="product-units">1 uds</span>
+              <span class="product-price">Q438.36</span>
+            </div>
+            <div class="product-actions">
+              <a href="productos/bandeja-ovalada-antideslizante-56-x-68-5-cms-fibra-de-vidrio.html" class="btn-product">Ver ficha</a>
+              <a href="https://wa.me/50248005692?text=Hola%20CYLO,%20quiero%20cotizar%20BANDEJA%20OVALADA%20ANTIDESLIZANTE%20SKU%20SERV-0009" target="_blank" rel="noopener" class="btn-quote">Cotizar</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="por-negocio" class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Soluciones por tipo de negocio</span>
+          <h2>Abastecimiento según la operación de tu negocio</h2>
+        </div>
+        <p>
+          Encuentra categorías y productos alineados al consumo diario de restaurantes, cafeterías, hoteles, distribuidores y operaciones foodservice.
+        </p>
+      </div>
+
+      <div class="business-grid">
+        <article class="business-card reveal">
+          <div class="icon">R</div>
+          <h3>Restaurantes</h3>
+          <p>Contenedores, desechables, vajilla, cristalería, utensilios y servicio de mesa.</p>
+        </article>
+
+        <article class="business-card reveal">
+          <div class="icon">C</div>
+          <h3>Cafeterías</h3>
+          <p>Vasos, tapas, removedores, insumos para barra, presentación y productos de atención rápida.</p>
+        </article>
+
+        <article class="business-card reveal">
+          <div class="icon">H</div>
+          <h3>Hoteles</h3>
+          <p>Cristalería, vajilla, servicio, catering, accesorios y abastecimiento institucional.</p>
+        </article>
+
+        <article class="business-card reveal">
+          <div class="icon">D</div>
+          <h3>Distribuidores</h3>
+          <p>Productos de alta rotación con presentaciones por caja y cotización por volumen.</p>
+        </article>
+
+        <article class="business-card reveal">
+          <div class="icon">F</div>
+          <h3>Foodservice</h3>
+          <p>Empaques, cubiertos, bolsas, bowls, contenedores y productos para operación constante.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section light">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Proceso de cotización</span>
+          <h2>Cómo cotizar productos con CYLO Guatemala</h2>
+        </div>
+        <p>
+          Busca productos, revisa la ficha individual y solicita confirmación de precio, existencia y condiciones de entrega por WhatsApp.
+        </p>
+      </div>
+
+      <div class="process-grid">
+        <article class="process-card reveal">
+          <div class="process-num">01</div>
+          <h3>Busca el producto</h3>
+          <p>Usa el buscador o entra por categorías para localizar productos por nombre, código o aplicación.</p>
+        </article>
+
+        <article class="process-card reveal">
+          <div class="process-num">02</div>
+          <h3>Revisa la ficha</h3>
+          <p>Consulta imagen, precio mayorista, unidades, disponibilidad, aplicaciones y productos relacionados.</p>
+        </article>
+
+        <article class="process-card reveal">
+          <div class="process-num">03</div>
+          <h3>Calcula cantidad</h3>
+          <p>En las fichas individuales puedes estimar cajas, unidades y subtotal antes de solicitar cotización.</p>
+        </article>
+
+        <article class="process-card reveal">
+          <div class="process-num">04</div>
+          <h3>Confirma por WhatsApp</h3>
+          <p>El asesor confirma precio vigente, stock, forma de pago y condiciones de entrega.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark">
+    <div class="container trust-grid">
+      <div class="trust-card reveal">
+        <h2>Abastecimiento digital con enfoque comercial.</h2>
+        <p>
+          CYLO Guatemala organiza su catálogo para que el comprador encuentre productos, revise información comercial y solicite cotización con datos claros de precio, presentación y disponibilidad.
+        </p>
+        <a href="Catalogo-digital-2026.html" class="btn btn-primary">Entrar al catálogo</a>
+      </div>
+
+      <div class="trust-list reveal">
+        <div class="trust-item">
+          <strong>Precios y presentaciones visibles</strong>
+          <span>El cliente entiende unidades, caja y valor de referencia antes de escribir.</span>
+        </div>
+        <div class="trust-item">
+          <strong>WhatsApp como canal principal</strong>
+          <span>Funciona mejor para validación de stock, condiciones y entrega en Guatemala.</span>
+        </div>
+        <div class="trust-item">
+          <strong>Catálogo enlazado a fichas</strong>
+          <span>Cada producto puede llevar al cliente a una ficha individual con información comercial y cotización.</span>
+        </div>
+        <div class="trust-item">
+          <strong>Compras por volumen</strong>
+          <span>Atención para operaciones comerciales, institucionales y pedidos recurrentes.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="final-cta reveal">
+        <div>
+          <h2>Arma tu pedido con CYLO Guatemala</h2>
+          <p>
+            Busca productos, revisa fichas individuales y solicita cotización con información suficiente para confirmar precio, stock y entrega.
+          </p>
+        </div>
+
+        <a href="https://wa.me/50248005692?text=Hola%20CYLO,%20quiero%20armar%20un%20pedido%20para%20mi%20negocio." class="btn btn-primary" target="_blank" rel="noopener">
+          Cotizar ahora
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-cta">
+    <div class="container footer-cta-inner">
+      <div>
+        <h2>Centraliza tu abastecimiento con CYLO Guatemala</h2>
+        <p>
+          Cotiza insumos, empaques, utensilios y productos para foodservice con atención comercial directa.
+        </p>
+      </div>
+
+      <a href="https://wa.me/50248005692?text=Hola%20CYLO,%20quiero%20recibir%20asesor%C3%ADa%20para%20un%20pedido%20comercial." class="btn btn-primary" target="_blank" rel="noopener">
+        Hablar con ventas
       </a>
     </div>
   </div>
-</section>
 
-<!-- FOOTER -->
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-brand-name">CY<em>LO</em></div>
-        <div class="footer-tagline">Guatemala · 2026</div>
-        <p class="footer-desc">La solución en insumos para alimentos, utensilios de cocina, higiene institucional y accesorios. Un enfoque ecológico.</p>
-        <div class="footer-social" style="margin-top:20px">
-          <a href="https://www.facebook.com/cyloguatemala" target="_blank" title="Facebook">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
-          </a>
-          <a href="https://www.tiktok.com/@cylo.guatemala" target="_blank" title="TikTok">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.17 8.17 0 004.78 1.52v-3.4a4.85 4.85 0 01-1.01-.12z"/></svg>
-          </a>
-          <a href="https://wa.me/50248005692" target="_blank" title="WhatsApp">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          </a>
+  <div class="footer-main">
+    <div class="container footer-grid">
+
+      <div class="footer-brand">
+        <h2>CY<em>LO</em> Guatemala</h2>
+        <p>
+          Distribuidor digital de empaques, utensilios e insumos para alimentos.
+          Atención para clientes comerciales, institucionales y compras recurrentes.
+        </p>
+
+        <div class="footer-badge-row">
+          <span class="footer-badge">Mayorista</span>
+          <span class="footer-badge">Foodservice</span>
+          <span class="footer-badge">Guatemala</span>
         </div>
       </div>
+
       <div>
-        <div class="footer-h">Navegación</div>
-        <div class="footer-links">
-          <a href="/">Inicio</a>
-          <a href="catalogo.html">Productos</a>
-          <a href="nosotros.html">Nosotros</a>
-          <a href="contacto.html">Contacto</a>
+        <h3>Catálogo</h3>
+        <ul>
+          <li><a href="Catalogo-digital-2026.html">Catálogo completo</a></li>
+          <li><a href="Catalogo-digital-2026.html#cat-desechables">Desechables</a></li>
+          <li><a href="Catalogo-digital-2026.html#cat-utensilios">Utensilios</a></li>
+          <li><a href="Catalogo-digital-2026.html#cat-cocci-n">Cocción</a></li>
+          <li><a href="Catalogo-digital-2026.html#cat-accesorios">Accesorios</a></li>
+          <li><a href="Catalogo-digital-2026.html#cat-reposter-a">Repostería</a></li>
+          <li><a href="Catalogo-digital-2026.html#cat-pizzer-a">Pizzería</a></li>
+          <li><a href="Catalogo-digital-2026.html#cat-contenedores">Contenedores</a></li>
+          <li><a href="Catalogo-digital-2026.html#cat-catering">Catering</a></li>
+          <li><a href="Catalogo-digital-2026.html#cat-servicio">Servicio</a></li>
+          <li><a href="Catalogo-digital-2026.html#cat-bartender">Bartender</a></li>
+          <li><a href="Catalogo-digital-2026.html#cat-cafeter-a">Cafetería</a></li>
+          <li><a href="Catalogo-digital-2026.html#cat-presentaci-n">Presentación</a></li>
+          <li><a href="Catalogo-digital-2026.html#cat-vajilla">Vajilla</a></li>
+          <li><a href="Catalogo-digital-2026.html#cat-cristaler-a">Cristalería</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Empresa</h3>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="politica-de-privacidad.html">Política de privacidad</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Atención comercial</h3>
+
+        <div class="footer-contact-card">
+          <strong>WhatsApp</strong>
+          <span>+502 4800-5692</span>
+        </div>
+
+        <div class="footer-contact-card" style="margin-top:10px;">
+          <strong>Correo</strong>
+          <span>ventas@cyloguatemala.me</span>
+        </div>
+
+        <div class="footer-contact-card" style="margin-top:10px;">
+          <strong>Cobertura</strong>
+          <span>Ciudad de Guatemala y departamentos según coordinación logística.</span>
         </div>
       </div>
-      <div>
-        <div class="footer-h">Distribución</div>
-        <div class="footer-links">
-          <a href="#">Guatemala Capital</a>
-          <a href="#">Escuintla</a>
-          <a href="#">Toda la República</a>
-          <a href="contacto.html">Pedidos Express</a>
-        </div>
-      </div>
-      <div>
-        <div class="footer-h">Contacto</div>
-        <div class="footer-contact-item">
-          <span class="ic">📱</span>
-          <div><a href="https://wa.me/50248005692" target="_blank" style="color:var(--orange)">+502 4800-5692</a><br><span style="font-size:.75rem">WhatsApp</span></div>
-        </div>
-        <div class="footer-contact-item">
-          <span class="ic">✉️</span>
-          <div><a href="mailto:ventas@cyloguatemala.me" style="color:var(--orange)">ventas@cyloguatemala.me</a></div>
-        </div>
-        <div class="footer-contact-item">
-          <span class="ic">📍</span>
-          <div>Ciudad de Guatemala<br>Palín, Escuintla</div>
-        </div>
-      </div>
+
     </div>
-    <div class="footer-bottom">
-      <span>CYLO Guatemala 2026 © — Todos los derechos reservados.</span>
-      <span>Un enfoque ecológico. 🌿</span>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <span>© 2026 CYLO Guatemala. Todos los derechos reservados.</span>
+      <span>Catálogo digital para compras comerciales e institucionales.</span>
     </div>
   </div>
 </footer>
 
-<!-- WA FLOAT -->
-<a class="wa-float" href="https://wa.me/50248005692?text=Hola%20CYLO,%20me%20interesa%20hacer%20un%20pedido." target="_blank" title="WhatsApp">
-  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+<a class="float-whatsapp" href="https://wa.me/50248005692?text=Hola%20CYLO,%20quiero%20cotizar%20productos%20para%20mi%20negocio." target="_blank" rel="noopener">
+  Cotizar por WhatsApp
 </a>
 
-<!-- index redirect -->
-<script>/* redirect index */</script>
-<script src="components.js" defer></script>
+<div id="cookie-banner">
+  <span>
+    Utilizamos cookies para optimizar tu experiencia. Al navegar, aceptas nuestra
+    <a href="/politica-de-privacidad.html">política de privacidad</a>.
+  </span>
+
+  <button onclick="acceptCookies()">Aceptar</button>
+</div>
+
+<script>
+function acceptCookies() {
+  document.getElementById('cookie-banner').style.display = 'none';
+  localStorage.setItem('cookiesAccepted', 'true');
+}
+
+window.addEventListener('load', function() {
+  if(localStorage.getItem('cookiesAccepted') !== 'true') {
+    document.getElementById('cookie-banner').style.display = 'flex';
+  }
+});
+</script>
+
+<script>
+(function () {
+  const forms = document.querySelectorAll('.js-search-form');
+
+  forms.forEach(form => {
+    form.addEventListener('submit', function (event) {
+      const input = form.querySelector('input[name="q"]');
+      if (!input) return;
+
+      const value = input.value.trim();
+      if (!value) return;
+
+      event.preventDefault();
+      window.location.href = form.getAttribute('action') + '?q=' + encodeURIComponent(value) + '#catalog-search';
+    });
+  });
+})();
+</script>
+
+<script>
+(function () {
+  const items = document.querySelectorAll('.reveal');
+
+  if (!('IntersectionObserver' in window)) {
+    items.forEach(item => item.classList.add('is-visible'));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  items.forEach(item => observer.observe(item));
+})();
+</script>
+
+
+<script>
+(function () {
+  const carousel = document.getElementById('categoryCarousel');
+  const prev = document.getElementById('catPrev');
+  const next = document.getElementById('catNext');
+  const select = document.getElementById('categorySelect');
+
+  if (carousel && prev && next) {
+    const getStep = () => Math.max(260, Math.floor(carousel.clientWidth * 0.75));
+
+    prev.addEventListener('click', function () {
+      carousel.scrollBy({ left: -getStep(), behavior: 'smooth' });
+    });
+
+    next.addEventListener('click', function () {
+      carousel.scrollBy({ left: getStep(), behavior: 'smooth' });
+    });
+  }
+
+  if (select) {
+    select.addEventListener('change', function () {
+      if (this.value) {
+        window.location.href = this.value;
+      }
+    });
+  }
+})();
+</script>
+
+
+<script>
+(function () {
+  const dropdown = document.querySelector('.nav-dropdown');
+  if (!dropdown) return;
+
+  document.addEventListener('click', function (event) {
+    if (!dropdown.contains(event.target)) {
+      dropdown.removeAttribute('open');
+    }
+  });
+
+  dropdown.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function () {
+      dropdown.removeAttribute('open');
+    });
+  });
+})();
+</script>
+
+<script src="assets/js/cylo-ui.js" defer></script>
 </body>
 </html>

@@ -4,490 +4,1278 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Icono de la pestaña (Favicon) -->
-<link rel="icon" href="img/favicon.png" type="image/png">
+  <link rel="icon" href="img/favicon.png" type="image/png">
 
-<!-- Pre-carga de Tipografías (Optimizada para PageSpeed) -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-  <!-- SEO Primario -->
-  <title>Contacto — CYLO Guatemala | Insumos para Alimentos en Guatemala</title>
-  <meta name="description" content="Contáctanos en CYLO Guatemala. Pedidos de insumos para alimentos, utensilios de cocina y desechables para restaurantes. WhatsApp +502 4800-5692. Entrega express en Ciudad de Guatemala.">
-  <meta name="keywords" content="contacto CYLO Guatemala, pedido insumos Guatemala, WhatsApp insumos restaurantes Guatemala, cotizar insumos cocina Guatemala, proveedor desechables Guatemala">
+  <title>Contacto — CYLO Guatemala | Cotización de Insumos para Alimentos</title>
+  <meta name="description" content="Contacta a CYLO Guatemala para cotizar insumos para alimentos, desechables, empaques, utensilios, vajilla y productos para foodservice. Atención comercial por WhatsApp, correo y formulario.">
+  <meta name="keywords" content="contacto CYLO Guatemala, cotizar insumos Guatemala, proveedor foodservice Guatemala, WhatsApp insumos restaurantes Guatemala, desechables Guatemala, utensilios Guatemala">
   <meta name="robots" content="index, follow">
   <meta name="author" content="CYLO Guatemala">
   <link rel="canonical" href="https://www.cyloguatemala.me/contacto.html">
   <meta name="geo.region" content="GT">
   <meta name="geo.placename" content="Ciudad de Guatemala, Guatemala">
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_GT">
   <meta property="og:site_name" content="CYLO Guatemala">
-  <meta property="og:title" content="Contacto — CYLO Guatemala | Insumos para Alimentos en Guatemala">
-  <meta property="og:description" content="Realiza tu pedido de insumos para restaurantes y cocinas. WhatsApp, correo, Facebook. Atención personalizada en Guatemala.">
+  <meta property="og:title" content="Contacto — CYLO Guatemala | Cotización de insumos">
+  <meta property="og:description" content="Solicita cotización comercial de insumos, empaques, desechables y utensilios para negocios de alimentos en Guatemala.">
   <meta property="og:url" content="https://www.cyloguatemala.me/contacto.html">
   <meta property="og:image" content="https://www.cyloguatemala.me/img/hero-bg.webp">
-  <meta property="og:image:alt" content="CYLO Guatemala - Contacto para insumos de alimentos">
+  <meta property="og:image:alt" content="CYLO Guatemala - Contacto comercial">
 
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Contacto — CYLO Guatemala">
-  <meta name="twitter:description" content="WhatsApp +502 4800-5692. Insumos para restaurantes y cocinas en Guatemala.">
+  <meta name="twitter:description" content="Solicita cotización de insumos para restaurantes, cafeterías, hoteles y foodservice en Guatemala.">
   <meta name="twitter:image" content="https://www.cyloguatemala.me/img/hero-bg.webp">
 
-  <!-- Preconnect -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <!-- Schema LocalBusiness -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "CYLO Guatemala",
-    "description": "Proveedor digital de insumos para alimentos, utensilios de cocina e higiene institucional en Guatemala.",
+    "description": "Proveedor digital de insumos para alimentos, utensilios de cocina, empaques, desechables y productos para foodservice en Guatemala.",
     "url": "https://www.cyloguatemala.me",
     "telephone": "+502-4800-5692",
     "email": "ventas@cyloguatemala.me",
-    "address": {"@type": "PostalAddress", "addressLocality": "Palín", "addressRegion": "Escuintla", "addressCountry": "GT"},
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Palín",
+      "addressRegion": "Escuintla",
+      "addressCountry": "GT"
+    },
     "openingHoursSpecification": [
       {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "17:00"},
       {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "12:00"}
     ],
     "priceRange": "Q-QQQ",
     "image": "https://www.cyloguatemala.me/img/hero-bg.webp",
-    "sameAs": ["https://www.facebook.com/cyloguatemala"]
+    "sameAs": [
+      "https://www.facebook.com/cyloguatemala",
+      "https://www.tiktok.com/@cylo.guatemala"
+    ]
   }
   </script>
 
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="assets/css/cylo-ui.css">
+
   <style>
-    .contact-grid {
+    :root {
+      --navy: #1B2A4A;
+      --navy2: #0F1D33;
+      --orange: #F47B20;
+      --orange-dark: #D95F0E;
+      --green: #25D366;
+      --green-dark: #128C7E;
+      --light: #F4F6F9;
+      --soft: #F8FAFC;
+      --border: #D8E2EF;
+      --text: #24324A;
+      --muted: #6B7A8D;
+      --white: #FFFFFF;
+      --shadow: 0 8px 28px rgba(16, 29, 51, 0.10);
+      --shadow-soft: 0 4px 16px rgba(16, 29, 51, 0.07);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'DM Sans', sans-serif;
+      background: #FFFFFF;
+      color: var(--text);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(1220px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-weight: 900;
+      border-radius: 4px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: 0.18s ease;
+      font-family: inherit;
+    }
+
+    .btn-primary {
+      background: var(--orange);
+      color: white;
+      padding: 14px 22px;
+    }
+
+    .btn-primary:hover {
+      background: var(--orange-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-whatsapp {
+      background: var(--green);
+      color: white;
+      padding: 14px 22px;
+    }
+
+    .btn-whatsapp:hover {
+      background: var(--green-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: white;
+      color: var(--navy);
+      border-color: var(--border);
+      padding: 14px 22px;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--orange);
+      color: var(--orange);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: var(--orange);
+      font-size: 0.74rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .contact-hero {
+      background:
+        radial-gradient(circle at 82% 18%, rgba(244,123,32,0.18), transparent 28%),
+        linear-gradient(135deg, var(--navy2), var(--navy));
+      color: white;
+      padding: 58px 0;
+    }
+
+    .contact-hero-grid {
       display: grid;
-      grid-template-columns: 1.1fr 1fr;
-      gap: 52px;
+      grid-template-columns: minmax(0, 1fr) 380px;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .contact-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 4.8vw, 4.7rem);
+      line-height: 0.98;
+      margin: 0 0 16px;
+      letter-spacing: -1.2px;
+      max-width: 860px;
+    }
+
+    .contact-hero p {
+      color: rgba(255,255,255,0.74);
+      line-height: 1.7;
+      font-size: 1.03rem;
+      margin: 0;
+      max-width: 760px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .contact-panel {
+      background: rgba(255,255,255,0.98);
+      color: var(--text);
+      border: 1px solid rgba(255,255,255,0.35);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.22);
+    }
+
+    .contact-panel-head {
+      background: var(--orange);
+      color: white;
+      padding: 15px 18px;
+      font-size: 0.86rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .contact-panel-body {
+      padding: 18px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .panel-row {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 12px;
+      align-items: center;
+      border: 1px solid var(--border);
+      padding: 12px;
+      background: #FFFFFF;
+    }
+
+    .panel-code {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      background: #FFF1E8;
+      color: var(--orange);
+      font-weight: 900;
+    }
+
+    .panel-row strong {
+      display: block;
+      color: var(--navy);
+      font-size: 0.92rem;
+    }
+
+    .panel-row span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.78rem;
+      margin-top: 2px;
+      line-height: 1.4;
+    }
+
+    .section {
+      padding: 72px 0;
+    }
+
+    .section.light {
+      background: var(--light);
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: 30px;
+      align-items: end;
+      margin-bottom: 32px;
+    }
+
+    .section-head h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--navy);
+      font-size: clamp(2rem, 3.4vw, 3rem);
+      line-height: 1.06;
+      margin: 0;
+      letter-spacing: -0.5px;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .contact-main-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      gap: 24px;
       align-items: start;
     }
-    .form-card {
-      background: var(--white);
+
+    .quote-card,
+    .info-card,
+    .process-card,
+    .method-card,
+    .coverage-card,
+    .faq-card {
+      background: white;
       border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 40px;
-      box-shadow: var(--shadow);
+      box-shadow: var(--shadow-soft);
     }
-    .form-card h3 { margin-bottom: 6px; }
-    .form-card > p { font-size: .9rem; margin-bottom: 28px; }
+
+    .quote-card {
+      padding: 28px;
+      border-top: 4px solid var(--orange);
+    }
+
+    .quote-card h2,
+    .info-card h3 {
+      color: var(--navy);
+      margin: 0 0 8px;
+    }
+
+    .quote-card > p {
+      color: var(--muted);
+      line-height: 1.65;
+      margin: 0 0 22px;
+    }
 
     .form-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 16px;
+      gap: 14px;
+    }
+
+    .form-group {
+      margin-bottom: 14px;
+    }
+
+    label {
+      display: block;
+      color: var(--navy);
+      font-size: 0.76rem;
+      font-weight: 900;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 7px;
+    }
+
+    .form-control {
+      width: 100%;
+      min-height: 46px;
+      border: 2px solid var(--border);
+      background: #FFFFFF;
+      color: var(--text);
+      padding: 0 12px;
+      font-family: inherit;
+      font-size: 0.92rem;
+      outline: none;
+      border-radius: 0;
+    }
+
+    textarea.form-control {
+      min-height: 132px;
+      padding: 12px;
+      resize: vertical;
+    }
+
+    .form-control:focus {
+      border-color: var(--orange);
+    }
+
+    .form-note {
+      background: #F8FAFC;
+      border: 1px solid var(--border);
+      padding: 13px 14px;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 0.86rem;
+      margin: 8px 0 16px;
     }
 
     .form-success {
       display: none;
-      background: #f0faf5;
-      border: 1px solid #b2dfce;
-      border-radius: 8px;
-      padding: 16px 20px;
-      font-size: .92rem;
-      color: #1a7040;
+      background: #ECFFF4;
+      border: 1px solid rgba(37,211,102,0.28);
+      color: var(--green-dark);
+      padding: 14px;
       margin-top: 12px;
+      font-weight: 800;
+      line-height: 1.5;
     }
 
-    /* Channels grid */
-    .channels-grid {
+    .info-stack {
       display: grid;
-      grid-template-columns: 1fr 1fr;
       gap: 16px;
-      margin-top: 40px;
     }
-    .channel-card {
-      display: flex;
-      flex-direction: column;
+
+    .info-card {
+      padding: 24px;
+    }
+
+    .contact-channel-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .channel-line {
+      display: grid;
+      grid-template-columns: 50px 1fr auto;
+      gap: 12px;
       align-items: center;
-      text-align: center;
-      padding: 28px 20px;
+      padding: 13px;
+      background: #F8FAFC;
       border: 1px solid var(--border);
-      border-radius: 12px;
-      background: var(--light);
-      transition: var(--transition);
-      cursor: pointer;
+      text-decoration: none;
+      transition: 0.16s ease;
+    }
+
+    .channel-line:hover {
+      border-color: rgba(244,123,32,0.45);
+      transform: translateX(3px);
+      background: #FFFFFF;
+    }
+
+    .channel-code {
+      width: 50px;
+      height: 42px;
+      background: var(--navy);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 0.78rem;
+    }
+
+    .channel-line strong {
+      display: block;
+      color: var(--navy);
+      font-size: 0.92rem;
+    }
+
+    .channel-line span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-top: 2px;
+    }
+
+    .channel-arrow {
+      color: var(--orange);
+      font-weight: 900;
+    }
+
+    .requirements {
+      margin: 18px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .requirements li {
+      position: relative;
+      padding-left: 22px;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 0.9rem;
+    }
+
+    .requirements li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.62em;
+      width: 8px;
+      height: 8px;
+      background: var(--orange);
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .process-card {
+      padding: 22px;
+      min-height: 190px;
+    }
+
+    .process-num {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      background: var(--navy);
+      color: white;
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+
+    .process-card h3 {
+      margin: 0 0 8px;
+      color: var(--navy);
+      font-size: 1rem;
+    }
+
+    .process-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 0.88rem;
+    }
+
+    .methods-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .method-card {
+      padding: 20px;
+      border-top: 3px solid var(--orange);
+    }
+
+    .method-card strong {
+      display: block;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .method-card span {
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 0.88rem;
+    }
+
+    .coverage-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .coverage-card {
+      padding: 26px;
+    }
+
+    .coverage-card.dark {
+      background: var(--navy);
+      color: white;
+      border-color: rgba(255,255,255,0.10);
+    }
+
+    .coverage-card h2,
+    .coverage-card h3 {
+      margin: 0 0 10px;
+      color: var(--navy);
+    }
+
+    .coverage-card.dark h2,
+    .coverage-card.dark h3 {
+      color: white;
+    }
+
+    .coverage-card p {
+      color: var(--muted);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .coverage-card.dark p,
+    .coverage-card.dark li {
+      color: rgba(255,255,255,0.70);
+    }
+
+    .coverage-card ul {
+      margin: 16px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .coverage-card li {
+      position: relative;
+      padding-left: 22px;
+      line-height: 1.55;
+    }
+
+    .coverage-card li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.58em;
+      width: 8px;
+      height: 8px;
+      background: var(--orange);
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .faq-card {
+      padding: 22px;
+    }
+
+    .faq-card h3 {
+      color: var(--navy);
+      margin: 0 0 8px;
+      font-size: 1rem;
+    }
+
+    .faq-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 0.9rem;
+    }
+
+    .site-footer {
+      background:
+        radial-gradient(circle at 85% 0%, rgba(244,123,32,0.18), transparent 28%),
+        linear-gradient(135deg, #08111F 0%, var(--navy2) 48%, #132542 100%);
+      color: rgba(255,255,255,0.70);
+      padding: 0;
+    }
+
+    .footer-main {
+      padding: 48px 0 34px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.9fr 0.9fr 1fr;
+      gap: 34px;
+    }
+
+    .footer-brand h2 {
+      color: white;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      margin: 0 0 10px;
+    }
+
+    .footer-brand h2 em {
+      color: var(--orange);
+      font-style: normal;
+    }
+
+    .footer-brand p,
+    .site-footer li {
+      line-height: 1.7;
+      font-size: 0.9rem;
+    }
+
+    .site-footer h3 {
+      color: white;
+      margin: 0 0 14px;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+    }
+
+    .site-footer ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 9px;
+    }
+
+    .site-footer a {
+      color: rgba(255,255,255,0.68);
       text-decoration: none;
     }
-    .channel-card:hover {
-      border-color: var(--orange);
-      background: white;
-      transform: translateY(-3px);
-      box-shadow: var(--shadow);
-    }
-    .channel-icon {
-      width: 52px; height: 52px;
-      border-radius: 12px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.5rem;
-      margin-bottom: 12px;
-    }
-    .channel-name { font-size: .85rem; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
-    .channel-value { font-size: .78rem; color: var(--muted); }
 
-    .hours-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-top: 28px;
+    .site-footer a:hover {
+      color: var(--orange);
     }
-    .hour-item {
-      padding: 14px 16px;
-      background: var(--light);
-      border-radius: 8px;
-      border-left: 3px solid var(--orange);
-    }
-    .hour-day { font-size: .72rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); }
-    .hour-time { font-size: .92rem; font-weight: 700; color: var(--navy); margin-top: 2px; }
 
-    .faq-mini { margin-top: 60px; }
-    .faq-mini h2 { margin-bottom: 32px; }
-
-    @media (max-width: 900px) {
-      .contact-grid { grid-template-columns: 1fr; }
-      .form-row { grid-template-columns: 1fr; }
-      .channels-grid { grid-template-columns: 1fr 1fr; }
-      .hours-grid { grid-template-columns: 1fr; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.10);
+      padding: 16px 0;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.45);
     }
-    @media (max-width: 500px) {
-      .channels-grid { grid-template-columns: 1fr; }
-      .form-card { padding: 24px; }
+
+    .footer-bottom-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .float-whatsapp {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 999;
+      background: var(--green);
+      color: white;
+      text-decoration: none;
+      padding: 14px 18px;
+      border-radius: 999px;
+      font-weight: 900;
+      box-shadow: 0 12px 28px rgba(37,211,102,0.35);
+    }
+
+    @media (max-width: 1000px) {
+      .contact-hero-grid,
+      .section-head,
+      .contact-main-grid,
+      .coverage-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .process-grid,
+      .methods-grid,
+      .faq-grid,
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .contact-panel {
+        max-width: 540px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .contact-hero {
+        padding: 44px 0;
+      }
+
+      .section {
+        padding: 54px 0;
+      }
+
+      .form-row,
+      .process-grid,
+      .methods-grid,
+      .faq-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .quote-card,
+      .info-card,
+      .coverage-card {
+        padding: 22px;
+      }
+
+      .channel-line {
+        grid-template-columns: 42px 1fr;
+      }
+
+      .channel-arrow {
+        display: none;
+      }
+
+      .float-whatsapp {
+        left: 18px;
+        right: 18px;
+        display: flex;
+      }
     }
   </style>
 </head>
+
 <body>
 
-<!-- NAV -->
-<nav class="site-nav" id="site-nav">
-  <div class="nav-inner">
-    <a href="/" class="nav-logo">
+<div class="cylo-shell">
+  <div class="cylo-top-bar">
+    <div class="cylo-container cylo-top-bar-inner">
+      <div><strong>CYLO Guatemala</strong> | Insumos para alimentos y compras institucionales</div>
+      <div>WhatsApp: +502 4800-5692 | ventas@cyloguatemala.me</div>
+    </div>
+  </div>
+
+  <header class="cylo-header">
+    <div class="cylo-container cylo-header-main">
+      <a href="index.html" class="cylo-logo" aria-label="CYLO Guatemala">
+        <div class="cylo-logo-main">CY<em>LO</em></div>
+        <div class="cylo-logo-sub">Guatemala</div>
+      </a>
+
+      <form class="cylo-search cylo-global-search" action="Catalogo-digital-2026.html">
+        <input type="search" name="q" placeholder="Buscar productos, empaques, insumos o categorías">
+        <button type="submit">Buscar</button>
+      </form>
+
+      <div class="cylo-header-actions">
+        <a href="contacto.html">Contacto</a>
+        <a class="cylo-whatsapp" href="https://wa.me/50248005692?text=Hola%20CYLO,%20quiero%20cotizar%20productos%20para%20mi%20negocio." target="_blank" rel="noopener">Cotizar</a>
+      </div>
+    </div>
+
+    <nav class="cylo-main-menu" aria-label="Navegación principal">
+      <div class="cylo-container cylo-menu-inner">
+        <a href="index.html">Inicio</a>
+        <a href="Catalogo-digital-2026.html">Catálogo completo</a>
+
+        <details class="cylo-dropdown">
+          <summary>Categorías</summary>
+          <div class="cylo-dropdown-panel">
+            <a href="Catalogo-digital-2026.html#cat-desechables"><span>Desechables</span><small>76</small></a>
+            <a href="Catalogo-digital-2026.html#cat-utensilios"><span>Utensilios</span><small>136</small></a>
+            <a href="Catalogo-digital-2026.html#cat-cocci-n"><span>Cocción</span><small>34</small></a>
+            <a href="Catalogo-digital-2026.html#cat-accesorios"><span>Accesorios</span><small>59</small></a>
+            <a href="Catalogo-digital-2026.html#cat-reposter-a"><span>Repostería</span><small>59</small></a>
+            <a href="Catalogo-digital-2026.html#cat-pizzer-a"><span>Pizzería</span><small>16</small></a>
+            <a href="Catalogo-digital-2026.html#cat-contenedores"><span>Contenedores</span><small>38</small></a>
+            <a href="Catalogo-digital-2026.html#cat-catering"><span>Catering</span><small>84</small></a>
+            <a href="Catalogo-digital-2026.html#cat-servicio"><span>Servicio</span><small>96</small></a>
+            <a href="Catalogo-digital-2026.html#cat-bartender"><span>Bartender</span><small>77</small></a>
+            <a href="Catalogo-digital-2026.html#cat-cafeter-a"><span>Cafetería</span><small>48</small></a>
+            <a href="Catalogo-digital-2026.html#cat-presentaci-n"><span>Presentación</span><small>17</small></a>
+            <a href="Catalogo-digital-2026.html#cat-vajilla"><span>Vajilla</span><small>108</small></a>
+            <a href="Catalogo-digital-2026.html#cat-cristaler-a"><span>Cristalería</span><small>123</small></a>
+          </div>
+        </details>
+
+        <a href="blog/index.html">Blog</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="contacto.html" class="is-active">Contacto</a>
+      </div>
+    </nav>
+  </header>
+</div>
+
+<main>
+
+  <section class="contact-hero">
+    <div class="container contact-hero-grid">
       <div>
-        <div class="nav-logo-text">CY<em>LO</em></div>
-        <div class="nav-logo-sub">Guatemala</div>
+        <span class="eyebrow">Atención comercial</span>
+        <h1>Cotiza insumos para tu negocio con atención directa.</h1>
+        <p>
+          Solicita apoyo para pedidos por volumen, disponibilidad, precios vigentes, entregas y productos para restaurantes, cafeterías, hoteles, catering y operaciones foodservice.
+        </p>
+
+        <div class="hero-actions">
+          <a href="https://wa.me/50248005692?text=Hola%20CYLO,%20quiero%20solicitar%20una%20cotizaci%C3%B3n%20comercial." class="btn btn-whatsapp" target="_blank" rel="noopener">Cotizar por WhatsApp</a>
+          <a href="Catalogo-digital-2026.html" class="btn btn-primary">Ver catálogo</a>
+          <a href="#formulario" class="btn btn-outline">Enviar solicitud</a>
+        </div>
       </div>
-    </a>
-    <div class="nav-links">
-      <a href="/">Inicio</a>
-      <a href="catalogo.html">Productos</a>
-      <a href="nosotros.html">Nosotros</a>
-      <a href="contacto.html" class="active">Contacto</a>
-      <a href="https://wa.me/50248005692?text=Hola,%20necesito%20conversar%20con%20un%20asesor." target="_blank" class="nav-cta">Comprar Ahora ☀</a>
+
+      <aside class="contact-panel">
+        <div class="contact-panel-head">Canales de respuesta</div>
+        <div class="contact-panel-body">
+          <div class="panel-row">
+            <div class="panel-code">WA</div>
+            <div>
+              <strong>WhatsApp comercial</strong>
+              <span>Respuesta rápida para pedidos y confirmación de stock.</span>
+            </div>
+          </div>
+          <div class="panel-row">
+            <div class="panel-code">CO</div>
+            <div>
+              <strong>Correo de ventas</strong>
+              <span>Ideal para cotizaciones con listado de productos.</span>
+            </div>
+          </div>
+          <div class="panel-row">
+            <div class="panel-code">GT</div>
+            <div>
+              <strong>Cobertura Guatemala</strong>
+              <span>Coordinación logística según volumen y ubicación.</span>
+            </div>
+          </div>
+        </div>
+      </aside>
     </div>
-    <button class="nav-hamburger" id="nav-hamburger" aria-label="Menú" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-  <div class="nav-mobile" id="nav-mobile">
-    <a href="/">Inicio</a>
-    <a href="catalogo.html">Productos</a>
-    <a href="nosotros.html">Nosotros</a>
-    <a href="contacto.html" class="active">Contacto</a>
-    <a href="https://wa.me/50248005692?text=Hola,%20necesito%20conversar%20con%20un%20asesor." target="_blank" class="nav-cta">Comprar Ahora ☀</a>
-  </div>
-</nav>
+  </section>
 
-<!-- PAGE HERO -->
-<section class="page-hero">
-  <div class="container page-hero-content">
-    <span class="eyebrow anim-fade-up">Estamos para ti</span>
-    <h1 class="anim-fade-up anim-delay-1">Contáctanos</h1>
-    <p class="anim-fade-up anim-delay-2">Puedes comunicarte con nuestro equipo de ventas o con nuestra administración ejecutiva. Respondemos en minutos.</p>
-  </div>
-</section>
-<div class="divider-diagonal"></div>
+  <section class="section" id="formulario">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Solicitud comercial</span>
+          <h2>Envíanos la información de tu pedido</h2>
+        </div>
+        <p>
+          Mientras más clara sea la solicitud, más rápido se puede confirmar precio, existencia, presentación y condiciones de entrega.
+        </p>
+      </div>
 
-<!-- MAIN CONTACT -->
-<section class="section-pad">
-  <div class="container">
-    <div class="contact-grid">
+      <div class="contact-main-grid">
+        <article class="quote-card">
+          <h2>Formulario de cotización</h2>
+          <p>Este formulario genera un mensaje estructurado para WhatsApp con los datos de tu solicitud.</p>
 
-      <!-- FORM -->
-      <div class="form-card" data-reveal>
-        <h3>Envíanos un mensaje</h3>
-        <p>Cuéntanos en qué podemos ayudarte y un asesor te responderá a la brevedad.</p>
-        <form id="contact-form" onsubmit="handleSubmit(event)">
-          <div class="form-row">
+          <form id="contact-form" onsubmit="handleSubmit(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" class="form-control" placeholder="Nombre del contacto" required>
+              </div>
+              <div class="form-group">
+                <label for="empresa">Empresa o negocio</label>
+                <input type="text" id="empresa" class="form-control" placeholder="Restaurante, cafetería, hotel, distribuidor...">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="telefono">Teléfono / WhatsApp</label>
+                <input type="tel" id="telefono" class="form-control" placeholder="+502 0000 0000">
+              </div>
+              <div class="form-group">
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" class="form-control" placeholder="ventas@empresa.com">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="tipo">Tipo de solicitud</label>
+                <select id="tipo" class="form-control" required>
+                  <option value="">Seleccionar</option>
+                  <option value="Cotización comercial">Cotización comercial</option>
+                  <option value="Pedido por volumen">Pedido por volumen</option>
+                  <option value="Consulta de disponibilidad">Consulta de disponibilidad</option>
+                  <option value="Productos personalizados">Productos personalizados</option>
+                  <option value="Información general">Información general</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="urgencia">Prioridad</label>
+                <select id="urgencia" class="form-control">
+                  <option value="Normal">Normal</option>
+                  <option value="Alta">Alta</option>
+                  <option value="Pedido recurrente">Pedido recurrente</option>
+                  <option value="Compra institucional">Compra institucional</option>
+                </select>
+              </div>
+            </div>
+
             <div class="form-group">
-              <label for="nombre">Nombre *</label>
-              <input type="text" id="nombre" class="form-control" placeholder="Tu nombre" required>
+              <label for="mensaje">Detalle del pedido o consulta</label>
+              <textarea id="mensaje" class="form-control" placeholder="Indica productos, cantidades estimadas, categoría, lugar de entrega y cualquier condición importante." required></textarea>
             </div>
-            <div class="form-group">
-              <label for="empresa">Empresa / Negocio</label>
-              <input type="text" id="empresa" class="form-control" placeholder="Nombre del negocio">
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="email">Correo electrónico *</label>
-            <input type="email" id="email" class="form-control" placeholder="tu@correo.com" required>
-          </div>
-          <div class="form-group">
-            <label for="telefono">Teléfono / WhatsApp</label>
-            <input type="tel" id="telefono" class="form-control" placeholder="+502 0000 0000">
-          </div>
-          <div class="form-group">
-            <label for="tipo">Tipo de consulta *</label>
-            <select id="tipo" class="form-control" required>
-              <option value="">Selecciona una opción...</option>
-              <option value="pedido">Hacer un pedido</option>
-              <option value="cotizacion">Solicitar cotización</option>
-              <option value="personalizacion">Productos personalizados</option>
-              <option value="informacion">Información general</option>
-              <option value="otro">Otro</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="mensaje">Mensaje *</label>
-            <textarea id="mensaje" class="form-control" placeholder="Cuéntanos qué necesitas..." required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">
-            Enviar mensaje →
-          </button>
-          <div class="form-success" id="form-success">
-            ✅ ¡Mensaje enviado! Un asesor te contactará a la brevedad. También puedes escribirnos directamente por WhatsApp al <strong>4800-5692</strong>.
-          </div>
-        </form>
-      </div>
 
-      <!-- INFO -->
-      <div data-reveal>
-        <span class="eyebrow">Canales directos</span>
-        <h3 style="margin-bottom:8px;font-size:1.5rem">Te brindamos los siguientes medios de contacto</h3>
-        <p style="margin-bottom:0">Elige el que prefieras. Todos tienen respuesta rápida.</p>
+            <div class="form-note">
+              Para cotizaciones más rápidas, incluye producto, cantidad, presentación requerida, ubicación de entrega y fecha estimada de compra.
+            </div>
 
-        <div class="channels-grid">
-          <a href="https://wa.me/50248005692?text=Hola%20CYLO%20Guatemala,%20necesito%20conversar%20con%20un%20asesor." target="_blank" class="channel-card">
-            <div class="channel-icon" style="background:#e8faf0">📱</div>
-            <div class="channel-name">WhatsApp</div>
-            <div class="channel-value">+502 4800-5692</div>
-          </a>
-          <a href="https://www.facebook.com/cyloguatemala" target="_blank" class="channel-card">
-            <div class="channel-icon" style="background:#e8eeff">📘</div>
-            <div class="channel-name">Facebook</div>
-            <div class="channel-value">@CYLOGUATEMALA</div>
-          </a>
-          <a href="mailto:ventas@cyloguatemala.me" class="channel-card">
-            <div class="channel-icon" style="background:#fff4e8">✉️</div>
-            <div class="channel-name">Ventas</div>
-            <div class="channel-value">ventas@cyloguatemala.me</div>
-          </a>
-          <a href="mailto:administracion@cyloguatemala.me" class="channel-card">
-            <div class="channel-icon" style="background:#f0f4ff">🏢</div>
-            <div class="channel-name">Administración</div>
-            <div class="channel-value">administracion@cyloguatemala.me</div>
-          </a>
-        </div>
+            <button type="submit" class="btn btn-primary" style="width:100%">
+              Enviar solicitud por WhatsApp
+            </button>
 
-        <div style="margin-top:32px">
-          <span class="eyebrow">Horarios</span>
-          <h3 style="font-size:1.1rem;margin-bottom:16px">Horario de atención</h3>
-          <div class="hours-grid">
-            <div class="hour-item">
-              <div class="hour-day">Lunes – Viernes</div>
-              <div class="hour-time">08:00 – 17:00 hrs</div>
+            <div class="form-success" id="form-success">
+              Solicitud preparada. Se abrirá WhatsApp para enviar el mensaje al equipo comercial de CYLO Guatemala.
             </div>
-            <div class="hour-item">
-              <div class="hour-day">Sábado</div>
-              <div class="hour-time">08:00 – 12:00 hrs</div>
-            </div>
-            <div class="hour-item">
-              <div class="hour-day">Express Capital</div>
-              <div class="hour-time">Lun–Vie hasta 15:00</div>
-            </div>
-            <div class="hour-item">
-              <div class="hour-day">Domingo</div>
-              <div class="hour-time">Cerrado</div>
-            </div>
-          </div>
-        </div>
+          </form>
+        </article>
 
-        <div style="margin-top:32px;padding:24px;background:var(--navy);border-radius:12px;color:white">
-          <div style="font-size:.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:10px">Comprar ahora</div>
-          <p style="color:rgba(255,255,255,.7);font-size:.9rem;margin-bottom:16px">¿Quieres hacer un pedido de inmediato? Escríbenos por WhatsApp y un asesor te atenderá al momento.</p>
-          <a href="https://wa.me/50248005692?text=Hola,%20quiero%20hacer%20un%20pedido." target="_blank" class="btn btn-wa" style="width:100%;justify-content:center">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            Iniciar chat en WhatsApp
-          </a>
-        </div>
+        <aside class="info-stack">
+          <article class="info-card">
+            <span class="eyebrow">Canales directos</span>
+            <h3>Comunicación comercial</h3>
+            <p style="color:var(--muted);line-height:1.65;margin:0">
+              Usa el canal más conveniente según el tipo de gestión que necesitas.
+            </p>
+
+            <div class="contact-channel-list">
+              <a class="channel-line" href="https://wa.me/50248005692?text=Hola%20CYLO,%20necesito%20conversar%20con%20un%20asesor." target="_blank" rel="noopener">
+                <div class="channel-code">WA</div>
+                <div>
+                  <strong>WhatsApp</strong>
+                  <span>+502 4800-5692</span>
+                </div>
+                <div class="channel-arrow">→</div>
+              </a>
+
+              <a class="channel-line" href="mailto:ventas@cyloguatemala.me">
+                <div class="channel-code">VE</div>
+                <div>
+                  <strong>Ventas</strong>
+                  <span>ventas@cyloguatemala.me</span>
+                </div>
+                <div class="channel-arrow">→</div>
+              </a>
+
+              <a class="channel-line" href="mailto:administracion@cyloguatemala.me">
+                <div class="channel-code">AD</div>
+                <div>
+                  <strong>Administración</strong>
+                  <span>administracion@cyloguatemala.me</span>
+                </div>
+                <div class="channel-arrow">→</div>
+              </a>
+
+              <a class="channel-line" href="https://www.facebook.com/cyloguatemala" target="_blank" rel="noopener">
+                <div class="channel-code">FB</div>
+                <div>
+                  <strong>Facebook</strong>
+                  <span>@cyloguatemala</span>
+                </div>
+                <div class="channel-arrow">→</div>
+              </a>
+            </div>
+          </article>
+
+          <article class="info-card">
+            <span class="eyebrow">Datos recomendados</span>
+            <h3>Información que agiliza la cotización</h3>
+
+            <ul class="requirements">
+              <li>Nombre del producto o enlace de la ficha individual.</li>
+              <li>Cantidad aproximada o frecuencia de compra.</li>
+              <li>Ubicación de entrega: capital, municipio o departamento.</li>
+              <li>Fecha estimada de compra o nivel de urgencia.</li>
+              <li>Datos fiscales si necesitas documentación específica.</li>
+            </ul>
+          </article>
+        </aside>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- PAYMENT METHODS -->
-<section class="section-pad" style="background:var(--light);padding-top:0">
-  <div class="container">
-    <div class="text-center" data-reveal style="margin-bottom:40px">
-      <span class="eyebrow">Pagos</span>
-      <h2>Métodos de pago disponibles</h2>
-      <p style="max-width:440px;margin:12px auto 0">Elige el que más te convenga. Todos los métodos son seguros.</p>
-    </div>
-    <div class="payment-grid" data-reveal style="max-width:700px;margin:0 auto">
-      <div class="payment-card">
-        <div class="payment-icon">🏦</div>
+  <section class="section light">
+    <div class="container">
+      <div class="section-head">
         <div>
-          <div class="payment-name">Transferencia Bancaria</div>
-          <div class="payment-note">Banco Industrial · BAC · Banrural</div>
+          <span class="eyebrow">Proceso de atención</span>
+          <h2>Flujo claro para pedidos comerciales</h2>
         </div>
+        <p>
+          El objetivo es evitar mensajes incompletos y acelerar la confirmación de precio, disponibilidad y entrega.
+        </p>
       </div>
-      <div class="payment-card">
-        <div class="payment-icon">💵</div>
-        <div>
-          <div class="payment-name">Depósito Bancario</div>
-          <div class="payment-note">En cualquier agencia</div>
-        </div>
-      </div>
-      <div class="payment-card">
-        <div class="payment-icon">💳</div>
-        <div>
-          <div class="payment-name">Link de Pago / Tarjeta</div>
-          <div class="payment-note">Recargo del 5.25% + Q2</div>
-        </div>
-      </div>
-      <div class="payment-card">
-        <div class="payment-icon">🚚</div>
-        <div>
-          <div class="payment-name">Pago contra Entrega</div>
-          <div class="payment-note">Recargo del ≈8%</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- MAP -->
-<section class="section-pad">
-  <div class="container">
-    <div class="text-center" data-reveal style="margin-bottom:40px">
-      <span class="eyebrow">Ubicación</span>
-      <h2>Nuestras operaciones</h2>
-      <p style="max-width:440px;margin:12px auto 0">Operamos desde Escuintla y la Ciudad Capital, con envíos a toda la República.</p>
-    </div>
-    <div class="map-wrap" data-reveal style="max-width:900px;margin:0 auto">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247427.4082847553!2d-90.52530275!3d14.3725489!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8589a18e0e7e5ff3%3A0x4b96b1b50da6c547!2sEscuintla%2C%20Guatemala!5e0!3m2!1ses!2sgt!4v1700000000000"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
-    </div>
-  </div>
-</section>
+      <div class="process-grid">
+        <article class="process-card">
+          <div class="process-num">01</div>
+          <h3>Envías la solicitud</h3>
+          <p>Comparte producto, cantidad, ubicación y fecha estimada de compra.</p>
+        </article>
 
-<!-- FAQ MINI -->
-<section class="section-pad" style="background:var(--light);padding-top:0">
-  <div class="container faq-mini">
-    <div class="text-center" data-reveal style="margin-bottom:40px">
-      <span class="eyebrow">FAQ</span>
-      <h2>Preguntas frecuentes</h2>
-    </div>
-    <div style="max-width:700px;margin:0 auto">
-      <div class="faq-item" data-reveal>
-        <button class="faq-question">¿Cuánto tiempo tarda mi pedido en llegar? <span class="faq-icon">+</span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">Entrega Express el mismo día en Ciudad Capital (Lun–Vie 08:00–15:00, Sáb 08:00–10:00). Envíos al interior del país en 48–72 horas hábiles.</div></div>
-      </div>
-      <div class="faq-item" data-reveal>
-        <button class="faq-question">¿Tienen tienda física? <span class="faq-icon">+</span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">CYLO GUATEMALA opera 100% de manera digital. Las compras se realizan a través de nuestros canales en línea con acompañamiento de asesores.</div></div>
-      </div>
-      <div class="faq-item" data-reveal>
-        <button class="faq-question">¿Cómo hago un pedido? <span class="faq-icon">+</span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">1. Explora nuestro catálogo. 2. Contáctanos por WhatsApp o correo. 3. Realiza tu pago. 4. Recibe tu pedido en casa. ¡Así de fácil!</div></div>
-      </div>
-      <div class="faq-item" data-reveal>
-        <button class="faq-question">¿Hacen pedidos personalizados? <span class="faq-icon">+</span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">Sí. Trabajamos cotizaciones personalizadas para empresas. Necesitamos: tipo de producto, tipo de personalización (impresión o vinil), cantidad mensual y diseño.</div></div>
-      </div>
-    </div>
-  </div>
-</section>
+        <article class="process-card">
+          <div class="process-num">02</div>
+          <h3>Validamos datos</h3>
+          <p>Se revisa disponibilidad, presentación, precio vigente y condiciones comerciales.</p>
+        </article>
 
-<!-- FOOTER -->
+        <article class="process-card">
+          <div class="process-num">03</div>
+          <h3>Confirmamos cotización</h3>
+          <p>Recibes la información necesaria para aprobar la compra o ajustar cantidades.</p>
+        </article>
+
+        <article class="process-card">
+          <div class="process-num">04</div>
+          <h3>Coordinamos entrega</h3>
+          <p>Se define forma de pago, despacho y cobertura logística aplicable.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Pagos y operación</span>
+          <h2>Métodos de pago disponibles</h2>
+        </div>
+        <p>
+          Los métodos de pago y condiciones finales se confirman durante la cotización, según volumen, ubicación y tipo de pedido.
+        </p>
+      </div>
+
+      <div class="methods-grid">
+        <article class="method-card">
+          <strong>Transferencia bancaria</strong>
+          <span>Opción recomendada para compras comerciales y pedidos recurrentes.</span>
+        </article>
+
+        <article class="method-card">
+          <strong>Depósito bancario</strong>
+          <span>Disponible según coordinación con el equipo comercial.</span>
+        </article>
+
+        <article class="method-card">
+          <strong>Link de pago o tarjeta</strong>
+          <span>Puede aplicar recargo operativo según proveedor de pago.</span>
+        </article>
+
+        <article class="method-card">
+          <strong>Pago contra entrega</strong>
+          <span>Sujeto a cobertura, monto, tipo de pedido y condiciones logísticas.</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section light">
+    <div class="container coverage-grid">
+      <article class="coverage-card dark">
+        <span class="eyebrow">Cobertura</span>
+        <h2>Atención para Ciudad de Guatemala y departamentos</h2>
+        <p>
+          CYLO Guatemala coordina entregas según disponibilidad, volumen de compra, ruta y cobertura logística.
+        </p>
+      </article>
+
+      <article class="coverage-card">
+        <h3>Horarios de atención</h3>
+        <p>
+          La atención comercial se gestiona principalmente por canales digitales para mantener trazabilidad de pedidos y cotizaciones.
+        </p>
+
+        <ul>
+          <li>Lunes a viernes: 08:00 a 17:00 horas.</li>
+          <li>Sábado: 08:00 a 12:00 horas.</li>
+          <li>Domingo: cerrado.</li>
+          <li>Pedidos urgentes: sujetos a confirmación de stock y ruta.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Preguntas frecuentes</span>
+          <h2>Consultas comunes antes de cotizar</h2>
+        </div>
+        <p>
+          Estas respuestas ayudan a reducir dudas iniciales y preparar mejor la solicitud comercial.
+        </p>
+      </div>
+
+      <div class="faq-grid">
+        <article class="faq-card">
+          <h3>¿Puedo cotizar por volumen?</h3>
+          <p>Sí. Se atienden compras comerciales, institucionales y recurrentes según producto, cantidad y disponibilidad.</p>
+        </article>
+
+        <article class="faq-card">
+          <h3>¿Los precios del catálogo son definitivos?</h3>
+          <p>Funcionan como referencia comercial. Para compra final se confirma precio vigente, stock y condiciones de entrega.</p>
+        </article>
+
+        <article class="faq-card">
+          <h3>¿Atienden pedidos personalizados?</h3>
+          <p>Sí. Se pueden revisar solicitudes especiales según tipo de producto, volumen y factibilidad de abastecimiento.</p>
+        </article>
+
+        <article class="faq-card">
+          <h3>¿Tienen tienda física?</h3>
+          <p>CYLO Guatemala opera como proveedor digital. La atención se gestiona por canales en línea y asesoría comercial.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+</main>
+
 <footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-brand-name">CY<em>LO</em></div>
-        <div class="footer-tagline">Guatemala · 2026</div>
-        <p class="footer-desc">La solución en insumos para alimentos, utensilios de cocina, higiene institucional y accesorios.</p>
-        <div class="footer-social" style="margin-top:20px">
-          <a href="https://www.facebook.com/cyloguatemala" target="_blank">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
-          </a>
-          <a href="https://www.tiktok.com/@cylo.guatemala" target="_blank">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.17 8.17 0 004.78 1.52v-3.4a4.85 4.85 0 01-1.01-.12z"/></svg>
-          </a>
-          <a href="https://wa.me/50248005692" target="_blank">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          </a>
-        </div>
+  <div class="footer-main">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h2>CY<em>LO</em> Guatemala</h2>
+        <p>
+          Distribuidor digital de empaques, utensilios e insumos para alimentos en Guatemala.
+          Atención para clientes comerciales, institucionales y compras por volumen.
+        </p>
       </div>
+
       <div>
-        <div class="footer-h">Navegación</div>
-        <div class="footer-links">
-          <a href="/">Inicio</a>
-          <a href="catalogo.html">Productos</a>
-          <a href="nosotros.html">Nosotros</a>
-          <a href="contacto.html">Contacto</a>
-        </div>
+        <h3>Catálogo</h3>
+        <ul>
+          <li><a href="Catalogo-digital-2026.html">Catálogo completo</a></li>
+          <li><a href="Catalogo-digital-2026.html#cat-desechables">Desechables</a></li>
+          <li><a href="Catalogo-digital-2026.html#cat-accesorios">Accesorios</a></li>
+          <li><a href="Catalogo-digital-2026.html#cat-vajilla">Vajilla</a></li>
+        </ul>
       </div>
+
       <div>
-        <div class="footer-h">Distribución</div>
-        <div class="footer-links">
-          <a href="#">Guatemala Capital</a>
-          <a href="#">Escuintla</a>
-          <a href="#">Toda la República</a>
-        </div>
+        <h3>Empresa</h3>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="politica-de-privacidad.html">Política de privacidad</a></li>
+        </ul>
       </div>
+
       <div>
-        <div class="footer-h">Contacto</div>
-        <div class="footer-contact-item">
-          <span class="ic">📱</span>
-          <div><a href="https://wa.me/50248005692" target="_blank" style="color:var(--orange)">+502 4800-5692</a></div>
-        </div>
-        <div class="footer-contact-item">
-          <span class="ic">✉️</span>
-          <div><a href="mailto:ventas@cyloguatemala.me" style="color:var(--orange)">ventas@cyloguatemala.me</a></div>
-        </div>
-        <div class="footer-contact-item">
-          <span class="ic">📍</span>
-          <div>Ciudad de Guatemala · Palín, Escuintla</div>
-        </div>
+        <h3>Contacto</h3>
+        <ul>
+          <li><a href="https://wa.me/50248005692" target="_blank" rel="noopener">+502 4800-5692</a></li>
+          <li><a href="mailto:ventas@cyloguatemala.me">ventas@cyloguatemala.me</a></li>
+          <li>Guatemala</li>
+        </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>CYLO Guatemala 2026 © — Todos los derechos reservados.</span>
-      <span>Un enfoque ecológico. 🌿</span>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <span>© 2026 CYLO Guatemala. Todos los derechos reservados.</span>
+      <span>Catálogo digital para compras comerciales e institucionales.</span>
     </div>
   </div>
 </footer>
 
-<a class="wa-float" href="https://wa.me/50248005692?text=Hola%20CYLO,%20me%20interesa%20hacer%20un%20pedido." target="_blank" title="WhatsApp">
-  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+<a class="float-whatsapp" href="https://wa.me/50248005692?text=Hola%20CYLO,%20quiero%20iniciar%20una%20cotizaci%C3%B3n%20comercial." target="_blank" rel="noopener">
+  Cotizar por WhatsApp
 </a>
 
-<script src="components.js" defer></script>
 <script>
-function handleSubmit(e) {
-  e.preventDefault();
-  const nombre = document.getElementById('nombre').value;
-  const mensaje = document.getElementById('mensaje').value;
-  const tipo = document.getElementById('tipo').value;
-  const telefono = document.getElementById('telefono').value;
-  // Redirect to WhatsApp with pre-filled message
-  const text = `Hola CYLO Guatemala, mi nombre es ${nombre}.\n\nTipo de consulta: ${tipo}\nMensaje: ${mensaje}${telefono ? '\nTeléfono: '+telefono : ''}`;
-  window.open(`https://wa.me/50248005692?text=${encodeURIComponent(text)}`, '_blank');
+/* Nav estático CYLO - búsqueda global y cierre de categorías */
+(function () {
+  document.querySelectorAll(".cylo-global-search").forEach(function(search) {
+    search.addEventListener("submit", function(event) {
+      const input = search.querySelector('input[name="q"]');
+      const query = input ? input.value.trim() : "";
+
+      if (!query) return;
+
+      event.preventDefault();
+      window.location.href = "Catalogo-digital-2026.html?q=" + encodeURIComponent(query) + "#catalog-search";
+    });
+  });
+
+  document.querySelectorAll(".cylo-dropdown").forEach(function(dropdown) {
+    document.addEventListener("click", function(event) {
+      if (!dropdown.contains(event.target)) {
+        dropdown.removeAttribute("open");
+      }
+    });
+
+    dropdown.querySelectorAll("a").forEach(function(link) {
+      link.addEventListener("click", function() {
+        dropdown.removeAttribute("open");
+      });
+    });
+  });
+})();
+</script>
+
+<script>
+function handleSubmit(event) {
+  event.preventDefault();
+
+  const nombre = document.getElementById('nombre').value.trim();
+  const empresa = document.getElementById('empresa').value.trim();
+  const telefono = document.getElementById('telefono').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const tipo = document.getElementById('tipo').value.trim();
+  const urgencia = document.getElementById('urgencia').value.trim();
+  const mensaje = document.getElementById('mensaje').value.trim();
+
+  const text =
+    `Hola CYLO Guatemala, quiero solicitar atención comercial.%0A%0A` +
+    `Nombre: ${encodeURIComponent(nombre)}%0A` +
+    `Empresa / negocio: ${encodeURIComponent(empresa || 'No indicado')}%0A` +
+    `Teléfono: ${encodeURIComponent(telefono || 'No indicado')}%0A` +
+    `Correo: ${encodeURIComponent(email || 'No indicado')}%0A` +
+    `Tipo de solicitud: ${encodeURIComponent(tipo)}%0A` +
+    `Prioridad: ${encodeURIComponent(urgencia || 'Normal')}%0A%0A` +
+    `Detalle:%0A${encodeURIComponent(mensaje)}`;
+
   document.getElementById('form-success').style.display = 'block';
-  e.target.reset();
+  window.open(`https://wa.me/50248005692?text=${text}`, '_blank');
+  event.target.reset();
 }
 </script>
+
 </body>
 </html>
