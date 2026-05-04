@@ -3824,4 +3824,61 @@ body {
 })();
 </script>
 
+
+
+<style id="cylo-sidebar-sticky-final-fix">
+/* =========================================================
+   CYLO FIX FINAL: Sidebar de categorías fija en escritorio
+   Problema corregido: .sidebar era un grid item estirado dentro de .app.
+   Para que position: sticky funcione, el item debe iniciar arriba y no estar
+   estirado por el grid.
+========================================================= */
+@media (min-width: 1001px) {
+  body.cylo-catalog-page .app {
+    display: grid !important;
+    grid-template-columns: 268px minmax(0, 1fr) !important;
+    align-items: start !important;
+    overflow: visible !important;
+    position: relative !important;
+  }
+
+  body.cylo-catalog-page .main {
+    min-width: 0 !important;
+    overflow: visible !important;
+  }
+
+  body.cylo-catalog-page .sidebar {
+    display: block !important;
+    position: sticky !important;
+    top: 0 !important;
+    align-self: start !important;
+    width: 268px !important;
+    min-width: 268px !important;
+    height: 100vh !important;
+    max-height: 100vh !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    z-index: 80 !important;
+    transform: none !important;
+    contain: none !important;
+  }
+
+  body.cylo-catalog-page .search-bar {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 90 !important;
+  }
+}
+
+@media (max-width: 1000px) {
+  body.cylo-catalog-page .app {
+    display: block !important;
+  }
+
+  body.cylo-catalog-page .sidebar {
+    display: none !important;
+  }
+}
+</style>
+
 </body></html>
