@@ -1,46 +1,17 @@
 <!DOCTYPE html>
 <html lang="es-GT">
 <head>
-
-<!-- Analytics diferido para proteger rendimiento -->
-<script>
-(function () {
-  function loadAnalytics() {
-    if (window.__cyloAnalyticsLoaded) return;
-    window.__cyloAnalyticsLoaded = true;
-
-    var script = document.createElement("script");
-    script.src = "https://www.googletagmanager.com/gtag/js?id=G-LHMK4HJZLF";
-    script.async = true;
-    document.head.appendChild(script);
-
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
-    window.gtag = gtag;
-    gtag("js", new Date());
-    gtag("config", "G-LHMK4HJZLF", { anonymize_ip: true });
-  }
-
-  window.addEventListener("load", function () {
-    if ("requestIdleCallback" in window) {
-      requestIdleCallback(loadAnalytics, { timeout: 5000 });
-    } else {
-      setTimeout(loadAnalytics, 4200);
-    }
-  });
-})();
-</script>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel="icon" href="img/favicon.png" type="image/png">
-<link rel="preload" as="image" href="img/hero-bg.webp" fetchpriority="high">
+<link rel="preload" as="image" href="img/hero-bg.webp" fetchpriority="high" media="(min-width: 781px)">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;600;700;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;600;700;900&display=swap"></noscript>
 
 <title>Insumos para Alimentos en Guatemala | CYLO Guatemala — Proveedor Digital</title>
 <meta name="description" content="CYLO Guatemala: proveedor digital de insumos para alimentos, utensilios de cocina, desechables, empaques, cristalería y productos para foodservice. +900 productos para cotización comercial en Guatemala.">
@@ -1855,18 +1826,11 @@ a {
 }
 
 
-/* CYLO PAGESPEED FIX V1 - CLS, imágenes, hero y render estable */
 
-/* El header se inyecta por JS en #cylo-header; reservar altura evita que el hero se desplace al cargar. */
-#cylo-header {
-  display: block;
-  min-height: 162px;
-  background: #FFFFFF;
-  contain: layout paint;
-}
 
-/* Estabilización de tipografías y layout inicial */
+/* CYLO PERFORMANCE MOBILE V12 - rendimiento real en móvil */
 html {
+  scroll-behavior: auto;
   text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -1875,38 +1839,32 @@ body {
   font-synthesis: none;
 }
 
-/* Hero estable: evita desplazamientos cuando terminan de cargar fuentes, buscador o panel comercial. */
+/* El navbar se inyecta por JS. Reservar solo lo necesario, no 305px. */
+#cylo-header {
+  min-height: 142px;
+  background: #FFFFFF;
+  contain: layout paint;
+}
+
+/* Eliminar animación inicial que puede retrasar pintura percibida */
+.reveal,
+.reveal.is-visible {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+/* Estabilizar primera pantalla */
 .hero {
-  min-height: 805px;
-  isolation: isolate;
+  min-height: auto;
   contain: layout paint style;
-  background-color: var(--navy2);
 }
 
 .hero-grid {
-  min-height: 680px;
-}
-
-.hero-left {
-  min-height: 560px;
-}
-
-.hero-kicker {
-  min-height: 36px;
-}
-
-.hero h1 {
-  min-height: 235px;
-  text-wrap: balance;
-}
-
-.hero-copy {
-  min-height: 68px;
+  min-height: 620px;
 }
 
 .hero-search {
-  min-height: 64px;
-  width: min(700px, 100%);
   contain: layout paint;
 }
 
@@ -1915,147 +1873,121 @@ body {
   min-height: 48px;
 }
 
-.quick-tags {
-  min-height: 78px;
-}
-
-.hero-actions {
-  min-height: 50px;
-}
-
-.command-panel {
-  min-height: 520px;
+.product-img,
+.img-wrap {
   contain: layout paint;
 }
 
-.hero-bottom {
-  min-height: 86px;
-}
-
-.hero-bottom-grid {
-  min-height: 86px;
-}
-
-/* Imágenes con espacio reservado */
-img {
-  overflow-clip-margin: content-box;
-}
-
-.product-img {
-  aspect-ratio: 1 / 1;
-  min-height: 190px;
-  height: auto;
-}
-
-.product-img img {
-  width: 100%;
-  height: 155px;
+.product-img img,
+.img-wrap img {
   aspect-ratio: 1 / 1;
   object-fit: contain;
 }
 
-/* Evita movimiento por animaciones reveal en la primera pantalla */
-.hero .reveal {
-  opacity: 1 !important;
-  transform: none !important;
-}
-
-/* Contraste: mejora textos tenues detectados por Lighthouse */
-.hero-copy,
-.hero-proof span,
-.command-item small {
-  color: rgba(255,255,255,0.82);
-}
-
-.command-item small {
-  color: #5D6B80;
-}
-
-/* Mejorar estabilidad en tablets/móviles */
-@media (max-width: 1080px) {
+/* Móvil: menos peso visual, sin imagen de fondo pesada y sin panel lateral del hero */
+@media (max-width: 780px) {
   #cylo-header {
-    min-height: 205px;
+    min-height: 146px;
   }
 
   .hero {
-    min-height: 930px;
+    background: linear-gradient(135deg, rgba(15,29,51,0.98), rgba(27,42,74,0.97)) !important;
+    overflow: visible;
+  }
+
+  .hero::before {
+    display: none !important;
   }
 
   .hero-grid {
-    min-height: 760px;
+    display: block;
+    min-height: 0 !important;
+    padding: 24px 0 18px !important;
   }
 
   .hero-left {
-    min-height: 0;
+    min-height: 0 !important;
+    display: block;
+  }
+
+  .hero-kicker {
+    font-size: 0.68rem;
+    margin-bottom: 10px;
   }
 
   .hero h1 {
-    min-height: 180px;
-  }
-
-  .command-panel {
-    min-height: 480px;
-  }
-}
-
-@media (max-width: 780px) {
-  #cylo-header {
-    min-height: 255px;
-  }
-
-  .hero {
-    min-height: 1010px;
-  }
-
-  .hero-grid {
-    min-height: 840px;
-  }
-
-  .hero h1 {
-    min-height: 245px;
+    font-size: clamp(2rem, 9vw, 2.65rem) !important;
+    line-height: 1.02 !important;
+    letter-spacing: -0.8px !important;
+    min-height: 0 !important;
+    margin-bottom: 12px !important;
   }
 
   .hero-copy {
-    min-height: 120px;
+    font-size: 0.95rem !important;
+    line-height: 1.55 !important;
+    min-height: 0 !important;
+    margin-bottom: 16px !important;
   }
 
   .hero-search {
-    min-height: 112px;
+    grid-template-columns: 1fr !important;
+    padding: 6px !important;
+    margin-bottom: 12px !important;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.20) !important;
+  }
+
+  .hero-search input,
+  .hero-search button {
+    width: 100%;
+    min-height: 46px;
   }
 
   .quick-tags {
-    min-height: 165px;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    margin-bottom: 14px !important;
+    min-height: 0 !important;
+  }
+
+  .quick-tags a {
+    text-align: center;
+    padding: 9px 8px !important;
+    font-size: 0.73rem !important;
+  }
+
+  .quick-tags a:nth-child(n+7) {
+    display: none !important;
   }
 
   .hero-actions {
-    min-height: 176px;
+    display: grid !important;
+    grid-template-columns: 1fr;
+    gap: 8px !important;
+    min-height: 0 !important;
   }
 
-  .hero-bottom,
-  .hero-bottom-grid {
-    min-height: 260px;
-  }
-}
-
-@media (max-width: 580px) {
-  #cylo-header {
-    min-height: 305px;
+  .hero-actions .btn {
+    width: 100%;
+    padding: 12px 14px;
   }
 
-  .hero {
-    min-height: 1120px;
+  .command-panel,
+  .hero-bottom {
+    display: none !important;
   }
 
-  .hero-grid {
-    min-height: 930px;
+  .section {
+    padding: 42px 0 !important;
   }
 
-  .hero h1 {
-    min-height: 320px;
+  .section-head h2 {
+    font-size: 2rem !important;
   }
 
-  .quick-tags {
-    min-height: 250px;
+  .products-grid {
+    grid-template-columns: 1fr !important;
   }
 }
 
@@ -2088,20 +2020,20 @@ img {
         </form>
 
         <div class="quick-tags">
-          <a href="/Catalogo-digital-2026.html?cat=cat-desechables#cat-desechables">Desechables</a>
-          <a href="/Catalogo-digital-2026.html?cat=cat-utensilios#cat-utensilios">Utensilios</a>
-          <a href="/Catalogo-digital-2026.html?cat=cat-cocci-n#cat-cocci-n">Cocción</a>
-          <a href="/Catalogo-digital-2026.html?cat=cat-accesorios#cat-accesorios">Accesorios</a>
-          <a href="/Catalogo-digital-2026.html?cat=cat-reposter-a#cat-reposter-a">Repostería</a>
-          <a href="/Catalogo-digital-2026.html?cat=cat-pizzer-a#cat-pizzer-a">Pizzería</a>
-          <a href="/Catalogo-digital-2026.html?cat=cat-contenedores#cat-contenedores">Contenedores</a>
-          <a href="/Catalogo-digital-2026.html?cat=cat-catering#cat-catering">Catering</a>
-          <a href="/Catalogo-digital-2026.html?cat=cat-servicio#cat-servicio">Servicio</a>
-          <a href="/Catalogo-digital-2026.html?cat=cat-bartender#cat-bartender">Bartender</a>
-          <a href="/Catalogo-digital-2026.html?cat=cat-cafeter-a#cat-cafeter-a">Cafetería</a>
-          <a href="/Catalogo-digital-2026.html?cat=cat-presentaci-n#cat-presentaci-n">Presentación</a>
-          <a href="/Catalogo-digital-2026.html?cat=cat-vajilla#cat-vajilla">Vajilla</a>
-          <a href="/Catalogo-digital-2026.html?cat=cat-cristaler-a#cat-cristaler-a">Cristalería</a>
+          <a href="/Catalogo-digital-2026.html#cat-desechables">Desechables</a>
+          <a href="/Catalogo-digital-2026.html#cat-utensilios">Utensilios</a>
+          <a href="/Catalogo-digital-2026.html#cat-cocci-n">Cocción</a>
+          <a href="/Catalogo-digital-2026.html#cat-accesorios">Accesorios</a>
+          <a href="/Catalogo-digital-2026.html#cat-reposter-a">Repostería</a>
+          <a href="/Catalogo-digital-2026.html#cat-pizzer-a">Pizzería</a>
+          <a href="/Catalogo-digital-2026.html#cat-contenedores">Contenedores</a>
+          <a href="/Catalogo-digital-2026.html#cat-catering">Catering</a>
+          <a href="/Catalogo-digital-2026.html#cat-servicio">Servicio</a>
+          <a href="/Catalogo-digital-2026.html#cat-bartender">Bartender</a>
+          <a href="/Catalogo-digital-2026.html#cat-cafeter-a">Cafetería</a>
+          <a href="/Catalogo-digital-2026.html#cat-presentaci-n">Presentación</a>
+          <a href="/Catalogo-digital-2026.html#cat-vajilla">Vajilla</a>
+          <a href="/Catalogo-digital-2026.html#cat-cristaler-a">Cristalería</a>
         </div>
 
         <div class="hero-actions">
@@ -2220,85 +2152,85 @@ img {
 
       <div class="category-carousel-wrap">
         <div class="category-carousel" id="categoryCarousel">
-        <a href="/Catalogo-digital-2026.html?cat=cat-desechables#cat-desechables" class="category-tile">
+        <a href="/Catalogo-digital-2026.html#cat-desechables" class="category-tile">
           <span class="category-dot"></span>
           <strong>Desechables</strong>
           <em>76 productos</em>
           <small>Empaques, contenedores y desechables</small>
         </a>
-        <a href="/Catalogo-digital-2026.html?cat=cat-utensilios#cat-utensilios" class="category-tile">
+        <a href="/Catalogo-digital-2026.html#cat-utensilios" class="category-tile">
           <span class="category-dot"></span>
           <strong>Utensilios</strong>
           <em>136 productos</em>
           <small>Herramientas para cocina y operación</small>
         </a>
-        <a href="/Catalogo-digital-2026.html?cat=cat-cocci-n#cat-cocci-n" class="category-tile">
+        <a href="/Catalogo-digital-2026.html#cat-cocci-n" class="category-tile">
           <span class="category-dot"></span>
           <strong>Cocción</strong>
           <em>34 productos</em>
           <small>Productos para preparación y cocina</small>
         </a>
-        <a href="/Catalogo-digital-2026.html?cat=cat-accesorios#cat-accesorios" class="category-tile">
+        <a href="/Catalogo-digital-2026.html#cat-accesorios" class="category-tile">
           <span class="category-dot"></span>
           <strong>Accesorios</strong>
           <em>59 productos</em>
           <small>Accesorios para servicio y operación</small>
         </a>
-        <a href="/Catalogo-digital-2026.html?cat=cat-reposter-a#cat-reposter-a" class="category-tile">
+        <a href="/Catalogo-digital-2026.html#cat-reposter-a" class="category-tile">
           <span class="category-dot"></span>
           <strong>Repostería</strong>
           <em>59 productos</em>
           <small>Insumos y herramientas de repostería</small>
         </a>
-        <a href="/Catalogo-digital-2026.html?cat=cat-pizzer-a#cat-pizzer-a" class="category-tile">
+        <a href="/Catalogo-digital-2026.html#cat-pizzer-a" class="category-tile">
           <span class="category-dot"></span>
           <strong>Pizzería</strong>
           <em>16 productos</em>
           <small>Soluciones para pizzerías</small>
         </a>
-        <a href="/Catalogo-digital-2026.html?cat=cat-contenedores#cat-contenedores" class="category-tile">
+        <a href="/Catalogo-digital-2026.html#cat-contenedores" class="category-tile">
           <span class="category-dot"></span>
           <strong>Contenedores</strong>
           <em>38 productos</em>
           <small>Contenedores para alimentos</small>
         </a>
-        <a href="/Catalogo-digital-2026.html?cat=cat-catering#cat-catering" class="category-tile">
+        <a href="/Catalogo-digital-2026.html#cat-catering" class="category-tile">
           <span class="category-dot"></span>
           <strong>Catering</strong>
           <em>84 productos</em>
           <small>Servicio, eventos y banquetes</small>
         </a>
-        <a href="/Catalogo-digital-2026.html?cat=cat-servicio#cat-servicio" class="category-tile">
+        <a href="/Catalogo-digital-2026.html#cat-servicio" class="category-tile">
           <span class="category-dot"></span>
           <strong>Servicio</strong>
           <em>96 productos</em>
           <small>Productos para atención y mesa</small>
         </a>
-        <a href="/Catalogo-digital-2026.html?cat=cat-bartender#cat-bartender" class="category-tile">
+        <a href="/Catalogo-digital-2026.html#cat-bartender" class="category-tile">
           <span class="category-dot"></span>
           <strong>Bartender</strong>
           <em>77 productos</em>
           <small>Barra, coctelería y servicio</small>
         </a>
-        <a href="/Catalogo-digital-2026.html?cat=cat-cafeter-a#cat-cafeter-a" class="category-tile">
+        <a href="/Catalogo-digital-2026.html#cat-cafeter-a" class="category-tile">
           <span class="category-dot"></span>
           <strong>Cafetería</strong>
           <em>48 productos</em>
           <small>Insumos para cafeterías</small>
         </a>
-        <a href="/Catalogo-digital-2026.html?cat=cat-presentaci-n#cat-presentaci-n" class="category-tile">
+        <a href="/Catalogo-digital-2026.html#cat-presentaci-n" class="category-tile">
           <span class="category-dot"></span>
           <strong>Presentación</strong>
           <em>17 productos</em>
           <small>Presentación de alimentos</small>
         </a>
-        <a href="/Catalogo-digital-2026.html?cat=cat-vajilla#cat-vajilla" class="category-tile">
+        <a href="/Catalogo-digital-2026.html#cat-vajilla" class="category-tile">
           <span class="category-dot"></span>
           <strong>Vajilla</strong>
           <em>108 productos</em>
           <small>Vajilla para restaurantes y hoteles</small>
         </a>
-        <a href="/Catalogo-digital-2026.html?cat=cat-cristaler-a#cat-cristaler-a" class="category-tile">
+        <a href="/Catalogo-digital-2026.html#cat-cristaler-a" class="category-tile">
           <span class="category-dot"></span>
           <strong>Cristalería</strong>
           <em>123 productos</em>
@@ -2324,98 +2256,98 @@ img {
       </div>
 
       <div class="category-directory">
-        <a href="/Catalogo-digital-2026.html?cat=cat-desechables#cat-desechables" class="category-mini">
+        <a href="/Catalogo-digital-2026.html#cat-desechables" class="category-mini">
           <div>
             <strong>Desechables</strong>
             <span>Empaques, contenedores y desechables</span>
           </div>
           <small>76 productos →</small>
         </a>
-        <a href="/Catalogo-digital-2026.html?cat=cat-utensilios#cat-utensilios" class="category-mini">
+        <a href="/Catalogo-digital-2026.html#cat-utensilios" class="category-mini">
           <div>
             <strong>Utensilios</strong>
             <span>Herramientas para cocina y operación</span>
           </div>
           <small>136 productos →</small>
         </a>
-        <a href="/Catalogo-digital-2026.html?cat=cat-cocci-n#cat-cocci-n" class="category-mini">
+        <a href="/Catalogo-digital-2026.html#cat-cocci-n" class="category-mini">
           <div>
             <strong>Cocción</strong>
             <span>Productos para preparación y cocina</span>
           </div>
           <small>34 productos →</small>
         </a>
-        <a href="/Catalogo-digital-2026.html?cat=cat-accesorios#cat-accesorios" class="category-mini">
+        <a href="/Catalogo-digital-2026.html#cat-accesorios" class="category-mini">
           <div>
             <strong>Accesorios</strong>
             <span>Accesorios para servicio y operación</span>
           </div>
           <small>59 productos →</small>
         </a>
-        <a href="/Catalogo-digital-2026.html?cat=cat-reposter-a#cat-reposter-a" class="category-mini">
+        <a href="/Catalogo-digital-2026.html#cat-reposter-a" class="category-mini">
           <div>
             <strong>Repostería</strong>
             <span>Insumos y herramientas de repostería</span>
           </div>
           <small>59 productos →</small>
         </a>
-        <a href="/Catalogo-digital-2026.html?cat=cat-pizzer-a#cat-pizzer-a" class="category-mini">
+        <a href="/Catalogo-digital-2026.html#cat-pizzer-a" class="category-mini">
           <div>
             <strong>Pizzería</strong>
             <span>Soluciones para pizzerías</span>
           </div>
           <small>16 productos →</small>
         </a>
-        <a href="/Catalogo-digital-2026.html?cat=cat-contenedores#cat-contenedores" class="category-mini">
+        <a href="/Catalogo-digital-2026.html#cat-contenedores" class="category-mini">
           <div>
             <strong>Contenedores</strong>
             <span>Contenedores para alimentos</span>
           </div>
           <small>38 productos →</small>
         </a>
-        <a href="/Catalogo-digital-2026.html?cat=cat-catering#cat-catering" class="category-mini">
+        <a href="/Catalogo-digital-2026.html#cat-catering" class="category-mini">
           <div>
             <strong>Catering</strong>
             <span>Servicio, eventos y banquetes</span>
           </div>
           <small>84 productos →</small>
         </a>
-        <a href="/Catalogo-digital-2026.html?cat=cat-servicio#cat-servicio" class="category-mini">
+        <a href="/Catalogo-digital-2026.html#cat-servicio" class="category-mini">
           <div>
             <strong>Servicio</strong>
             <span>Productos para atención y mesa</span>
           </div>
           <small>96 productos →</small>
         </a>
-        <a href="/Catalogo-digital-2026.html?cat=cat-bartender#cat-bartender" class="category-mini">
+        <a href="/Catalogo-digital-2026.html#cat-bartender" class="category-mini">
           <div>
             <strong>Bartender</strong>
             <span>Barra, coctelería y servicio</span>
           </div>
           <small>77 productos →</small>
         </a>
-        <a href="/Catalogo-digital-2026.html?cat=cat-cafeter-a#cat-cafeter-a" class="category-mini">
+        <a href="/Catalogo-digital-2026.html#cat-cafeter-a" class="category-mini">
           <div>
             <strong>Cafetería</strong>
             <span>Insumos para cafeterías</span>
           </div>
           <small>48 productos →</small>
         </a>
-        <a href="/Catalogo-digital-2026.html?cat=cat-presentaci-n#cat-presentaci-n" class="category-mini">
+        <a href="/Catalogo-digital-2026.html#cat-presentaci-n" class="category-mini">
           <div>
             <strong>Presentación</strong>
             <span>Presentación de alimentos</span>
           </div>
           <small>17 productos →</small>
         </a>
-        <a href="/Catalogo-digital-2026.html?cat=cat-vajilla#cat-vajilla" class="category-mini">
+        <a href="/Catalogo-digital-2026.html#cat-vajilla" class="category-mini">
           <div>
             <strong>Vajilla</strong>
             <span>Vajilla para restaurantes y hoteles</span>
           </div>
           <small>108 productos →</small>
         </a>
-        <a href="/Catalogo-digital-2026.html?cat=cat-cristaler-a#cat-cristaler-a" class="category-mini">
+        <a href="/Catalogo-digital-2026.html#cat-cristaler-a" class="category-mini">
           <div>
             <strong>Cristalería</strong>
             <span>Cristalería para servicio profesional</span>
@@ -2692,20 +2624,20 @@ img {
         <h3>Catálogo</h3>
         <ul>
           <li><a href="Catalogo-digital-2026.html">Catálogo completo</a></li>
-          <li><a href="/Catalogo-digital-2026.html?cat=cat-desechables#cat-desechables">Desechables</a></li>
-          <li><a href="/Catalogo-digital-2026.html?cat=cat-utensilios#cat-utensilios">Utensilios</a></li>
-          <li><a href="/Catalogo-digital-2026.html?cat=cat-cocci-n#cat-cocci-n">Cocción</a></li>
-          <li><a href="/Catalogo-digital-2026.html?cat=cat-accesorios#cat-accesorios">Accesorios</a></li>
-          <li><a href="/Catalogo-digital-2026.html?cat=cat-reposter-a#cat-reposter-a">Repostería</a></li>
-          <li><a href="/Catalogo-digital-2026.html?cat=cat-pizzer-a#cat-pizzer-a">Pizzería</a></li>
-          <li><a href="/Catalogo-digital-2026.html?cat=cat-contenedores#cat-contenedores">Contenedores</a></li>
-          <li><a href="/Catalogo-digital-2026.html?cat=cat-catering#cat-catering">Catering</a></li>
-          <li><a href="/Catalogo-digital-2026.html?cat=cat-servicio#cat-servicio">Servicio</a></li>
-          <li><a href="/Catalogo-digital-2026.html?cat=cat-bartender#cat-bartender">Bartender</a></li>
-          <li><a href="/Catalogo-digital-2026.html?cat=cat-cafeter-a#cat-cafeter-a">Cafetería</a></li>
-          <li><a href="/Catalogo-digital-2026.html?cat=cat-presentaci-n#cat-presentaci-n">Presentación</a></li>
-          <li><a href="/Catalogo-digital-2026.html?cat=cat-vajilla#cat-vajilla">Vajilla</a></li>
-          <li><a href="/Catalogo-digital-2026.html?cat=cat-cristaler-a#cat-cristaler-a">Cristalería</a></li>
+          <li><a href="/Catalogo-digital-2026.html#cat-desechables">Desechables</a></li>
+          <li><a href="/Catalogo-digital-2026.html#cat-utensilios">Utensilios</a></li>
+          <li><a href="/Catalogo-digital-2026.html#cat-cocci-n">Cocción</a></li>
+          <li><a href="/Catalogo-digital-2026.html#cat-accesorios">Accesorios</a></li>
+          <li><a href="/Catalogo-digital-2026.html#cat-reposter-a">Repostería</a></li>
+          <li><a href="/Catalogo-digital-2026.html#cat-pizzer-a">Pizzería</a></li>
+          <li><a href="/Catalogo-digital-2026.html#cat-contenedores">Contenedores</a></li>
+          <li><a href="/Catalogo-digital-2026.html#cat-catering">Catering</a></li>
+          <li><a href="/Catalogo-digital-2026.html#cat-servicio">Servicio</a></li>
+          <li><a href="/Catalogo-digital-2026.html#cat-bartender">Bartender</a></li>
+          <li><a href="/Catalogo-digital-2026.html#cat-cafeter-a">Cafetería</a></li>
+          <li><a href="/Catalogo-digital-2026.html#cat-presentaci-n">Presentación</a></li>
+          <li><a href="/Catalogo-digital-2026.html#cat-vajilla">Vajilla</a></li>
+          <li><a href="/Catalogo-digital-2026.html#cat-cristaler-a">Cristalería</a></li>
         </ul>
       </div>
 
@@ -2867,5 +2799,52 @@ window.addEventListener('load', function() {
 </script>
 
 <script src="assets/js/cylo-ui.js" defer></script>
+
+<!-- CYLO Analytics ultra diferido: no bloquea FCP/LCP ni ejecución inicial -->
+<script>
+(function () {
+  var loaded = false;
+
+  function loadAnalytics() {
+    if (loaded || window.__cyloAnalyticsLoaded) return;
+    loaded = true;
+    window.__cyloAnalyticsLoaded = true;
+
+    var script = document.createElement("script");
+    script.src = "https://www.googletagmanager.com/gtag/js?id=G-LHMK4HJZLF";
+    script.async = true;
+    document.head.appendChild(script);
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    window.gtag = gtag;
+    gtag("js", new Date());
+    gtag("config", "G-LHMK4HJZLF", { anonymize_ip: true });
+  }
+
+  function scheduleAnalytics() {
+    var run = function () {
+      if ("requestIdleCallback" in window) {
+        requestIdleCallback(loadAnalytics, { timeout: 12000 });
+      } else {
+        setTimeout(loadAnalytics, 12000);
+      }
+    };
+
+    setTimeout(run, 8000);
+  }
+
+  ["pointerdown", "keydown", "touchstart"].forEach(function (eventName) {
+    window.addEventListener(eventName, loadAnalytics, { once: true, passive: true });
+  });
+
+  if (document.readyState === "complete") {
+    scheduleAnalytics();
+  } else {
+    window.addEventListener("load", scheduleAnalytics, { once: true });
+  }
+})();
+</script>
+
 </body>
 </html>

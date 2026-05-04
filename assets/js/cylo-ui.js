@@ -24,8 +24,8 @@
     ["Cristalería", "123", "cat-cristaler-a"]
   ];
 
-  const base = ".";
-  const catalogUrl = `${base}/Catalogo-digital-2026.html`;
+  const base = "";
+  const catalogUrl = `/Catalogo-digital-2026.html`;
 
   const activeClass = (key) => active === key ? "is-active" : "";
 
@@ -47,7 +47,7 @@
 
       <header class="cylo-header">
         <div class="cylo-container cylo-header-main">
-          <a href="${base}/index.html" class="cylo-logo" aria-label="CYLO Guatemala">
+          <a href="/index.html" class="cylo-logo" aria-label="CYLO Guatemala">
             <div class="cylo-logo-main">CY<em>LO</em></div>
             <div class="cylo-logo-sub">Guatemala</div>
           </a>
@@ -58,14 +58,14 @@
           </form>
 
           <div class="cylo-header-actions">
-            <a href="${base}/contacto.html">Contacto</a>
+            <a href="/contacto.html">Contacto</a>
             <a class="cylo-whatsapp" href="https://wa.me/50248005692?text=Hola%20CYLO,%20quiero%20cotizar%20productos%20para%20mi%20negocio." target="_blank" rel="noopener">Cotizar</a>
           </div>
         </div>
 
         <nav class="cylo-main-menu" aria-label="Navegación principal">
           <div class="cylo-container cylo-menu-inner">
-            <a href="${base}/index.html" class="${activeClass("inicio")}">Inicio</a>
+            <a href="/index.html" class="${activeClass("inicio")}">Inicio</a>
             <a href="${catalogUrl}" class="${activeClass("catalogo")}">Catálogo completo</a>
 
             <details class="cylo-dropdown">
@@ -75,9 +75,9 @@
               </div>
             </details>
 
-<a href="${base}/blog/index.html" class="${activeClass("blog")}">Blog</a>
-<a href="${base}/nosotros.html" class="${activeClass("nosotros")}">Nosotros</a>
-<a href="${base}/contacto.html" class="${activeClass("contacto")}">Contacto</a>
+<a href="/blog/index.html" class="${activeClass("blog")}">Blog</a>
+<a href="/nosotros.html" class="${activeClass("nosotros")}">Nosotros</a>
+<a href="/contacto.html" class="${activeClass("contacto")}">Contacto</a>
           </div>
         </nav>
       </header>
@@ -93,7 +93,7 @@
       if (!query) return;
 
       event.preventDefault();
-      window.location.href = `${catalogUrl}?q=${encodeURIComponent(query)}#catalog-search`;
+      window.location.href = `/Catalogo-digital-2026.html?q=${encodeURIComponent(query)}#catalog-search`;
     });
   }
 
