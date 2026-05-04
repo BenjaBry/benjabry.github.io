@@ -1828,9 +1828,8 @@ a {
 
 
 
-/* CYLO PERFORMANCE MOBILE V12 - rendimiento real en móvil */
+/* CYLO SAFE PERFORMANCE V13 - sin romper layout */
 html {
-  scroll-behavior: auto;
   text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -1839,38 +1838,16 @@ body {
   font-synthesis: none;
 }
 
-/* El navbar se inyecta por JS. Reservar solo lo necesario, no 305px. */
 #cylo-header {
   min-height: 142px;
   background: #FFFFFF;
   contain: layout paint;
 }
 
-/* Eliminar animación inicial que puede retrasar pintura percibida */
 .reveal,
 .reveal.is-visible {
   opacity: 1 !important;
   transform: none !important;
-  transition: none !important;
-}
-
-/* Estabilizar primera pantalla */
-.hero {
-  min-height: auto;
-  contain: layout paint style;
-}
-
-.hero-grid {
-  min-height: 620px;
-}
-
-.hero-search {
-  contain: layout paint;
-}
-
-.hero-search input,
-.hero-search button {
-  min-height: 48px;
 }
 
 .product-img,
@@ -1884,7 +1861,6 @@ body {
   object-fit: contain;
 }
 
-/* Móvil: menos peso visual, sin imagen de fondo pesada y sin panel lateral del hero */
 @media (max-width: 780px) {
   #cylo-header {
     min-height: 146px;
@@ -1892,102 +1868,39 @@ body {
 
   .hero {
     background: linear-gradient(135deg, rgba(15,29,51,0.98), rgba(27,42,74,0.97)) !important;
-    overflow: visible;
   }
 
-  .hero::before {
+  .hero::before,
+  .command-panel,
+  .hero-bottom {
     display: none !important;
   }
 
   .hero-grid {
-    display: block;
     min-height: 0 !important;
-    padding: 24px 0 18px !important;
-  }
-
-  .hero-left {
-    min-height: 0 !important;
-    display: block;
-  }
-
-  .hero-kicker {
-    font-size: 0.68rem;
-    margin-bottom: 10px;
+    padding: 24px 0 20px !important;
   }
 
   .hero h1 {
-    font-size: clamp(2rem, 9vw, 2.65rem) !important;
-    line-height: 1.02 !important;
-    letter-spacing: -0.8px !important;
+    font-size: clamp(2rem, 9vw, 2.7rem) !important;
+    line-height: 1.04 !important;
     min-height: 0 !important;
-    margin-bottom: 12px !important;
   }
 
   .hero-copy {
     font-size: 0.95rem !important;
-    line-height: 1.55 !important;
     min-height: 0 !important;
-    margin-bottom: 16px !important;
   }
 
   .hero-search {
     grid-template-columns: 1fr !important;
-    padding: 6px !important;
-    margin-bottom: 12px !important;
-    box-shadow: 0 12px 28px rgba(0,0,0,0.20) !important;
+    min-height: 0 !important;
   }
 
   .hero-search input,
   .hero-search button {
     width: 100%;
     min-height: 46px;
-  }
-
-  .quick-tags {
-    display: grid !important;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 8px;
-    margin-bottom: 14px !important;
-    min-height: 0 !important;
-  }
-
-  .quick-tags a {
-    text-align: center;
-    padding: 9px 8px !important;
-    font-size: 0.73rem !important;
-  }
-
-  .quick-tags a:nth-child(n+7) {
-    display: none !important;
-  }
-
-  .hero-actions {
-    display: grid !important;
-    grid-template-columns: 1fr;
-    gap: 8px !important;
-    min-height: 0 !important;
-  }
-
-  .hero-actions .btn {
-    width: 100%;
-    padding: 12px 14px;
-  }
-
-  .command-panel,
-  .hero-bottom {
-    display: none !important;
-  }
-
-  .section {
-    padding: 42px 0 !important;
-  }
-
-  .section-head h2 {
-    font-size: 2rem !important;
-  }
-
-  .products-grid {
-    grid-template-columns: 1fr !important;
   }
 }
 
@@ -2800,20 +2713,19 @@ window.addEventListener('load', function() {
 
 <script src="assets/js/cylo-ui.js" defer></script>
 
-<!-- CYLO Analytics ultra diferido: no bloquea FCP/LCP ni ejecución inicial -->
+<!-- CYLO Analytics seguro: carga después de interacción o reposo -->
 <script>
 (function () {
   var loaded = false;
-
   function loadAnalytics() {
     if (loaded || window.__cyloAnalyticsLoaded) return;
     loaded = true;
     window.__cyloAnalyticsLoaded = true;
 
-    var script = document.createElement("script");
-    script.src = "https://www.googletagmanager.com/gtag/js?id=G-LHMK4HJZLF";
-    script.async = true;
-    document.head.appendChild(script);
+    var s = document.createElement("script");
+    s.src = "https://www.googletagmanager.com/gtag/js?id=G-LHMK4HJZLF";
+    s.async = true;
+    document.head.appendChild(s);
 
     window.dataLayer = window.dataLayer || [];
     function gtag(){ dataLayer.push(arguments); }
@@ -2822,27 +2734,19 @@ window.addEventListener('load', function() {
     gtag("config", "G-LHMK4HJZLF", { anonymize_ip: true });
   }
 
-  function scheduleAnalytics() {
-    var run = function () {
-      if ("requestIdleCallback" in window) {
-        requestIdleCallback(loadAnalytics, { timeout: 12000 });
-      } else {
-        setTimeout(loadAnalytics, 12000);
-      }
-    };
-
-    setTimeout(run, 8000);
-  }
-
-  ["pointerdown", "keydown", "touchstart"].forEach(function (eventName) {
-    window.addEventListener(eventName, loadAnalytics, { once: true, passive: true });
+  ["pointerdown", "touchstart", "keydown"].forEach(function (ev) {
+    window.addEventListener(ev, loadAnalytics, { once: true, passive: true });
   });
 
-  if (document.readyState === "complete") {
-    scheduleAnalytics();
-  } else {
-    window.addEventListener("load", scheduleAnalytics, { once: true });
-  }
+  window.addEventListener("load", function () {
+    setTimeout(function () {
+      if ("requestIdleCallback" in window) {
+        requestIdleCallback(loadAnalytics, { timeout: 9000 });
+      } else {
+        setTimeout(loadAnalytics, 9000);
+      }
+    }, 6500);
+  }, { once: true });
 })();
 </script>
 

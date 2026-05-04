@@ -15,7 +15,7 @@
 /* === 1. RESET RESPONSIVO CORREGIDO (MANTIENE EL STICKY) === */
   * {
     box-sizing: border-box !important;
-    max-width: 100%; /* Previene que elementos sueltos rompan el ancho */
+    /* max-width global eliminado: se controla por componente */
   }
   
   html, body {
@@ -3362,20 +3362,20 @@ function generateCyloPDF() {
 </script>
 
 
-<!-- CYLO Analytics ultra diferido: no bloquea FCP/LCP ni ejecución inicial -->
+
+<!-- CYLO Analytics seguro: carga después de interacción o reposo -->
 <script>
 (function () {
   var loaded = false;
-
   function loadAnalytics() {
     if (loaded || window.__cyloAnalyticsLoaded) return;
     loaded = true;
     window.__cyloAnalyticsLoaded = true;
 
-    var script = document.createElement("script");
-    script.src = "https://www.googletagmanager.com/gtag/js?id=G-LHMK4HJZLF";
-    script.async = true;
-    document.head.appendChild(script);
+    var s = document.createElement("script");
+    s.src = "https://www.googletagmanager.com/gtag/js?id=G-LHMK4HJZLF";
+    s.async = true;
+    document.head.appendChild(s);
 
     window.dataLayer = window.dataLayer || [];
     function gtag(){ dataLayer.push(arguments); }
@@ -3384,34 +3384,42 @@ function generateCyloPDF() {
     gtag("config", "G-LHMK4HJZLF", { anonymize_ip: true });
   }
 
-  function scheduleAnalytics() {
-    var run = function () {
-      if ("requestIdleCallback" in window) {
-        requestIdleCallback(loadAnalytics, { timeout: 12000 });
-      } else {
-        setTimeout(loadAnalytics, 12000);
-      }
-    };
-
-    setTimeout(run, 8000);
-  }
-
-  ["pointerdown", "keydown", "touchstart"].forEach(function (eventName) {
-    window.addEventListener(eventName, loadAnalytics, { once: true, passive: true });
+  ["pointerdown", "touchstart", "keydown"].forEach(function (ev) {
+    window.addEventListener(ev, loadAnalytics, { once: true, passive: true });
   });
 
-  if (document.readyState === "complete") {
-    scheduleAnalytics();
-  } else {
-    window.addEventListener("load", scheduleAnalytics, { once: true });
-  }
+  window.addEventListener("load", function () {
+    setTimeout(function () {
+      if ("requestIdleCallback" in window) {
+        requestIdleCallback(loadAnalytics, { timeout: 9000 });
+      } else {
+        setTimeout(loadAnalytics, 9000);
+      }
+    }, 6500);
+  }, { once: true });
 })();
 </script>
 
 
 <style>
-/* CYLO CATALOG PERFORMANCE MOBILE V12 */
-html { scroll-behavior: auto !important; }
+/* CYLO CATALOG MOBILE RESET V13 - prioridad: usable, sin overflow y sin ?cat */
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden !important;
+  scroll-behavior: auto !important;
+}
+
+.cylo-catalog-page {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden !important;
+}
+
+.cylo-catalog-page * {
+  box-sizing: border-box;
+}
 
 .cylo-catalog-page .cat-section,
 .cylo-catalog-page [id^="cat-"] {
@@ -3419,8 +3427,8 @@ html { scroll-behavior: auto !important; }
 }
 
 .cylo-catalog-page .cat-section.cylo-current-category {
-  outline: 3px solid rgba(244, 123, 32, 0.32);
-  outline-offset: 4px;
+  outline: 3px solid rgba(244, 123, 32, 0.30);
+  outline-offset: 3px;
 }
 
 .cylo-catalog-page .toc-item.cylo-current-link,
@@ -3430,124 +3438,266 @@ html { scroll-behavior: auto !important; }
   border-left-color: #F47B20 !important;
 }
 
-@media(max-width: 780px) {
-  .cylo-catalog-page .cylo-top-bar {
-    display: none !important;
+/* Desktop/tablet: evita que los grids generen ancho fantasma */
+.cylo-catalog-page .app,
+.cylo-catalog-page .main,
+.cylo-catalog-page .catalog-start,
+.cylo-catalog-page .cat-section,
+.cylo-catalog-page .products-grid {
+  max-width: 100%;
+  min-width: 0;
+}
+
+/* Móvil estable */
+@media (max-width: 780px) {
+  body.cylo-catalog-page,
+  .cylo-catalog-page {
+    background: #F4F6F9 !important;
   }
 
-  .cylo-catalog-page .cylo-header-main {
-    min-height: 92px !important;
-    padding: 10px 0 !important;
-    gap: 10px !important;
-  }
-
-  .cylo-catalog-page .cylo-logo-main {
-    font-size: 1.55rem !important;
-  }
-
-  .cylo-catalog-page .cylo-logo-sub {
-    font-size: 0.48rem !important;
-    letter-spacing: 3px !important;
-  }
-
-  .cylo-catalog-page .cylo-search {
-    height: 40px !important;
-  }
-
-  .cylo-catalog-page .cylo-search input {
-    font-size: 0.86rem !important;
-  }
-
-  .cylo-catalog-page .cylo-search button {
-    padding: 0 12px !important;
-    font-size: 0.78rem !important;
-  }
-
-  .cylo-catalog-page .cylo-main-menu {
-    overflow-x: auto !important;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .cylo-catalog-page .cylo-menu-inner {
-    width: max-content !important;
-    min-width: 100% !important;
-    display: flex !important;
-    flex-wrap: nowrap !important;
-  }
-
-  .cylo-catalog-page .cylo-menu-inner > a,
-  .cylo-catalog-page .cylo-dropdown summary {
-    min-height: 42px !important;
-    padding: 10px 13px !important;
-    font-size: 0.78rem !important;
-  }
-
-  .cylo-catalog-page .catalog-start {
-    padding: 22px 0 18px !important;
-  }
-
-  .cylo-catalog-page .catalog-start h1 {
-    font-size: 2rem !important;
-  }
-
-  .cylo-catalog-page .catalog-start p {
-    font-size: 0.92rem !important;
-  }
-
+  .cylo-catalog-page .cover,
+  .cylo-catalog-page .catalog-hero,
+  .cylo-catalog-page .sidebar,
   .cylo-catalog-page .catalog-start-summary {
     display: none !important;
   }
 
+  .cylo-catalog-page .app {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+  }
+
+  .cylo-catalog-page .main {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+  }
+
+  .cylo-catalog-page .container {
+    width: calc(100% - 24px) !important;
+    max-width: none !important;
+    margin: 0 auto !important;
+  }
+
+  .cylo-catalog-page .catalog-start {
+    padding: 20px 0 16px !important;
+    border-bottom: 1px solid #D8E2EF !important;
+    width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  .cylo-catalog-page .catalog-start-head {
+    display: block !important;
+    margin-bottom: 14px !important;
+  }
+
+  .cylo-catalog-page .catalog-start h1 {
+    font-size: 1.75rem !important;
+    line-height: 1.06 !important;
+    margin: 0 0 8px !important;
+  }
+
+  .cylo-catalog-page .catalog-start p {
+    font-size: 0.9rem !important;
+    line-height: 1.48 !important;
+  }
+
   .cylo-catalog-page .catalog-action-panel {
+    display: grid !important;
     grid-template-columns: 1fr !important;
-    padding: 12px !important;
+    gap: 10px !important;
+    padding: 10px !important;
+    margin: 0 0 14px !important;
+    width: 100% !important;
+  }
+
+  .cylo-catalog-page .catalog-search-control {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    min-height: 0 !important;
+  }
+
+  .cylo-catalog-page .catalog-search-control input,
+  .cylo-catalog-page .catalog-category-control select {
+    width: 100% !important;
+    min-width: 0 !important;
+    height: 44px !important;
+    font-size: 0.86rem !important;
+  }
+
+  .cylo-catalog-page .catalog-search-control button {
+    height: 42px !important;
+    width: 100% !important;
   }
 
   .cylo-catalog-page .catalog-category-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
     gap: 8px !important;
+    width: 100% !important;
+    overflow: hidden !important;
   }
 
   .cylo-catalog-page .catalog-category-card {
-    min-height: 92px !important;
-    padding: 11px !important;
+    min-width: 0 !important;
+    min-height: 86px !important;
+    padding: 10px !important;
+    overflow: hidden !important;
+  }
+
+  .cylo-catalog-page .catalog-category-card h3,
+  .cylo-catalog-page .catalog-category-card p {
+    overflow-wrap: anywhere !important;
   }
 
   .cylo-catalog-page .search-bar {
     position: sticky !important;
     top: 0 !important;
+    z-index: 100 !important;
+    display: grid !important;
     grid-template-columns: 1fr !important;
+    gap: 8px !important;
+    width: 100% !important;
     padding: 10px 12px !important;
+    background: #FFFFFF !important;
+    border-bottom: 1px solid #D8E2EF !important;
+  }
+
+  .cylo-catalog-page .search-wrap {
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  .cylo-catalog-page .search-input {
+    width: 100% !important;
+    min-width: 0 !important;
+    height: 42px !important;
+    padding: 0 12px !important;
+    font-size: 0.86rem !important;
+  }
+
+  .cylo-catalog-page .search-ico {
+    display: none !important;
+  }
+
+  .cylo-catalog-page .sc {
+    justify-self: start !important;
+    width: auto !important;
+    padding: 8px 10px !important;
+    font-size: 0.78rem !important;
+  }
+
+  .cylo-catalog-page .cat-section {
+    width: calc(100% - 24px) !important;
+    max-width: calc(100vw - 24px) !important;
+    margin: 14px auto !important;
+    overflow: hidden !important;
+    border: 1px solid #D8E2EF !important;
+    box-shadow: none !important;
+  }
+
+  .cylo-catalog-page .cat-header {
+    padding: 16px 14px !important;
+  }
+
+  .cylo-catalog-page .cat-hc {
+    gap: 10px !important;
+  }
+
+  .cylo-catalog-page .cat-icon-circ {
+    width: 42px !important;
+    height: 42px !important;
+    min-width: 42px !important;
+  }
+
+  .cylo-catalog-page .cat-title {
+    font-size: 1.25rem !important;
+    line-height: 1.1 !important;
   }
 
   .cylo-catalog-page .products-grid {
+    display: grid !important;
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     gap: 8px !important;
+    width: 100% !important;
     padding: 8px !important;
+    background: #FFFFFF !important;
+    overflow: hidden !important;
   }
 
   .cylo-catalog-page .product-card {
     min-width: 0 !important;
+    width: 100% !important;
+    overflow: hidden !important;
+    border: 1px solid #D8E2EF !important;
+    box-shadow: none !important;
+  }
+
+  .cylo-catalog-page .product-card:hover {
+    transform: none !important;
   }
 
   .cylo-catalog-page .img-wrap {
-    aspect-ratio: 1 / 0.86 !important;
+    aspect-ratio: 1 / 0.82 !important;
+    min-height: 0 !important;
   }
 
-  .cylo-catalog-page .prod-name {
-    font-size: 0.68rem !important;
-    line-height: 1.25 !important;
-    min-height: 38px !important;
+  .cylo-catalog-page .img-wrap img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    padding: 6px !important;
   }
 
   .cylo-catalog-page .card-body {
     padding: 9px !important;
+    gap: 5px !important;
+  }
+
+  .cylo-catalog-page .prod-code {
+    font-size: 0.58rem !important;
+    letter-spacing: 1.2px !important;
+  }
+
+  .cylo-catalog-page .prod-name {
+    font-size: 0.68rem !important;
+    line-height: 1.24 !important;
+    min-height: 42px !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  .cylo-catalog-page .card-foot {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    align-items: start !important;
+    gap: 5px !important;
+  }
+
+  .cylo-catalog-page .prod-price {
+    justify-self: start !important;
+    font-size: 0.72rem !important;
+    padding: 5px 8px !important;
+  }
+
+  .cylo-catalog-page .add-btn,
+  .cylo-catalog-page .btn-add,
+  .cylo-catalog-page button {
+    max-width: 100% !important;
+  }
+
+  .cylo-catalog-page #cylo-cart-btn {
+    right: 10px !important;
+    bottom: 10px !important;
+    max-width: calc(100vw - 20px) !important;
   }
 }
 </style>
 
 <script>
-/* CYLO CATALOG PERFORMANCE MOBILE V12 - navegación hash sin recarga */
+/* CYLO CATALOG HASH NAV V13 - sin recargas y sin ?cat */
 (function () {
   const CATEGORY_IDS = new Set([
     "cat-desechables","cat-utensilios","cat-cocci-n","cat-accesorios",
@@ -3556,116 +3706,113 @@ html { scroll-behavior: auto !important; }
     "cat-vajilla","cat-cristaler-a"
   ]);
 
-  function clean(value) {
-    return String(value || "").replace(/^#/, "").trim();
+  function clean(v) {
+    return String(v || "").replace(/^#/, "").trim();
   }
 
-  function getCatFromHref(href) {
+  function catFromHref(href) {
     if (!href) return "";
     try {
-      const url = new URL(href, window.location.origin);
-      const hash = clean(url.hash);
-      if (CATEGORY_IDS.has(hash)) return hash;
-      const queryCat = clean(url.searchParams.get("cat"));
-      if (CATEGORY_IDS.has(queryCat)) return queryCat;
+      const u = new URL(href, window.location.origin);
+      const h = clean(u.hash);
+      if (CATEGORY_IDS.has(h)) return h;
+      const q = clean(u.searchParams.get("cat"));
+      if (CATEGORY_IDS.has(q)) return q;
     } catch(e) {
-      const hash = href.includes("#") ? clean(href.split("#").pop()) : "";
-      if (CATEGORY_IDS.has(hash)) return hash;
+      const h = href.includes("#") ? clean(href.split("#").pop()) : "";
+      if (CATEGORY_IDS.has(h)) return h;
     }
     return "";
   }
 
-  function getOffset() {
-    const selectors = [".cylo-header", ".site-header", ".search-bar"];
-    let total = 0;
-    selectors.forEach(function (selector) {
-      const el = document.querySelector(selector);
+  function offset() {
+    const search = document.querySelector(".search-bar");
+    const header = document.querySelector(".cylo-header, .site-header");
+    let h = 14;
+
+    [header, search].forEach(function(el) {
       if (!el) return;
-      const rect = el.getBoundingClientRect();
-      const style = window.getComputedStyle(el);
-      if (rect.height > 0 && (style.position === "sticky" || style.position === "fixed") && rect.top <= 10) {
-        total += Math.ceil(rect.height);
+      const r = el.getBoundingClientRect();
+      const s = window.getComputedStyle(el);
+      if (r.height > 0 && (s.position === "sticky" || s.position === "fixed") && r.top <= 10) {
+        h += Math.ceil(r.height);
       }
     });
-    if (total < 70) total = window.innerWidth <= 780 ? 76 : 94;
-    return total + 14;
+
+    if (h < 78) h = window.innerWidth <= 780 ? 78 : 96;
+    return h;
   }
 
-  function setOffsetVar() {
-    document.documentElement.style.setProperty("--cylo-category-offset", getOffset() + "px");
-  }
+  function scrollToCat(cat, behavior) {
+    cat = clean(cat);
+    if (!CATEGORY_IDS.has(cat)) return false;
 
-  function mark(catId) {
-    document.querySelectorAll(".cylo-current-category,.cylo-current-link").forEach(function(el){
-      el.classList.remove("cylo-current-category", "cylo-current-link");
-    });
-    const target = document.getElementById(catId);
-    if (target) {
-      target.classList.add("cylo-current-category");
-      setTimeout(function(){ target.classList.remove("cylo-current-category"); }, 1200);
-    }
-    document.querySelectorAll('a[href="#' + catId + '"], a[href$="#' + catId + '"]').forEach(function(link){
-      link.classList.add("cylo-current-link");
-    });
-  }
-
-  function scrollToCat(catId, behavior) {
-    catId = clean(catId);
-    if (!CATEGORY_IDS.has(catId)) return false;
-    const target = document.getElementById(catId);
+    const target = document.getElementById(cat);
     if (!target) return false;
 
-    setOffsetVar();
-    const top = Math.max(0, target.getBoundingClientRect().top + window.pageYOffset - getOffset());
+    document.documentElement.style.setProperty("--cylo-category-offset", offset() + "px");
+
+    const top = Math.max(0, target.getBoundingClientRect().top + window.pageYOffset - offset());
     window.scrollTo({ top: top, behavior: behavior || "smooth" });
-    mark(catId);
+
+    document.querySelectorAll(".cylo-current-category,.cylo-current-link").forEach(function(el) {
+      el.classList.remove("cylo-current-category", "cylo-current-link");
+    });
+
+    target.classList.add("cylo-current-category");
+    setTimeout(function(){ target.classList.remove("cylo-current-category"); }, 1100);
+
+    document.querySelectorAll('a[href="#' + cat + '"], a[href$="#' + cat + '"]').forEach(function(a) {
+      a.classList.add("cylo-current-link");
+    });
+
     return true;
   }
 
-  function reliableScroll(catId, behavior) {
-    if (!CATEGORY_IDS.has(catId)) return;
-    [0, 120, 360, 820].forEach(function(delay, index){
-      setTimeout(function(){ scrollToCat(catId, index === 0 ? behavior : "auto"); }, delay);
+  function reliable(cat, behavior) {
+    if (!CATEGORY_IDS.has(clean(cat))) return;
+    [0, 120, 360, 780].forEach(function(delay, i) {
+      setTimeout(function(){ scrollToCat(cat, i === 0 ? behavior : "auto"); }, delay);
     });
   }
 
-  document.addEventListener("click", function(event){
-    const link = event.target.closest("a[href]");
-    if (!link) return;
-    const catId = getCatFromHref(link.getAttribute("href"));
-    if (!catId) return;
+  document.addEventListener("click", function(e) {
+    const a = e.target.closest("a[href]");
+    if (!a) return;
+    const cat = catFromHref(a.getAttribute("href"));
+    if (!cat) return;
 
-    event.preventDefault();
-    event.stopPropagation();
-    event.stopImmediatePropagation();
+    e.preventDefault();
+    e.stopPropagation();
+    e.stopImmediatePropagation();
 
-    history.pushState(null, "", "#" + catId);
-    reliableScroll(catId, "smooth");
+    history.pushState(null, "", "#" + cat);
+    reliable(cat, "smooth");
 
-    const details = link.closest("details");
+    const details = a.closest("details");
     if (details) details.removeAttribute("open");
   }, true);
 
-  document.addEventListener("change", function(event){
-    const select = event.target.closest("#catalogCategorySelect, #categorySelect");
+  document.addEventListener("change", function(e) {
+    const select = e.target.closest("#catalogCategorySelect, #categorySelect");
     if (!select) return;
-    const catId = CATEGORY_IDS.has(clean(select.value)) ? clean(select.value) : getCatFromHref(select.value);
-    if (!catId) return;
 
-    event.preventDefault();
-    event.stopPropagation();
-    event.stopImmediatePropagation();
+    const cat = CATEGORY_IDS.has(clean(select.value)) ? clean(select.value) : catFromHref(select.value);
+    if (!cat) return;
 
-    history.pushState(null, "", "#" + catId);
-    reliableScroll(catId, "smooth");
+    e.preventDefault();
+    e.stopPropagation();
+    e.stopImmediatePropagation();
+
+    history.pushState(null, "", "#" + cat);
+    reliable(cat, "smooth");
   }, true);
 
   function boot() {
-    setOffsetVar();
-    const initial = getCatFromHref(window.location.href);
-    if (initial) {
-      history.replaceState(null, "", "#" + initial);
-      reliableScroll(initial, "auto");
+    const cat = catFromHref(window.location.href);
+    if (cat) {
+      history.replaceState(null, "", "#" + cat);
+      reliable(cat, "auto");
     }
   }
 
@@ -3673,8 +3820,7 @@ html { scroll-behavior: auto !important; }
   else boot();
 
   window.addEventListener("load", boot);
-  window.addEventListener("resize", setOffsetVar);
-  window.addEventListener("popstate", function(){ reliableScroll(getCatFromHref(window.location.href), "smooth"); });
+  window.addEventListener("popstate", function(){ reliable(catFromHref(window.location.href), "smooth"); });
 })();
 </script>
 
