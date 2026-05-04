@@ -3826,47 +3826,56 @@ body {
 
 
 
-<style id="cylo-sidebar-sticky-final-fix">
-/* =========================================================
-   CYLO FIX FINAL: Sidebar de categorías fija en escritorio
-   Problema corregido: .sidebar era un grid item estirado dentro de .app.
-   Para que position: sticky funcione, el item debe iniciar arriba y no estar
-   estirado por el grid.
-========================================================= */
+<!-- =========================================================
+     CYLO FIX V2: Sidebar de categorías fija REAL con JS
+     Motivo: position: sticky se rompe por reglas repetidas/overflow/layout.
+     ========================================================= -->
+<style id="cylo-sidebar-fixed-v2-css">
 @media (min-width: 1001px) {
   body.cylo-catalog-page .app {
     display: grid !important;
     grid-template-columns: 268px minmax(0, 1fr) !important;
     align-items: start !important;
-    overflow: visible !important;
     position: relative !important;
+    overflow: visible !important;
   }
 
   body.cylo-catalog-page .main {
+    grid-column: 2 !important;
     min-width: 0 !important;
     overflow: visible !important;
   }
 
   body.cylo-catalog-page .sidebar {
-    display: block !important;
-    position: sticky !important;
-    top: 0 !important;
-    align-self: start !important;
+    grid-column: 1 !important;
     width: 268px !important;
     min-width: 268px !important;
-    height: 100vh !important;
-    max-height: 100vh !important;
+    max-width: 268px !important;
+    align-self: start !important;
     overflow-y: auto !important;
     overflow-x: hidden !important;
-    z-index: 80 !important;
     transform: none !important;
     contain: none !important;
+    will-change: auto !important;
   }
 
-  body.cylo-catalog-page .search-bar {
-    position: sticky !important;
-    top: 0 !important;
-    z-index: 90 !important;
+  body.cylo-catalog-page .app.cylo-sidebar-is-fixed .sidebar {
+    position: fixed !important;
+    left: var(--cylo-sidebar-left, 0px) !important;
+    top: var(--cylo-sidebar-top, 0px) !important;
+    height: calc(100vh - var(--cylo-sidebar-top, 0px)) !important;
+    max-height: calc(100vh - var(--cylo-sidebar-top, 0px)) !important;
+    z-index: 80 !important;
+  }
+
+  body.cylo-catalog-page .app.cylo-sidebar-is-bottom .sidebar {
+    position: absolute !important;
+    left: 0 !important;
+    top: auto !important;
+    bottom: 0 !important;
+    height: calc(100vh - var(--cylo-sidebar-top, 0px)) !important;
+    max-height: calc(100vh - var(--cylo-sidebar-top, 0px)) !important;
+    z-index: 80 !important;
   }
 }
 
@@ -3880,5 +3889,90 @@ body {
   }
 }
 </style>
+
+<script id="cylo-sidebar-fixed-v2-js">
+(function () {
+  const mq = window.matchMedia('(min-width: 1001px)');
+  const app = document.querySelector('body.cylo-catalog-page .app');
+  const sidebar = document.querySelector('body.cylo-catalog-page .sidebar');
+
+  if (!app || !sidebar) return;
+
+  function getHeaderOffset() {
+    let offset = 0;
+    document.querySelectorAll('.cylo-header, .site-header').forEach(function (header) {
+      const style = window.getComputedStyle(header);
+      const rect = header.getBoundingClientRect();
+
+      if (
+        rect.height > 0 &&
+        rect.bottom > 0 &&
+        rect.top <= 1 &&
+        (style.position === 'sticky' || style.position === 'fixed')
+      ) {
+        offset = Math.max(offset, Math.ceil(rect.bottom));
+      }
+    });
+
+    return offset;
+  }
+
+  function clearSidebarState() {
+    app.classList.remove('cylo-sidebar-is-fixed', 'cylo-sidebar-is-bottom');
+    app.style.removeProperty('--cylo-sidebar-left');
+    app.style.removeProperty('--cylo-sidebar-top');
+  }
+
+  function updateSidebar() {
+    if (!mq.matches) {
+      clearSidebarState();
+      return;
+    }
+
+    const appRect = app.getBoundingClientRect();
+    const topOffset = getHeaderOffset();
+    const sidebarHeight = Math.max(320, window.innerHeight - topOffset);
+
+    app.style.setProperty('--cylo-sidebar-left', Math.round(appRect.left) + 'px');
+    app.style.setProperty('--cylo-sidebar-top', topOffset + 'px');
+
+    if (appRect.top > topOffset) {
+      clearSidebarState();
+      app.style.setProperty('--cylo-sidebar-left', Math.round(appRect.left) + 'px');
+      app.style.setProperty('--cylo-sidebar-top', topOffset + 'px');
+      return;
+    }
+
+    if (appRect.bottom <= topOffset + sidebarHeight) {
+      app.classList.remove('cylo-sidebar-is-fixed');
+      app.classList.add('cylo-sidebar-is-bottom');
+      return;
+    }
+
+    app.classList.remove('cylo-sidebar-is-bottom');
+    app.classList.add('cylo-sidebar-is-fixed');
+  }
+
+  let ticking = false;
+  function requestUpdate() {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(function () {
+      ticking = false;
+      updateSidebar();
+    });
+  }
+
+  window.addEventListener('scroll', requestUpdate, { passive: true });
+  window.addEventListener('resize', requestUpdate);
+  window.addEventListener('load', requestUpdate);
+  document.addEventListener('DOMContentLoaded', requestUpdate);
+
+  if (mq.addEventListener) mq.addEventListener('change', requestUpdate);
+  else if (mq.addListener) mq.addListener(requestUpdate);
+
+  requestUpdate();
+})();
+</script>
 
 </body></html>
