@@ -1477,6 +1477,22 @@ body{font-family:'Inter',sans-serif;background:var(--light);color:var(--text)}
 }
 </style>
 
+
+<style>
+/* Corrección de anclas de categorías con navbar sticky */
+.cat-section,
+[id^="cat-"] {
+  scroll-margin-top: 165px;
+}
+
+@media (max-width: 900px) {
+  .cat-section,
+  [id^="cat-"] {
+    scroll-margin-top: 125px;
+  }
+}
+</style>
+
 </head>
 <body class="cylo-catalog-page">
 
@@ -3191,6 +3207,40 @@ function generateCyloPDF() {
         </div>
       </div>
       <script>window.onload = function() { window.print(); };<\/script>
+
+<script>
+/* Scroll preciso hacia categorías desde menú lateral, navbar o enlaces externos */
+(function () {
+  const HEADER_OFFSET_DESKTOP = 165;
+  const HEADER_OFFSET_MOBILE = 125;
+
+  function getOffset() {
+    return window.innerWidth <= 900 ? HEADER_OFFSET_MOBILE : HEADER_OFFSET_DESKTOP;
+  }
+
+  function scrollToCategoryFromHash() {
+    if (!window.location.hash) return;
+
+    const id = window.location.hash.replace("#", "");
+    const target = document.getElementById(id);
+
+    if (!target) return;
+
+    setTimeout(function () {
+      const y = target.getBoundingClientRect().top + window.pageYOffset - getOffset();
+
+      window.scrollTo({
+        top: y,
+        behavior: "smooth"
+      });
+    }, 350);
+  }
+
+  window.addEventListener("load", scrollToCategoryFromHash);
+  window.addEventListener("hashchange", scrollToCategoryFromHash);
+})();
+</script>
+
     </body>
     </html>
   `;
