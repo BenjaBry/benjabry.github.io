@@ -1,3 +1,74 @@
 {
-  "cleanUrls": true
+  "rewrites": [
+    {
+      "source": "/blog",
+      "destination": "/blog/index.html"
+    },
+    {
+      "source": "/blog/como-elegir-empaques-para-delivery-en-guatemala",
+      "destination": "/blog/como-elegir-empaques-para-delivery-en-guatemala.html"
+    },
+    {
+      "source": "/como-elegir-empaques-para-delivery-en-guatemala",
+      "destination": "/blog/como-elegir-empaques-para-delivery-en-guatemala.html"
+    },
+    {
+      "source": "/blog/desechables-para-restaurantes-guatemala-guia-compra",
+      "destination": "/blog/desechables-para-restaurantes-guatemala-guia-compra.html"
+    },
+    {
+      "source": "/desechables-para-restaurantes-guatemala-guia-compra",
+      "destination": "/blog/desechables-para-restaurantes-guatemala-guia-compra.html"
+    },
+    {
+      "source": "/blog/utensilios-cocina-restaurante-cafeteria",
+      "destination": "/blog/utensilios-cocina-restaurante-cafeteria.html"
+    },
+    {
+      "source": "/utensilios-cocina-restaurante-cafeteria",
+      "destination": "/blog/utensilios-cocina-restaurante-cafeteria.html"
+    },
+    {
+      "source": "/blog/contenedores-alimentos-hoteles-catering",
+      "destination": "/blog/contenedores-alimentos-hoteles-catering.html"
+    },
+    {
+      "source": "/contenedores-alimentos-hoteles-catering",
+      "destination": "/blog/contenedores-alimentos-hoteles-catering.html"
+    },
+    {
+      "source": "/blog/vajilla-cristaleria-restaurantes-guatemala",
+      "destination": "/blog/vajilla-cristaleria-restaurantes-guatemala.html"
+    },
+    {
+      "source": "/vajilla-cristaleria-restaurantes-guatemala",
+      "destination": "/blog/vajilla-cristaleria-restaurantes-guatemala.html"
+    },
+    {
+      "source": "/blog/control-inventario-insumos-foodservice",
+      "destination": "/blog/control-inventario-insumos-foodservice.html"
+    },
+    {
+      "source": "/control-inventario-insumos-foodservice",
+      "destination": "/blog/control-inventario-insumos-foodservice.html"
+    },
+    {
+      "source": "/blog/compras-por-volumen-insumos-para-alimentos",
+      "destination": "/blog/compras-por-volumen-insumos-para-alimentos.html"
+    },
+    {
+      "source": "/compras-por-volumen-insumos-para-alimentos",
+      "destination": "/blog/compras-por-volumen-insumos-para-alimentos.html"
+    },
+    {
+      "source": "/blog/diferencias-empaques-reciclables-biodegradables-compostables",
+      "destination": "/blog/diferencias-empaques-reciclables-biodegradables-compostables.html"
+    },
+    {
+      "source": "/diferencias-empaques-reciclables-biodegradables-compostables",
+      "destination": "/blog/diferencias-empaques-reciclables-biodegradables-compostables.html"
+    }
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false
 }
