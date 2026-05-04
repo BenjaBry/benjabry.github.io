@@ -4,28 +4,43 @@
 
 <!-- Analytics diferido para proteger rendimiento -->
 <script>
-  setTimeout(function(){
-    const script = document.createElement('script');
+(function () {
+  function loadAnalytics() {
+    if (window.__cyloAnalyticsLoaded) return;
+    window.__cyloAnalyticsLoaded = true;
+
+    var script = document.createElement("script");
     script.src = "https://www.googletagmanager.com/gtag/js?id=G-LHMK4HJZLF";
     script.async = true;
     document.head.appendChild(script);
 
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag(){ dataLayer.push(arguments); }
     window.gtag = gtag;
-    gtag('js', new Date());
-    gtag('config', 'G-LHMK4HJZLF', { 'anonymize_ip': true });
-  }, 3000);
+    gtag("js", new Date());
+    gtag("config", "G-LHMK4HJZLF", { anonymize_ip: true });
+  }
+
+  window.addEventListener("load", function () {
+    if ("requestIdleCallback" in window) {
+      requestIdleCallback(loadAnalytics, { timeout: 5000 });
+    } else {
+      setTimeout(loadAnalytics, 4200);
+    }
+  });
+})();
 </script>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel="icon" href="img/favicon.png" type="image/png">
+<link rel="preload" as="image" href="img/hero-bg.webp" fetchpriority="high">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;600;700;900&display=swap" rel="stylesheet">
 
 <title>Insumos para Alimentos en Guatemala | CYLO Guatemala — Proveedor Digital</title>
 <meta name="description" content="CYLO Guatemala: proveedor digital de insumos para alimentos, utensilios de cocina, desechables, empaques, cristalería y productos para foodservice. +900 productos para cotización comercial en Guatemala.">
@@ -1839,6 +1854,211 @@ a {
   }
 }
 
+
+/* CYLO PAGESPEED FIX V1 - CLS, imágenes, hero y render estable */
+
+/* El header se inyecta por JS en #cylo-header; reservar altura evita que el hero se desplace al cargar. */
+#cylo-header {
+  display: block;
+  min-height: 162px;
+  background: #FFFFFF;
+  contain: layout paint;
+}
+
+/* Estabilización de tipografías y layout inicial */
+html {
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-synthesis: none;
+}
+
+/* Hero estable: evita desplazamientos cuando terminan de cargar fuentes, buscador o panel comercial. */
+.hero {
+  min-height: 805px;
+  isolation: isolate;
+  contain: layout paint style;
+  background-color: var(--navy2);
+}
+
+.hero-grid {
+  min-height: 680px;
+}
+
+.hero-left {
+  min-height: 560px;
+}
+
+.hero-kicker {
+  min-height: 36px;
+}
+
+.hero h1 {
+  min-height: 235px;
+  text-wrap: balance;
+}
+
+.hero-copy {
+  min-height: 68px;
+}
+
+.hero-search {
+  min-height: 64px;
+  width: min(700px, 100%);
+  contain: layout paint;
+}
+
+.hero-search input,
+.hero-search button {
+  min-height: 48px;
+}
+
+.quick-tags {
+  min-height: 78px;
+}
+
+.hero-actions {
+  min-height: 50px;
+}
+
+.command-panel {
+  min-height: 520px;
+  contain: layout paint;
+}
+
+.hero-bottom {
+  min-height: 86px;
+}
+
+.hero-bottom-grid {
+  min-height: 86px;
+}
+
+/* Imágenes con espacio reservado */
+img {
+  overflow-clip-margin: content-box;
+}
+
+.product-img {
+  aspect-ratio: 1 / 1;
+  min-height: 190px;
+  height: auto;
+}
+
+.product-img img {
+  width: 100%;
+  height: 155px;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+}
+
+/* Evita movimiento por animaciones reveal en la primera pantalla */
+.hero .reveal {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Contraste: mejora textos tenues detectados por Lighthouse */
+.hero-copy,
+.hero-proof span,
+.command-item small {
+  color: rgba(255,255,255,0.82);
+}
+
+.command-item small {
+  color: #5D6B80;
+}
+
+/* Mejorar estabilidad en tablets/móviles */
+@media (max-width: 1080px) {
+  #cylo-header {
+    min-height: 205px;
+  }
+
+  .hero {
+    min-height: 930px;
+  }
+
+  .hero-grid {
+    min-height: 760px;
+  }
+
+  .hero-left {
+    min-height: 0;
+  }
+
+  .hero h1 {
+    min-height: 180px;
+  }
+
+  .command-panel {
+    min-height: 480px;
+  }
+}
+
+@media (max-width: 780px) {
+  #cylo-header {
+    min-height: 255px;
+  }
+
+  .hero {
+    min-height: 1010px;
+  }
+
+  .hero-grid {
+    min-height: 840px;
+  }
+
+  .hero h1 {
+    min-height: 245px;
+  }
+
+  .hero-copy {
+    min-height: 120px;
+  }
+
+  .hero-search {
+    min-height: 112px;
+  }
+
+  .quick-tags {
+    min-height: 165px;
+  }
+
+  .hero-actions {
+    min-height: 176px;
+  }
+
+  .hero-bottom,
+  .hero-bottom-grid {
+    min-height: 260px;
+  }
+}
+
+@media (max-width: 580px) {
+  #cylo-header {
+    min-height: 305px;
+  }
+
+  .hero {
+    min-height: 1120px;
+  }
+
+  .hero-grid {
+    min-height: 930px;
+  }
+
+  .hero h1 {
+    min-height: 320px;
+  }
+
+  .quick-tags {
+    min-height: 250px;
+  }
+}
+
 </style>
 <link rel="stylesheet" href="assets/css/cylo-ui.css">
 </head>
@@ -2223,7 +2443,7 @@ a {
         <article class="product-card reveal">
           <a class="product-img" href="productos/contenedor-para-alimentos-de-bagazo-8x8-pulg.html">
             <span class="product-badge">Desechables</span>
-            <img src="https://res.cloudinary.com/dhew6sfwc/image/upload/eco_bag_0002_contenedor_para_alimentos_de_bagazo_8x8_pulg.webp" alt="Contenedor para alimentos de bagazo 8x8 pulg" loading="lazy">
+            <img src="https://res.cloudinary.com/dhew6sfwc/image/upload/f_auto,q_auto,w_320,c_pad,b_white/eco_bag_0002_contenedor_para_alimentos_de_bagazo_8x8_pulg.webp" alt="Contenedor para alimentos de bagazo 8x8 pulg" loading="lazy" width="300" height="300" decoding="async">
           </a>
           <div class="product-body">
             <div class="product-code">ECO-BAG-0002</div>
@@ -2242,7 +2462,7 @@ a {
         <article class="product-card reveal">
           <a class="product-img" href="productos/abrelatas-manual-con-manivela.html">
             <span class="product-badge">Accesorios</span>
-            <img src="https://res.cloudinary.com/dhew6sfwc/image/upload/acc_abre_0002_abrelatas_manual_con_manivela.jpg" alt="Abrelatas manual con manivela" loading="lazy">
+            <img src="https://res.cloudinary.com/dhew6sfwc/image/upload/f_auto,q_auto,w_320,c_pad,b_white/acc_abre_0002_abrelatas_manual_con_manivela.jpg" alt="Abrelatas manual con manivela" loading="lazy" width="300" height="300" decoding="async">
           </a>
           <div class="product-body">
             <div class="product-code">ACC-ABRE-0002</div>
@@ -2261,7 +2481,7 @@ a {
         <article class="product-card reveal">
           <a class="product-img" href="productos/contenedor-multiusos-blanco-de-12-onzas.html">
             <span class="product-badge">Foodservice</span>
-            <img src="https://res.cloudinary.com/dhew6sfwc/image/upload/eco_pap_0002_contenedor_multiusos_blanco_de_12_onzas.webp" alt="Contenedor multiusos blanco de 12 onzas" loading="lazy">
+            <img src="https://res.cloudinary.com/dhew6sfwc/image/upload/f_auto,q_auto,w_320,c_pad,b_white/eco_pap_0002_contenedor_multiusos_blanco_de_12_onzas.webp" alt="Contenedor multiusos blanco de 12 onzas" loading="lazy" width="300" height="300" decoding="async">
           </a>
           <div class="product-body">
             <div class="product-code">ECO-PAP-0002</div>
@@ -2280,7 +2500,7 @@ a {
         <article class="product-card reveal">
           <a class="product-img" href="productos/bandeja-ovalada-antideslizante-56-x-68-5-cms-fibra-de-vidrio.html">
             <span class="product-badge">Servicio</span>
-            <img src="https://res.cloudinary.com/dhew6sfwc/image/upload/serv_0009_bandeja_ovalada_antideslizante_56_x_68_5_cms_fibra_de_vidrio.webp" alt="Bandeja ovalada antideslizante" loading="lazy">
+            <img src="https://res.cloudinary.com/dhew6sfwc/image/upload/f_auto,q_auto,w_320,c_pad,b_white/serv_0009_bandeja_ovalada_antideslizante_56_x_68_5_cms_fibra_de_vidrio.webp" alt="Bandeja ovalada antideslizante" loading="lazy" width="300" height="300" decoding="async">
           </a>
           <div class="product-body">
             <div class="product-code">SERV-0009</div>

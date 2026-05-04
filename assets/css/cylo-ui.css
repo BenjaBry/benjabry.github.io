@@ -352,3 +352,47 @@
     min-height: 48px;
   }
 }
+
+
+/* CYLO PAGESPEED FIX V1 - reserva de espacio para navbar inyectado */
+#cylo-header {
+  display: block;
+  min-height: 162px;
+  background: #FFFFFF;
+  contain: layout paint;
+}
+
+@media (max-width: 1000px) {
+  #cylo-header {
+    min-height: 205px;
+  }
+}
+
+@media (max-width: 640px) {
+  #cylo-header {
+    min-height: 305px;
+  }
+}
+
+/* Imágenes y cards estables */
+.product-img,
+.img-wrap {
+  contain: layout paint;
+}
+
+.product-img img,
+.img-wrap img {
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+}
+
+/* Ayuda a reducir saltos por fuentes */
+html {
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-synthesis: none;
+}
+
