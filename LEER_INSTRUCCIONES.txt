@@ -1,31 +1,37 @@
-CYLO FIX V9 - catálogo bloqueado + productos relacionados 404
+CYLO RESET CATEGORÍAS V11
 
-Problemas que corrige:
+Esta versión elimina el origen del problema: el uso de ?cat= combinado con #cat.
 
-1. Catálogo no cambia de categoría después de haber entrado por una categoría.
-   Causa: enlaces con query/hash desalineados:
-   ?cat=cat-reposter-a#cat-accesorios
-   El script anterior priorizaba query o hash en distintos momentos y el catálogo quedaba anclado.
+Problema actual:
+- La URL queda mezclada, por ejemplo:
+  ?cat=cat-reposter-a#cat-accesorios
 
-2. Productos relacionados dan 404.
-   Causa vista en captura:
-   /index.htmlproductos/bandeja-de-aluminio...
-   Eso viene de un href roto tipo:
-   index.htmlproductos/slug
-   Debe ser:
+Eso hace que el script lea una categoría y el navegador otra.
+
+Solución V11:
+1. Dentro del catálogo:
+   Las categorías quedan como:
+   #cat-accesorios
+   #cat-pizzer-a
+   #cat-desechables
+
+   No recargan la página.
+
+2. Desde una ficha de producto:
+   Las categorías quedan como:
+   /Catalogo-digital-2026.html#cat-accesorios
+
+   Abren el catálogo y bajan a la categoría.
+
+3. Los productos relacionados mantienen la corrección:
    /productos/slug.html
 
-Instalación:
-1. Copia reparar_catalogo_y_productos_v9.py a la raíz del proyecto.
+Uso:
+1. Copia reset_categorias_catalogo_v11.py en la raíz del proyecto.
 2. Ejecuta:
-   python reparar_catalogo_y_productos_v9.py
-3. Verifica que se hayan corregido archivos.
-4. Sube a GitHub/Vercel.
+   python reset_categorias_catalogo_v11.py
+3. Sube los archivos modificados a GitHub/Vercel.
 
-Validación:
-- Abre el catálogo con:
-  /Catalogo-digital-2026.html?cat=cat-reposter-a#cat-reposter-a
-- Luego haz clic en Accesorios, Pizzería, Desechables, etc.
-  Debe moverse a cada categoría.
-- En una página de producto, abre un producto relacionado.
-  Debe ir a /productos/slug.html, no a /index.htmlproductos/slug.
+Importante:
+- No uses más enlaces con ?cat=.
+- El catálogo debe trabajar solo con hash interno.
