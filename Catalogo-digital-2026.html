@@ -1494,17 +1494,14 @@ body{font-family:'Inter',sans-serif;background:var(--light);color:var(--text)}
 </style>
 
 
+
 <style>
-/* CYLO ANCHOR FIX V8 - Categorías desde fichas de producto */
-html {
-  scroll-behavior: auto !important;
-}
+/* CYLO CATEGORY FIX V9 */
+html { scroll-behavior: auto !important; }
 
 .cylo-catalog-page .cat-section,
-.cylo-catalog-page [id^="cat-"],
-#catalog-search,
-#catalog-categories {
-  scroll-margin-top: var(--cylo-anchor-offset, 88px) !important;
+.cylo-catalog-page [id^="cat-"] {
+  scroll-margin-top: var(--cylo-anchor-offset, 96px) !important;
 }
 
 .cylo-catalog-page .cat-section.cylo-anchor-active {
@@ -1512,7 +1509,8 @@ html {
   outline-offset: 4px;
 }
 
-.cylo-catalog-page .toc-item.cylo-toc-active {
+.toc-item.cylo-toc-active,
+.category-link.cylo-toc-active {
   background: #FFF8F1 !important;
   color: #F47B20 !important;
   border-left-color: #F47B20 !important;
@@ -1557,20 +1555,20 @@ html {
         <details class="cylo-dropdown">
           <summary>Categorías</summary>
           <div class="cylo-dropdown-panel">
-            <a href="Catalogo-digital-2026.html#cat-desechables"><span>Desechables</span><small>76</small></a>
-            <a href="Catalogo-digital-2026.html#cat-utensilios"><span>Utensilios</span><small>136</small></a>
-            <a href="Catalogo-digital-2026.html#cat-cocci-n"><span>Cocción</span><small>34</small></a>
-            <a href="Catalogo-digital-2026.html#cat-accesorios"><span>Accesorios</span><small>59</small></a>
-            <a href="Catalogo-digital-2026.html#cat-reposter-a"><span>Repostería</span><small>59</small></a>
-            <a href="Catalogo-digital-2026.html#cat-pizzer-a"><span>Pizzería</span><small>16</small></a>
-            <a href="Catalogo-digital-2026.html#cat-contenedores"><span>Contenedores</span><small>38</small></a>
-            <a href="Catalogo-digital-2026.html#cat-catering"><span>Catering</span><small>84</small></a>
-            <a href="Catalogo-digital-2026.html#cat-servicio"><span>Servicio</span><small>96</small></a>
-            <a href="Catalogo-digital-2026.html#cat-bartender"><span>Bartender</span><small>77</small></a>
-            <a href="Catalogo-digital-2026.html#cat-cafeter-a"><span>Cafetería</span><small>48</small></a>
-            <a href="Catalogo-digital-2026.html#cat-presentaci-n"><span>Presentación</span><small>17</small></a>
-            <a href="Catalogo-digital-2026.html#cat-vajilla"><span>Vajilla</span><small>108</small></a>
-            <a href="Catalogo-digital-2026.html#cat-cristaler-a"><span>Cristalería</span><small>123</small></a>
+            <a href="/Catalogo-digital-2026.html?cat=cat-desechables#cat-desechables"><span>Desechables</span><small>76</small></a>
+            <a href="/Catalogo-digital-2026.html?cat=cat-utensilios#cat-utensilios"><span>Utensilios</span><small>136</small></a>
+            <a href="/Catalogo-digital-2026.html?cat=cat-cocci-n#cat-cocci-n"><span>Cocción</span><small>34</small></a>
+            <a href="/Catalogo-digital-2026.html?cat=cat-accesorios#cat-accesorios"><span>Accesorios</span><small>59</small></a>
+            <a href="/Catalogo-digital-2026.html?cat=cat-reposter-a#cat-reposter-a"><span>Repostería</span><small>59</small></a>
+            <a href="/Catalogo-digital-2026.html?cat=cat-pizzer-a#cat-pizzer-a"><span>Pizzería</span><small>16</small></a>
+            <a href="/Catalogo-digital-2026.html?cat=cat-contenedores#cat-contenedores"><span>Contenedores</span><small>38</small></a>
+            <a href="/Catalogo-digital-2026.html?cat=cat-catering#cat-catering"><span>Catering</span><small>84</small></a>
+            <a href="/Catalogo-digital-2026.html?cat=cat-servicio#cat-servicio"><span>Servicio</span><small>96</small></a>
+            <a href="/Catalogo-digital-2026.html?cat=cat-bartender#cat-bartender"><span>Bartender</span><small>77</small></a>
+            <a href="/Catalogo-digital-2026.html?cat=cat-cafeter-a#cat-cafeter-a"><span>Cafetería</span><small>48</small></a>
+            <a href="/Catalogo-digital-2026.html?cat=cat-presentaci-n#cat-presentaci-n"><span>Presentación</span><small>17</small></a>
+            <a href="/Catalogo-digital-2026.html?cat=cat-vajilla#cat-vajilla"><span>Vajilla</span><small>108</small></a>
+            <a href="/Catalogo-digital-2026.html?cat=cat-cristaler-a#cat-cristaler-a"><span>Cristalería</span><small>123</small></a>
           </div>
         </details>
 
@@ -3443,8 +3441,9 @@ function generateCyloPDF() {
 </script>
 
 
+
 <script>
-/* CYLO CATEGORY NAV V8 - Corrección final de navegación por categorías */
+/* CYLO CATEGORY FIX V9 - permite cambiar entre categorías sin quedarse bloqueado */
 (function () {
   const CATEGORY_IDS = new Set([
     "cat-desechables",
@@ -3463,185 +3462,161 @@ function generateCyloPDF() {
     "cat-cristaler-a"
   ]);
 
-  function cleanId(value) {
+  function clean(value) {
     return String(value || "").replace(/^#/, "").trim();
   }
 
-  function isVisible(el) {
-    if (!el) return false;
-    const style = window.getComputedStyle(el);
-    if (style.display === "none" || style.visibility === "hidden") return false;
-    const rect = el.getBoundingClientRect();
-    return rect.width > 0 && rect.height > 0 && rect.bottom > 0 && rect.top < window.innerHeight;
-  }
-
-  function getStickyOffset() {
-    const elements = [
+  function getOffset() {
+    const candidates = [
       document.querySelector(".cylo-header"),
       document.querySelector(".site-header"),
+      document.querySelector(".catalog-topbar"),
       document.querySelector(".search-bar")
     ];
 
     let total = 0;
-    const used = new Set();
 
-    elements.forEach(function (el) {
-      if (!el || used.has(el) || !isVisible(el)) return;
-
-      const style = window.getComputedStyle(el);
+    candidates.forEach(function (el) {
+      if (!el) return;
+      const st = window.getComputedStyle(el);
       const rect = el.getBoundingClientRect();
-      const stickyOrFixed = style.position === "sticky" || style.position === "fixed";
 
-      if (stickyOrFixed && rect.top <= 8) {
+      if ((st.position === "sticky" || st.position === "fixed") && rect.top <= 8 && rect.height > 0) {
         total += Math.ceil(rect.height);
-        used.add(el);
       }
     });
 
-    if (total < 64) total = window.innerWidth <= 900 ? 72 : 82;
-    return total + 18;
+    if (total < 70) total = window.innerWidth <= 900 ? 78 : 92;
+    return total + 16;
   }
 
-  function setAnchorOffset() {
-    document.documentElement.style.setProperty("--cylo-anchor-offset", getStickyOffset() + "px");
+  function setOffset() {
+    document.documentElement.style.setProperty("--cylo-anchor-offset", getOffset() + "px");
   }
 
-  function getCategoryFromUrl() {
+  function getCatFromLocation() {
     const params = new URLSearchParams(window.location.search);
-    const fromQuery = cleanId(params.get("cat"));
-    const fromHash = cleanId(window.location.hash);
+    const q = clean(params.get("cat"));
+    const h = clean(window.location.hash);
 
-    if (CATEGORY_IDS.has(fromQuery)) return fromQuery;
-    if (CATEGORY_IDS.has(fromHash)) return fromHash;
-
+    if (CATEGORY_IDS.has(h)) return h;
+    if (CATEGORY_IDS.has(q)) return q;
     return "";
   }
 
-  function markActive(id) {
-    document.querySelectorAll(".cat-section.cylo-anchor-active").forEach(function (section) {
-      section.classList.remove("cylo-anchor-active");
-    });
-
-    document.querySelectorAll(".toc-item.cylo-toc-active").forEach(function (item) {
-      item.classList.remove("cylo-toc-active");
-    });
-
-    const target = document.getElementById(id);
-    if (target) {
-      target.classList.add("cylo-anchor-active");
-      setTimeout(function () {
-        target.classList.remove("cylo-anchor-active");
-      }, 1800);
-    }
-
-    document.querySelectorAll('a[href*="' + id + '"]').forEach(function (link) {
-      if (link.classList.contains("toc-item")) link.classList.add("cylo-toc-active");
-    });
+  function normalizeCatalogUrl(catId) {
+    return "/Catalogo-digital-2026.html?cat=" + encodeURIComponent(catId) + "#" + catId;
   }
 
-  function scrollToCategory(id, behavior) {
-    const targetId = cleanId(id);
-    if (!CATEGORY_IDS.has(targetId)) return false;
+  function scrollToCat(catId, behavior) {
+    catId = clean(catId);
+    if (!CATEGORY_IDS.has(catId)) return false;
 
-    const target = document.getElementById(targetId);
+    const target = document.getElementById(catId);
     if (!target) return false;
 
-    setAnchorOffset();
+    setOffset();
 
-    const y = Math.max(
-      0,
-      target.getBoundingClientRect().top + window.pageYOffset - getStickyOffset()
-    );
+    const y = Math.max(0, target.getBoundingClientRect().top + window.pageYOffset - getOffset());
 
     window.scrollTo({
       top: y,
-      behavior: behavior || "auto"
+      behavior: behavior || "smooth"
     });
 
-    markActive(targetId);
+    document.querySelectorAll(".cylo-anchor-active").forEach(function (el) {
+      el.classList.remove("cylo-anchor-active");
+    });
+    target.classList.add("cylo-anchor-active");
+    setTimeout(function () {
+      target.classList.remove("cylo-anchor-active");
+    }, 1400);
+
+    document.querySelectorAll(".cylo-toc-active").forEach(function (el) {
+      el.classList.remove("cylo-toc-active");
+    });
+    document.querySelectorAll('a[href*="' + catId + '"]').forEach(function (link) {
+      if (link.classList.contains("toc-item") || link.classList.contains("category-link")) {
+        link.classList.add("cylo-toc-active");
+      }
+    });
+
     return true;
   }
 
-  function scheduleScroll(id, behavior) {
-    if (!id) return;
-
-    const delays = [0, 80, 220, 480, 900, 1500, 2400, 3600, 5200];
-
-    delays.forEach(function (delay, index) {
+  function schedule(catId, behavior) {
+    if (!catId) return;
+    [0, 90, 260, 650, 1200, 2200].forEach(function (delay, index) {
       setTimeout(function () {
-        scrollToCategory(id, index === 0 ? (behavior || "auto") : "auto");
+        scrollToCat(catId, index === 0 ? behavior : "auto");
       }, delay);
     });
   }
 
-  function normalizeCatalogPath(pathname) {
-    const last = (pathname || "").split("/").filter(Boolean).pop() || "";
-    return last.replace(/\.html$/i, "");
+  function catFromHref(href) {
+    try {
+      const url = new URL(href, window.location.origin);
+      const q = clean(url.searchParams.get("cat"));
+      const h = clean(url.hash);
+      if (CATEGORY_IDS.has(h)) return h;
+      if (CATEGORY_IDS.has(q)) return q;
+    } catch (e) {}
+    return "";
   }
 
-  function linkPointsToThisCatalog(href) {
+  function isCatalogHref(href) {
     try {
-      const url = new URL(href, window.location.href);
-      const current = normalizeCatalogPath(window.location.pathname);
-      const target = normalizeCatalogPath(url.pathname);
-
-      return target === "Catalogo-digital-2026" || current === target;
-    } catch (error) {
+      const url = new URL(href, window.location.origin);
+      const last = (url.pathname.split("/").filter(Boolean).pop() || "").replace(/\.html$/i, "");
+      return last === "Catalogo-digital-2026" || url.pathname === "/";
+    } catch (e) {
       return false;
     }
-  }
-
-  function categoryFromHref(href) {
-    try {
-      const url = new URL(href, window.location.href);
-      const queryCat = cleanId(url.searchParams.get("cat"));
-      const hashCat = cleanId(url.hash);
-
-      if (CATEGORY_IDS.has(queryCat)) return queryCat;
-      if (CATEGORY_IDS.has(hashCat)) return hashCat;
-    } catch (error) {}
-
-    return "";
   }
 
   document.addEventListener("click", function (event) {
     const link = event.target.closest("a[href]");
     if (!link) return;
 
-    const href = link.getAttribute("href") || "";
-    const categoryId = categoryFromHref(href);
+    const href = link.getAttribute("href");
+    const catId = catFromHref(href);
 
-    if (!categoryId) return;
+    if (!catId) return;
+    if (!isCatalogHref(link.href)) return;
 
-    if (linkPointsToThisCatalog(link.href)) {
-      event.preventDefault();
-      event.stopImmediatePropagation();
+    event.preventDefault();
+    event.stopPropagation();
+    event.stopImmediatePropagation();
 
-      const cleanUrl = "/Catalogo-digital-2026.html?cat=" + encodeURIComponent(categoryId) + "#" + categoryId;
-      history.replaceState(null, "", cleanUrl);
-      scheduleScroll(categoryId, "smooth");
-    }
+    history.pushState(null, "", normalizeCatalogUrl(catId));
+    schedule(catId, "smooth");
   }, true);
 
   document.addEventListener("change", function (event) {
-    const select = event.target.closest("#catalogCategorySelect");
+    const select = event.target.closest("#catalogCategorySelect, #categorySelect");
     if (!select) return;
 
-    const categoryId = cleanId(select.value);
-    if (!CATEGORY_IDS.has(categoryId)) return;
+    let value = select.value || "";
+    let catId = catFromHref(value);
+    if (!catId) catId = clean(value);
+
+    if (!CATEGORY_IDS.has(catId)) return;
 
     event.preventDefault();
+    event.stopPropagation();
     event.stopImmediatePropagation();
 
-    const cleanUrl = "/Catalogo-digital-2026.html?cat=" + encodeURIComponent(categoryId) + "#" + categoryId;
-    history.replaceState(null, "", cleanUrl);
-    scheduleScroll(categoryId, "smooth");
+    history.pushState(null, "", normalizeCatalogUrl(catId));
+    schedule(catId, "smooth");
   }, true);
 
   function boot() {
-    setAnchorOffset();
-    const categoryId = getCategoryFromUrl();
-    if (categoryId) scheduleScroll(categoryId, "auto");
+    setOffset();
+    const catId = getCatFromLocation();
+    if (catId) {
+      history.replaceState(null, "", normalizeCatalogUrl(catId));
+      schedule(catId, "auto");
+    }
   }
 
   if (document.readyState === "loading") {
@@ -3651,10 +3626,9 @@ function generateCyloPDF() {
   }
 
   window.addEventListener("load", boot);
-  window.addEventListener("resize", setAnchorOffset);
-  window.addEventListener("hashchange", function () {
-    const categoryId = getCategoryFromUrl();
-    if (categoryId) scheduleScroll(categoryId, "smooth");
+  window.addEventListener("resize", setOffset);
+  window.addEventListener("popstate", function () {
+    schedule(getCatFromLocation(), "smooth");
   });
 })();
 </script>
