@@ -1493,6 +1493,32 @@ body{font-family:'Inter',sans-serif;background:var(--light);color:var(--text)}
 }
 </style>
 
+
+<style>
+/* CYLO ANCHOR FIX V8 - Categorías desde fichas de producto */
+html {
+  scroll-behavior: auto !important;
+}
+
+.cylo-catalog-page .cat-section,
+.cylo-catalog-page [id^="cat-"],
+#catalog-search,
+#catalog-categories {
+  scroll-margin-top: var(--cylo-anchor-offset, 88px) !important;
+}
+
+.cylo-catalog-page .cat-section.cylo-anchor-active {
+  outline: 3px solid rgba(244, 123, 32, 0.32);
+  outline-offset: 4px;
+}
+
+.cylo-catalog-page .toc-item.cylo-toc-active {
+  background: #FFF8F1 !important;
+  color: #F47B20 !important;
+  border-left-color: #F47B20 !important;
+}
+</style>
+
 </head>
 <body class="cylo-catalog-page">
 
@@ -3208,40 +3234,7 @@ function generateCyloPDF() {
       </div>
       <script>window.onload = function() { window.print(); };<\/script>
 
-<script>
-/* Scroll preciso hacia categorías desde menú lateral, navbar o enlaces externos */
-(function () {
-  const HEADER_OFFSET_DESKTOP = 165;
-  const HEADER_OFFSET_MOBILE = 125;
-
-  function getOffset() {
-    return window.innerWidth <= 900 ? HEADER_OFFSET_MOBILE : HEADER_OFFSET_DESKTOP;
-  }
-
-  function scrollToCategoryFromHash() {
-    if (!window.location.hash) return;
-
-    const id = window.location.hash.replace("#", "");
-    const target = document.getElementById(id);
-
-    if (!target) return;
-
-    setTimeout(function () {
-      const y = target.getBoundingClientRect().top + window.pageYOffset - getOffset();
-
-      window.scrollTo({
-        top: y,
-        behavior: "smooth"
-      });
-    }, 350);
-  }
-
-  window.addEventListener("load", scrollToCategoryFromHash);
-  window.addEventListener("hashchange", scrollToCategoryFromHash);
-})();
-</script>
-
-    </body>
+</body>
     </html>
   `;
 
@@ -3295,7 +3288,7 @@ function generateCyloPDF() {
       if (!query) return;
 
       event.preventDefault();
-      window.location.href = 'Catalogo-digital-2026.html?q=' + encodeURIComponent(query) + '#catalog-search';
+      window.location.href = '/Catalogo-digital-2026.html?q=' + encodeURIComponent(query) + '#catalog-search';
     });
   });
 })();
@@ -3361,7 +3354,7 @@ function generateCyloPDF() {
       if (!query) return;
 
       event.preventDefault();
-      window.location.href = "Catalogo-digital-2026.html?q=" + encodeURIComponent(query) + "#catalog-search";
+      window.location.href = "/Catalogo-digital-2026.html?q=" + encodeURIComponent(query) + "#catalog-search";
     });
   }
 
@@ -3446,6 +3439,223 @@ function generateCyloPDF() {
   window.addEventListener('load', injectCartButtons);
   setTimeout(injectCartButtons, 500);
   setTimeout(injectCartButtons, 1500);
+})();
+</script>
+
+
+<script>
+/* CYLO CATEGORY NAV V8 - Corrección final de navegación por categorías */
+(function () {
+  const CATEGORY_IDS = new Set([
+    "cat-desechables",
+    "cat-utensilios",
+    "cat-cocci-n",
+    "cat-accesorios",
+    "cat-reposter-a",
+    "cat-pizzer-a",
+    "cat-contenedores",
+    "cat-catering",
+    "cat-servicio",
+    "cat-bartender",
+    "cat-cafeter-a",
+    "cat-presentaci-n",
+    "cat-vajilla",
+    "cat-cristaler-a"
+  ]);
+
+  function cleanId(value) {
+    return String(value || "").replace(/^#/, "").trim();
+  }
+
+  function isVisible(el) {
+    if (!el) return false;
+    const style = window.getComputedStyle(el);
+    if (style.display === "none" || style.visibility === "hidden") return false;
+    const rect = el.getBoundingClientRect();
+    return rect.width > 0 && rect.height > 0 && rect.bottom > 0 && rect.top < window.innerHeight;
+  }
+
+  function getStickyOffset() {
+    const elements = [
+      document.querySelector(".cylo-header"),
+      document.querySelector(".site-header"),
+      document.querySelector(".search-bar")
+    ];
+
+    let total = 0;
+    const used = new Set();
+
+    elements.forEach(function (el) {
+      if (!el || used.has(el) || !isVisible(el)) return;
+
+      const style = window.getComputedStyle(el);
+      const rect = el.getBoundingClientRect();
+      const stickyOrFixed = style.position === "sticky" || style.position === "fixed";
+
+      if (stickyOrFixed && rect.top <= 8) {
+        total += Math.ceil(rect.height);
+        used.add(el);
+      }
+    });
+
+    if (total < 64) total = window.innerWidth <= 900 ? 72 : 82;
+    return total + 18;
+  }
+
+  function setAnchorOffset() {
+    document.documentElement.style.setProperty("--cylo-anchor-offset", getStickyOffset() + "px");
+  }
+
+  function getCategoryFromUrl() {
+    const params = new URLSearchParams(window.location.search);
+    const fromQuery = cleanId(params.get("cat"));
+    const fromHash = cleanId(window.location.hash);
+
+    if (CATEGORY_IDS.has(fromQuery)) return fromQuery;
+    if (CATEGORY_IDS.has(fromHash)) return fromHash;
+
+    return "";
+  }
+
+  function markActive(id) {
+    document.querySelectorAll(".cat-section.cylo-anchor-active").forEach(function (section) {
+      section.classList.remove("cylo-anchor-active");
+    });
+
+    document.querySelectorAll(".toc-item.cylo-toc-active").forEach(function (item) {
+      item.classList.remove("cylo-toc-active");
+    });
+
+    const target = document.getElementById(id);
+    if (target) {
+      target.classList.add("cylo-anchor-active");
+      setTimeout(function () {
+        target.classList.remove("cylo-anchor-active");
+      }, 1800);
+    }
+
+    document.querySelectorAll('a[href*="' + id + '"]').forEach(function (link) {
+      if (link.classList.contains("toc-item")) link.classList.add("cylo-toc-active");
+    });
+  }
+
+  function scrollToCategory(id, behavior) {
+    const targetId = cleanId(id);
+    if (!CATEGORY_IDS.has(targetId)) return false;
+
+    const target = document.getElementById(targetId);
+    if (!target) return false;
+
+    setAnchorOffset();
+
+    const y = Math.max(
+      0,
+      target.getBoundingClientRect().top + window.pageYOffset - getStickyOffset()
+    );
+
+    window.scrollTo({
+      top: y,
+      behavior: behavior || "auto"
+    });
+
+    markActive(targetId);
+    return true;
+  }
+
+  function scheduleScroll(id, behavior) {
+    if (!id) return;
+
+    const delays = [0, 80, 220, 480, 900, 1500, 2400, 3600, 5200];
+
+    delays.forEach(function (delay, index) {
+      setTimeout(function () {
+        scrollToCategory(id, index === 0 ? (behavior || "auto") : "auto");
+      }, delay);
+    });
+  }
+
+  function normalizeCatalogPath(pathname) {
+    const last = (pathname || "").split("/").filter(Boolean).pop() || "";
+    return last.replace(/\.html$/i, "");
+  }
+
+  function linkPointsToThisCatalog(href) {
+    try {
+      const url = new URL(href, window.location.href);
+      const current = normalizeCatalogPath(window.location.pathname);
+      const target = normalizeCatalogPath(url.pathname);
+
+      return target === "Catalogo-digital-2026" || current === target;
+    } catch (error) {
+      return false;
+    }
+  }
+
+  function categoryFromHref(href) {
+    try {
+      const url = new URL(href, window.location.href);
+      const queryCat = cleanId(url.searchParams.get("cat"));
+      const hashCat = cleanId(url.hash);
+
+      if (CATEGORY_IDS.has(queryCat)) return queryCat;
+      if (CATEGORY_IDS.has(hashCat)) return hashCat;
+    } catch (error) {}
+
+    return "";
+  }
+
+  document.addEventListener("click", function (event) {
+    const link = event.target.closest("a[href]");
+    if (!link) return;
+
+    const href = link.getAttribute("href") || "";
+    const categoryId = categoryFromHref(href);
+
+    if (!categoryId) return;
+
+    if (linkPointsToThisCatalog(link.href)) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+
+      const cleanUrl = "/Catalogo-digital-2026.html?cat=" + encodeURIComponent(categoryId) + "#" + categoryId;
+      history.replaceState(null, "", cleanUrl);
+      scheduleScroll(categoryId, "smooth");
+    }
+  }, true);
+
+  document.addEventListener("change", function (event) {
+    const select = event.target.closest("#catalogCategorySelect");
+    if (!select) return;
+
+    const categoryId = cleanId(select.value);
+    if (!CATEGORY_IDS.has(categoryId)) return;
+
+    event.preventDefault();
+    event.stopImmediatePropagation();
+
+    const cleanUrl = "/Catalogo-digital-2026.html?cat=" + encodeURIComponent(categoryId) + "#" + categoryId;
+    history.replaceState(null, "", cleanUrl);
+    scheduleScroll(categoryId, "smooth");
+  }, true);
+
+  function boot() {
+    setAnchorOffset();
+    const categoryId = getCategoryFromUrl();
+    if (categoryId) scheduleScroll(categoryId, "auto");
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", boot);
+  } else {
+    boot();
+  }
+
+  window.addEventListener("load", boot);
+  window.addEventListener("resize", setAnchorOffset);
+  window.addEventListener("hashchange", function () {
+    const categoryId = getCategoryFromUrl();
+    if (categoryId) scheduleScroll(categoryId, "smooth");
+  });
 })();
 </script>
 

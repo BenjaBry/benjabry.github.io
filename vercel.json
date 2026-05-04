@@ -1,6 +1,14 @@
 {
   "rewrites": [
     {
+      "source": "/Catalogo-digital-2026",
+      "destination": "/Catalogo-digital-2026.html"
+    },
+    {
+      "source": "/Catalogo-digital-2026/",
+      "destination": "/Catalogo-digital-2026.html"
+    },
+    {
       "source": "/blog",
       "destination": "/blog/index.html"
     },
