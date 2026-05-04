@@ -1225,7 +1225,7 @@ a {
 
 </style>
 
-<link rel="stylesheet" href="/assets/css/cylo-ui.css">
+<link rel="stylesheet" href="../assets/css/cylo-ui.css">
 
 <style>
 /* PATCH TEMPLATE PRODUCTO V3 - Layout estable, navbar unificado y relacionados */
@@ -1424,7 +1424,7 @@ a {
 
   <header class="cylo-header">
     <div class="cylo-container cylo-header-main">
-      <a href="/index.html" class="cylo-logo" aria-label="CYLO Guatemala">
+      <a href="../index.html" class="cylo-logo" aria-label="CYLO Guatemala">
         <div class="cylo-logo-main">CY<em>LO</em></div>
         <div class="cylo-logo-sub">Guatemala</div>
       </a>
@@ -1435,15 +1435,15 @@ a {
       </form>
 
       <div class="cylo-header-actions">
-        <a href="/contacto.html">Contacto</a>
+        <a href="../contacto.html">Contacto</a>
         <a class="cylo-whatsapp" href="https://wa.me/50248005692?text=Hola%20CYLO%2C%20quiero%20cotizar%20EXTENSI%C3%93N%20CANASTA%20LAVADO%2016%20ESP.%20SKU%20CANAS-0007" target="_blank" rel="noopener" data-dynamic-whatsapp>Cotizar</a>
       </div>
     </div>
 
     <nav class="cylo-main-menu" aria-label="Navegación principal">
       <div class="cylo-container cylo-menu-inner">
-        <a href="/index.html">Inicio</a>
-        <a href="/Catalogo-digital-2026.html" class="is-active">Catálogo completo</a>
+        <a href="../index.html">Inicio</a>
+        <a href="../Catalogo-digital-2026.html" class="is-active">Catálogo completo</a>
 
         <details class="cylo-dropdown">
           <summary>Categorías</summary>
@@ -1465,8 +1465,8 @@ a {
           </div>
         </details>
 
-        <a href="/nosotros.html">Nosotros</a>
-        <a href="/contacto.html">Contacto</a>
+        <a href="../nosotros.html">Nosotros</a>
+        <a href="../contacto.html">Contacto</a>
       </div>
     </nav>
   </header>
@@ -1474,8 +1474,8 @@ a {
 
 <div class="breadcrumb-zone">
   <div class="container breadcrumb">
-    <a href="/index.html">Inicio</a> /
-    <a href="/Catalogo-digital-2026.html">Catálogo</a> /
+    <a href="../index.html">Inicio</a> /
+    <a href="../Catalogo-digital-2026.html">Catálogo</a> /
     <span>SERVICIO</span> /
     <span>EXTENSIÓN CANASTA LAVADO 16 ESP.</span>
   </div>
@@ -2072,7 +2072,7 @@ window.addEventListener('load', function() {
       if (!query) return;
 
       event.preventDefault();
-      window.location.href = "/Catalogo-digital-2026.html?q=" + encodeURIComponent(query) + "#catalog-search";
+      window.location.href = "../Catalogo-digital-2026.html?q=" + encodeURIComponent(query) + "#catalog-search";
     });
   });
 
@@ -2114,7 +2114,7 @@ window.addEventListener('load', function() {
     link.addEventListener('click', function () {
       var cat = link.getAttribute('data-cylo-catalog-cat');
       if (!cat) return;
-      link.setAttribute('href', '/Catalogo-digital-2026.html?cat=' + encodeURIComponent(cat) + '#' + cat);
+      link.setAttribute('href', '../Catalogo-digital-2026.html?cat=' + encodeURIComponent(cat) + '#' + cat);
     });
   });
 })();

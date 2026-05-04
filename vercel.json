@@ -9,6 +9,10 @@
       "destination": "/Catalogo-digital-2026.html"
     },
     {
+      "source": "/productos/:slug",
+      "destination": "/productos/:slug.html"
+    },
+    {
       "source": "/blog",
       "destination": "/blog/index.html"
     },
