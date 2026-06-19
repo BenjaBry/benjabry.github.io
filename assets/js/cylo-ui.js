@@ -41,7 +41,7 @@
       <div class="cylo-top-bar">
         <div class="cylo-container cylo-top-bar-inner">
           <div><strong>CYLO Guatemala</strong> | Insumos para alimentos y compras institucionales</div>
-          <div>WhatsApp: +502 4800-5692 | ventas@cyloguatemala.me</div>
+          <div>WhatsApp: +502 4054-5591 | ventas@cyloguatemala.me</div>
         </div>
       </div>
 
@@ -59,7 +59,7 @@
 
           <div class="cylo-header-actions">
             <a href="/contacto.html">Contacto</a>
-            <a class="cylo-whatsapp" href="https://wa.me/50248005692?text=Hola%20CYLO,%20quiero%20cotizar%20productos%20para%20mi%20negocio." target="_blank" rel="noopener">Cotizar</a>
+            <a class="cylo-whatsapp" href="https://wa.me/50240545591?text=Hola%20CYLO,%20quiero%20cotizar%20productos%20para%20mi%20negocio." target="_blank" rel="noopener">Cotizar</a>
           </div>
         </div>
 
