@@ -6,6 +6,11 @@
   if (!mount) return;
 
   const active = (mount.dataset.active || "").toLowerCase();
+  const isPurificadores = active === "purificadores";
+  const logoUrl = isPurificadores ? "purificadores-agua.html" : "index.html";
+  const logoText = isPurificadores ? "Aqua<em>Pure</em>" : "CY<em>LO</em>";
+  const logoStyle = isPurificadores ? "style=\"color: #1768D3;\"" : "";
+  const subStyle = isPurificadores ? "style=\"color: #5AC8F2;\"" : "";
 
   const categories = [
     ["Desechables", "76", "cat-desechables"],
@@ -25,7 +30,7 @@
   ];
 
   const base = "";
-  const catalogUrl = `/Catalogo-digital-2026.html`;
+  const catalogUrl = `Catalogo-digital-2026.html`;
 
   const activeClass = (key) => active === key ? "is-active" : "";
 
@@ -36,48 +41,84 @@
     </a>
   `).join("");
 
+  const topBarMarkup = isPurificadores ? `
+    <div class="cylo-top-bar" style="background: var(--navy2);">
+      <div class="cylo-container cylo-top-bar-inner">
+        <div><strong>AquaPure Guatemala</strong> | Purificadores y filtros de agua pura de alto rendimiento</div>
+        <div>WhatsApp: +502 3443-1638 | ventas@cyloguatemala.me</div>
+      </div>
+    </div>
+  ` : `
+    <div class="cylo-top-bar">
+      <div class="cylo-container cylo-top-bar-inner">
+        <div><strong>CYLO Guatemala</strong> | Insumos para alimentos y compras institucionales</div>
+        <div>WhatsApp: +502 4054-5591 | ventas@cyloguatemala.me</div>
+      </div>
+    </div>
+  `;
+
+  const searchMarkup = isPurificadores ? `
+    <div style="flex: 1;"></div>
+  ` : `
+    <form class="cylo-search" id="cyloGlobalSearch" action="${catalogUrl}">
+      <input type="search" name="q" placeholder="Buscar productos, empaques, insumos o categorías">
+      <button type="submit">Buscar</button>
+    </form>
+  `;
+
+  const actionsMarkup = isPurificadores ? `
+    <div class="cylo-header-actions">
+      <a href="index.html" style="margin-right: 12px; font-weight: 800; color: var(--navy); text-decoration: none;">Volver a CYLO</a>
+      <a class="cylo-whatsapp" href="https://wa.me/50234431638?text=Hola%20AquaPure,%20quiero%20cotizar%20un%20purificador%20de%20agua." target="_blank" rel="noopener" style="background: #1768D3; border-radius: 4px; color: white !important; padding: 11px 16px; text-decoration: none;">WhatsApp Ventas</a>
+    </div>
+  ` : `
+    <div class="cylo-header-actions">
+      <a href="contacto.html">Contacto</a>
+      <a class="cylo-whatsapp" href="https://wa.me/50240545591?text=Hola%20CYLO,%20quiero%20cotizar%20productos%20para%20mi%20negocio." target="_blank" rel="noopener">Cotizar</a>
+    </div>
+  `;
+
+  const menuMarkup = isPurificadores ? `
+    <a href="purificadores-agua.html" class="is-active">Inicio Purificadores</a>
+    <a href="purificadores-agua.html#catalogo">Modelos</a>
+    <a href="purificadores-agua.html#calculadora">Calculadora de Ahorro</a>
+    <a href="purificadores-agua.html#proceso">¿Cómo comprar?</a>
+    <a href="index.html" class="back-to-cylo" style="margin-left: auto; border-right: none; background: rgba(255,255,255,0.08);">← Volver a CYLO</a>
+  ` : `
+    <a href="index.html" class="${activeClass("inicio")}">Inicio</a>
+    <a href="${catalogUrl}" class="${activeClass("catalogo")}">Catálogo completo</a>
+    <a href="purificadores-agua.html" class="${activeClass("purificadores")}">Purificadores</a>
+
+    <details class="cylo-dropdown">
+      <summary>Categorías</summary>
+      <div class="cylo-dropdown-panel">
+        ${categoryLinks}
+      </div>
+    </details>
+
+    <a href="blog/index.html" class="${activeClass("blog")}">Blog</a>
+    <a href="nosotros.html" class="${activeClass("nosotros")}">Nosotros</a>
+    <a href="contacto.html" class="${activeClass("contacto")}">Contacto</a>
+  `;
+
   mount.innerHTML = `
     <div class="cylo-shell">
-      <div class="cylo-top-bar">
-        <div class="cylo-container cylo-top-bar-inner">
-          <div><strong>CYLO Guatemala</strong> | Insumos para alimentos y compras institucionales</div>
-          <div>WhatsApp: +502 4054-5591 | ventas@cyloguatemala.me</div>
-        </div>
-      </div>
+      ${topBarMarkup}
 
       <header class="cylo-header">
         <div class="cylo-container cylo-header-main">
-          <a href="/index.html" class="cylo-logo" aria-label="CYLO Guatemala">
-            <div class="cylo-logo-main">CY<em>LO</em></div>
-            <div class="cylo-logo-sub">Guatemala</div>
+          <a href="${logoUrl}" class="cylo-logo" aria-label="${isPurificadores ? "AquaPure" : "CYLO"} Guatemala">
+            <div class="cylo-logo-main" ${logoStyle}>${logoText}</div>
+            <div class="cylo-logo-sub" ${subStyle}>Guatemala</div>
           </a>
 
-          <form class="cylo-search" id="cyloGlobalSearch" action="${catalogUrl}">
-            <input type="search" name="q" placeholder="Buscar productos, empaques, insumos o categorías">
-            <button type="submit">Buscar</button>
-          </form>
-
-          <div class="cylo-header-actions">
-            <a href="/contacto.html">Contacto</a>
-            <a class="cylo-whatsapp" href="https://wa.me/50240545591?text=Hola%20CYLO,%20quiero%20cotizar%20productos%20para%20mi%20negocio." target="_blank" rel="noopener">Cotizar</a>
-          </div>
+          ${searchMarkup}
+          ${actionsMarkup}
         </div>
 
         <nav class="cylo-main-menu" aria-label="Navegación principal">
           <div class="cylo-container cylo-menu-inner">
-            <a href="/index.html" class="${activeClass("inicio")}">Inicio</a>
-            <a href="${catalogUrl}" class="${activeClass("catalogo")}">Catálogo completo</a>
-
-            <details class="cylo-dropdown">
-              <summary>Categorías</summary>
-              <div class="cylo-dropdown-panel">
-                ${categoryLinks}
-              </div>
-            </details>
-
-<a href="/blog/index.html" class="${activeClass("blog")}">Blog</a>
-<a href="/nosotros.html" class="${activeClass("nosotros")}">Nosotros</a>
-<a href="/contacto.html" class="${activeClass("contacto")}">Contacto</a>
+            ${menuMarkup}
           </div>
         </nav>
       </header>
@@ -93,7 +134,7 @@
       if (!query) return;
 
       event.preventDefault();
-      window.location.href = `/Catalogo-digital-2026.html?q=${encodeURIComponent(query)}#catalog-search`;
+      window.location.href = `Catalogo-digital-2026.html?q=${encodeURIComponent(query)}#catalog-search`;
     });
   }
 

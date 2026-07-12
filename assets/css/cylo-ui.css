@@ -504,3 +504,18 @@ body {
   }
 }
 
+.cylo-menu-inner > a[href$="purificadores-agua.html"] {
+  transition: all 0.3s ease;
+}
+.cylo-menu-inner > a[href$="purificadores-agua.html"]:hover {
+  background: rgba(23, 104, 211, 0.25) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  box-shadow: 
+    inset 0 0 10px rgba(255, 255, 255, 0.2),
+    0 4px 20px rgba(23, 104, 211, 0.45) !important;
+  color: #FFFFFF !important;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+}
+
+

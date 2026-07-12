@@ -106,4 +106,68 @@
     <xhtml:link rel="alternate" hreflang="es-GT" href="https://www.cyloguatemala.me/nosotros.html"/>
   </url>
 
+  <url>
+    <loc>https://www.cyloguatemala.me/purificadores-agua.html</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="es-GT" href="https://www.cyloguatemala.me/purificadores-agua.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.cyloguatemala.me/productos/sistema-uv-aquapure.html</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="es-GT" href="https://www.cyloguatemala.me/productos/sistema-uv-aquapure.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.cyloguatemala.me/productos/osmosis-inversa-aquapure.html</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="es-GT" href="https://www.cyloguatemala.me/productos/osmosis-inversa-aquapure.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.cyloguatemala.me/productos/ozono-acrilico-aquapure.html</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="es-GT" href="https://www.cyloguatemala.me/productos/ozono-acrilico-aquapure.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.cyloguatemala.me/productos/ozono-vitro-aquapure.html</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="es-GT" href="https://www.cyloguatemala.me/productos/ozono-vitro-aquapure.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.cyloguatemala.me/blog/comparativa-sistemas-filtracion-agua.html</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.60</priority>
+    <xhtml:link rel="alternate" hreflang="es-GT" href="https://www.cyloguatemala.me/blog/comparativa-sistemas-filtracion-agua.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.cyloguatemala.me/blog/cuanto-ahorras-al-dejar-el-garrafon-de-agua.html</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.60</priority>
+    <xhtml:link rel="alternate" hreflang="es-GT" href="https://www.cyloguatemala.me/blog/cuanto-ahorras-al-dejar-el-garrafon-de-agua.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.cyloguatemala.me/blog/mantenimiento-basico-de-purificadores-de-agua.html</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.60</priority>
+    <xhtml:link rel="alternate" hreflang="es-GT" href="https://www.cyloguatemala.me/blog/mantenimiento-basico-de-purificadores-de-agua.html"/>
+  </url>
+
 </urlset>
