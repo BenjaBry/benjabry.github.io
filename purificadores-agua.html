@@ -711,7 +711,134 @@
       grid-template-columns: 1fr;
     }
   }
+
+  /* ===== CORRECCIONES MÓVIL GLOBAL ===== */
+  /* Evitar desbordamiento horizontal en toda la página */
+  html, body {
+    overflow-x: hidden;
+  }
+
+  @media (max-width: 680px) {
+    /* ---- Header top bar ---- */
+    .cylo-top-bar > div,
+    .cylo-top-bar .cylo-container {
+      flex-direction: column !important;
+      gap: 4px !important;
+      text-align: center !important;
+      padding: 0 16px !important;
+    }
+
+    /* ---- Header principal: logo + botón apilados ---- */
+    .cylo-header .cylo-container,
+    div[style*="height: 78px"] {
+      flex-wrap: wrap !important;
+      height: auto !important;
+      padding: 12px 16px !important;
+      gap: 12px !important;
+    }
+
+    /* ---- Nav bar: scrollable horizontal sin romper layout ---- */
+    nav.cylo-main-menu {
+      overflow-x: auto !important;
+      -webkit-overflow-scrolling: touch !important;
+      scrollbar-width: none !important;
+    }
+    nav.cylo-main-menu::-webkit-scrollbar { display: none; }
+    .cylo-main-menu .cylo-container,
+    nav.cylo-main-menu > div {
+      display: flex !important;
+      flex-wrap: nowrap !important;
+      width: max-content !important;
+      min-width: 100% !important;
+      padding: 0 !important;
+      overflow-x: visible !important;
+    }
+    nav.cylo-main-menu > div > a {
+      flex-shrink: 0 !important;
+    }
+
+    /* ---- Hero: ocultar hero visual (imágenes flotantes) en móvil ---- */
+    .hero-visual {
+      display: none !important;
+    }
+    .hero-inner {
+      grid-template-columns: 1fr !important;
+      padding-top: 48px !important;
+      padding-bottom: 40px !important;
+      text-align: center;
+    }
+    .hero-copy p { margin-left: auto; margin-right: auto; }
+    .hero-ctas { justify-content: center; }
+
+    /* ---- Float cards: desactivar posicionamiento absoluto ---- */
+    .float-card { display: none !important; }
+
+    /* ---- Footer: columnas responsivas ---- */
+    .footer-grid,
+    .container.footer-grid {
+      grid-template-columns: 1fr 1fr !important;
+      gap: 24px !important;
+      padding: 0 18px !important;
+    }
+
+    /* ---- Footer bottom: centrado ---- */
+    .footer-bottom-inner,
+    .container.footer-bottom-inner {
+      flex-direction: column !important;
+      text-align: center !important;
+      gap: 6px !important;
+    }
+
+    /* ---- Tarjetas de producto en columna única ---- */
+    .product-grid { grid-template-columns: 1fr !important; }
+
+    /* ---- Imagen de producto: limitar tamaño ---- */
+    .product-card .prod-image-wrap {
+      width: 100% !important;
+      height: 180px !important;
+    }
+
+    /* ---- Sección calculadora ---- */
+    .calc-card { grid-template-columns: 1fr !important; }
+
+    /* ---- Blog / noticias ---- */
+    .news-grid { flex-direction: column !important; }
+    .news-card { min-width: unset !important; width: 100% !important; }
+
+    /* ---- Sección stats ---- */
+    .stats-grid { grid-template-columns: repeat(2,1fr) !important; }
+
+    /* ---- Features ---- */
+    .features-grid { grid-template-columns: 1fr !important; }
+
+    /* ---- Steps ---- */
+    .steps-grid { grid-template-columns: 1fr !important; }
+
+    /* ---- Sección learn ---- */
+    .learn-grid { grid-template-columns: 1fr !important; }
+
+    /* ---- Espacio de secciones reducido en móvil ---- */
+    section { padding: 52px 0 !important; }
+
+    /* ---- .wrap padding comprimido ---- */
+    .wrap { padding: 0 18px !important; }
+
+    /* ---- Botones de ancho completo en CTA ---- */
+    .btn-primary, .btn-ghost { width: 100%; justify-content: center; text-align: center; }
+
+    /* ---- Ocultar link "Volver a CYLO" del nav en móvil para no romper layout ---- */
+    .back-to-cylo { margin-left: 0 !important; }
+  }
+
+  /* Footer a 1 columna en teléfonos muy pequeños */
+  @media (max-width: 440px) {
+    .footer-grid,
+    .container.footer-grid {
+      grid-template-columns: 1fr !important;
+    }
+  }
 </style>
+
 </head>
 <body>
 
